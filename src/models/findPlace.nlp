@@ -1,0 +1,562 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,can,go,place,recommend,to,you": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "am,do,for,fun,i,look,someth,to": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "ani,go,on,suggest,to,where": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "are,around,here,place,popular,some,what": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "for,i,idea,need,place,to,visit": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "activ,for,go,i,should,where": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "am,bore,do,i,should,what": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "bore,i,m": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "a,go,i,place,to,want": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "ani,go,good,place,to": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "recomend,your": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "me,place,recomend,some": {
+            "intent": "find.place",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "find.place": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Can you recommend a place to go?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm looking for something fun to do.",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "Any suggestions on where to go?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some popular places around here?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need ideas for places to visit.",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "Where should I go for [activity]?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm bored, what should I do?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i'm bored, what should I do?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i m bored",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i want to go to a place",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "any good place to go",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "your recomendation?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "recomend me some place",
+            "intent": "find.place"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "can": 1,
+              "you": 1,
+              "recommend": 1,
+              "a": 1,
+              "place": 1,
+              "to": 1,
+              "go": 1,
+              "i": 1,
+              "am": 1,
+              "look": 1,
+              "for": 1,
+              "someth": 1,
+              "fun": 1,
+              "do": 1,
+              "ani": 1,
+              "suggest": 1,
+              "on": 1,
+              "where": 1,
+              "what": 1,
+              "are": 1,
+              "some": 1,
+              "popular": 1,
+              "around": 1,
+              "here": 1,
+              "need": 1,
+              "idea": 1,
+              "visit": 1,
+              "should": 1,
+              "activ": 1,
+              "bore": 1,
+              "m": 1,
+              "want": 1,
+              "good": 1,
+              "your": 1,
+              "recomend": 1,
+              "me": 1
+            },
+            "intents": {
+              "find.place": 1
+            },
+            "intentFeatures": {
+              "find.place": {
+                "can": 1,
+                "you": 1,
+                "recommend": 1,
+                "a": 1,
+                "place": 1,
+                "to": 1,
+                "go": 1,
+                "i": 1,
+                "am": 1,
+                "look": 1,
+                "for": 1,
+                "someth": 1,
+                "fun": 1,
+                "do": 1,
+                "ani": 1,
+                "suggest": 1,
+                "on": 1,
+                "where": 1,
+                "what": 1,
+                "are": 1,
+                "some": 1,
+                "popular": 1,
+                "around": 1,
+                "here": 1,
+                "need": 1,
+                "idea": 1,
+                "visit": 1,
+                "should": 1,
+                "activ": 1,
+                "bore": 1,
+                "m": 1,
+                "want": 1,
+                "good": 1,
+                "your": 1,
+                "recomend": 1,
+                "me": 1
+              }
+            },
+            "featuresToIntent": {
+              "can": [
+                "find.place"
+              ],
+              "you": [
+                "find.place"
+              ],
+              "recommend": [
+                "find.place"
+              ],
+              "a": [
+                "find.place"
+              ],
+              "place": [
+                "find.place"
+              ],
+              "to": [
+                "find.place"
+              ],
+              "go": [
+                "find.place"
+              ],
+              "i": [
+                "find.place"
+              ],
+              "am": [
+                "find.place"
+              ],
+              "look": [
+                "find.place"
+              ],
+              "for": [
+                "find.place"
+              ],
+              "someth": [
+                "find.place"
+              ],
+              "fun": [
+                "find.place"
+              ],
+              "do": [
+                "find.place"
+              ],
+              "ani": [
+                "find.place"
+              ],
+              "suggest": [
+                "find.place"
+              ],
+              "on": [
+                "find.place"
+              ],
+              "where": [
+                "find.place"
+              ],
+              "what": [
+                "find.place"
+              ],
+              "are": [
+                "find.place"
+              ],
+              "some": [
+                "find.place"
+              ],
+              "popular": [
+                "find.place"
+              ],
+              "around": [
+                "find.place"
+              ],
+              "here": [
+                "find.place"
+              ],
+              "need": [
+                "find.place"
+              ],
+              "idea": [
+                "find.place"
+              ],
+              "visit": [
+                "find.place"
+              ],
+              "should": [
+                "find.place"
+              ],
+              "activ": [
+                "find.place"
+              ],
+              "bore": [
+                "find.place"
+              ],
+              "m": [
+                "find.place"
+              ],
+              "want": [
+                "find.place"
+              ],
+              "good": [
+                "find.place"
+              ],
+              "your": [
+                "find.place"
+              ],
+              "recomend": [
+                "find.place"
+              ],
+              "me": [
+                "find.place"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "can",
+                "you",
+                "recommend",
+                "a",
+                "place",
+                "to",
+                "go",
+                "i",
+                "am",
+                "look",
+                "for",
+                "someth",
+                "fun",
+                "do",
+                "ani",
+                "suggest",
+                "on",
+                "where",
+                "what",
+                "are",
+                "some",
+                "popular",
+                "around",
+                "here",
+                "need",
+                "idea",
+                "visit",
+                "should",
+                "activ",
+                "bore",
+                "m",
+                "want",
+                "good",
+                "your",
+                "recomend",
+                "me"
+              ],
+              "intents": [
+                "find.place"
+              ],
+              "perceptrons": [
+                [
+                  0.7674660682678223,
+                  0.7674660682678223,
+                  0.7674660682678223,
+                  0.00249407347291708,
+                  2.2862908840179443,
+                  2.0949528217315674,
+                  2.0772652626037598,
+                  3.1305313110351562,
+                  0.5651936531066895,
+                  0.4564189910888672,
+                  1.0474562644958496,
+                  0.4564189910888672,
+                  0.4564189910888672,
+                  0.5651936531066895,
+                  1.5611579418182373,
+                  0.8638684749603271,
+                  0.8638684749603271,
+                  1.3738819360733032,
+                  1.0806360244750977,
+                  0.9682658910751343,
+                  1.507473349571228,
+                  0.9682658910751343,
+                  0.9682658910751343,
+                  0.9682658910751343,
+                  0.07552190870046616,
+                  0.07552190870046616,
+                  0.07552190870046616,
+                  0.6228991150856018,
+                  0.5131467580795288,
+                  2.8482000827789307,
+                  2.735999345779419,
+                  -0.7641736268997192,
+                  0.6984268426895142,
+                  4.019046306610107,
+                  4.569948673248291,
+                  0.5422565937042236,
+                  5.502341250171946
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Can you recommend a place to go?"
+      ],
+      [
+        "en",
+        "I'm looking for something fun to do."
+      ],
+      [
+        "en",
+        "Any suggestions on where to go?"
+      ],
+      [
+        "en",
+        "What are some popular places around here?"
+      ],
+      [
+        "en",
+        "I need ideas for places to visit."
+      ],
+      [
+        "en",
+        "Where should I go for [activity]?"
+      ],
+      [
+        "en",
+        "I'm bored, what should I do?"
+      ],
+      [
+        "en",
+        "i'm bored, what should I do?"
+      ],
+      [
+        "en",
+        "i m bored"
+      ],
+      [
+        "en",
+        "i want to go to a place"
+      ],
+      [
+        "en",
+        "any good place to go"
+      ],
+      [
+        "en",
+        "your recomendation?"
+      ],
+      [
+        "en",
+        "recomend me some place"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "find.place": [
+          {
+            "answer": "Certainly! What type of place are you interested in? Restaurants, hotels, beaches, or theme parks?"
+          },
+          {
+            "answer": "That sounds great! What kind of activities are you interested in? Dining out, exploring nature, visiting attractions?"
+          },
+          {
+            "answer": "Of course! Are you looking for something specific like a restaurant, hotel, beach, or theme park, or are you open to any recommendations?"
+          },
+          {
+            "answer": "There are plenty of options! What type of place are you interested in? I can recommend restaurants, hotels, beaches, or theme parks."
+          },
+          {
+            "answer": "Sure thing! Can you tell me more about what you're in the mood for? Are you looking for dining options, accommodations, outdoor activities, or entertainment?"
+          },
+          {
+            "answer": "That depends on what you're interested in! Are you looking for recommendations for restaurants, hotels, beaches, or theme parks?"
+          },
+          {
+            "answer": "I can help with that! What type of place are you thinking of visiting? Restaurants, hotels, beaches, or theme parks?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

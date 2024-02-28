@@ -1,0 +1,251 @@
+{
+  "settings": {
+    "tag": "nlp",
+    "forceNER": true,
+    "languages": [
+      "en"
+    ],
+    "corpora": [
+      "./src/testAction/test.json"
+    ],
+    "calculateSentiment": true,
+    "executeActionsBeforeAnswers": false
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "is,it,time,what": {
+            "intent": "whatTimeIsIt",
+            "domain": "default"
+          },
+          "@cuntri,i,in,live": {
+            "intent": "whatTimeIsIt",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "whatTimeIsIt": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "What time is it?",
+            "intent": "whatTimeIsIt"
+          },
+          {
+            "domain": "default",
+            "utterance": "i live in @cuntry",
+            "intent": "whatTimeIsIt"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "what": 1,
+              "time": 1,
+              "is": 1,
+              "it": 1,
+              "i": 1,
+              "live": 1,
+              "in": 1,
+              "@cuntri": 1
+            },
+            "intents": {
+              "whatTimeIsIt": 1
+            },
+            "intentFeatures": {
+              "whatTimeIsIt": {
+                "what": 1,
+                "time": 1,
+                "is": 1,
+                "it": 1,
+                "i": 1,
+                "live": 1,
+                "in": 1,
+                "@cuntri": 1
+              }
+            },
+            "featuresToIntent": {
+              "what": [
+                "whatTimeIsIt"
+              ],
+              "time": [
+                "whatTimeIsIt"
+              ],
+              "is": [
+                "whatTimeIsIt"
+              ],
+              "it": [
+                "whatTimeIsIt"
+              ],
+              "i": [
+                "whatTimeIsIt"
+              ],
+              "live": [
+                "whatTimeIsIt"
+              ],
+              "in": [
+                "whatTimeIsIt"
+              ],
+              "@cuntri": [
+                "whatTimeIsIt"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "what",
+                "time",
+                "is",
+                "it",
+                "i",
+                "live",
+                "in",
+                "@cuntri"
+              ],
+              "intents": [
+                "whatTimeIsIt"
+              ],
+              "perceptrons": [
+                [
+                  2.865267753601074,
+                  2.865267753601074,
+                  2.865267753601074,
+                  2.865267753601074,
+                  2.852914333343506,
+                  2.852914333343506,
+                  2.852914333343506,
+                  2.852914333343506,
+                  2.8488912871097427
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "What time is it?"
+      ],
+      [
+        "en",
+        "i live in @cuntry"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {
+      "en": {
+        "cuntry": {
+          "name": "cuntry",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "en-US",
+              "texts": [
+                "tunisie, tunis, tn"
+              ]
+            },
+            {
+              "option": "ja-JP",
+              "texts": [
+                "japan",
+                "jp",
+                "Japen"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "whatTimeIsIt": [
+          {
+            "answer": "It is {{ time }} o'clock in {{ cuntry }} {{ test }}"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {
+      "whatTimeIsIt": [
+        {
+          "action": "handleWhatsTimeIntent",
+          "parameters": [
+            "en-US",
+            "parameter 2"
+          ]
+        }
+      ]
+    }
+  },
+  "slotManager": {
+    "whatTimeIsIt": {
+      "cuntry": {
+        "intent": "whatTimeIsIt",
+        "entity": "cuntry",
+        "mandatory": true,
+        "locales": {
+          "en": "where do you live?"
+        }
+      }
+    }
+  }
+}

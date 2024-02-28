@@ -1,0 +1,59 @@
+{
+    "name": "Movie Ticket Booker",
+    "locale": "en-US",
+    "entities": {
+      "movie_title": {
+        "options": []  
+      },
+      "showtime": {
+        "options": [
+          "morning",
+          "afternoon",
+          "evening"
+        ]
+      },
+      "number_of_tickets": {
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4+"
+        ]
+      }
+    },
+    "data": [
+      {
+        "intent": "movie.booking",
+        "utterances": [
+          "I'd like to book a ticket for @movie_title.",
+          "Can I get a ticket for the @showtime showing of @movie_title?",
+          "I need tickets for @movie_title. How many seats are available?",
+          "Looking to watch a movie @showtime. Any suggestions?",
+          "recommend a movie",
+          "recommend me movie"
+
+        ],
+        "answers": [
+          "Sure, what showtime are you interested in for {{movie_title}} (morning, afternoon, or evening)?",
+          "Sounds good! How many tickets would you like for {movie_title} @showtime?",
+          "Let's see what's playing @showtime. What kind of movie are you in the mood for?",
+          "Great choice! Tickets for {movie_title} @showtime can be booked right away. How many seats do you need?"
+        ],
+        "slotFilling": {
+          "movie_title": {
+            "mandatory": true,
+            "question": "What movie title are you interested in?"
+          },
+          "showtime": {
+            "mandatory": false,
+            "question": "Do you have a preference for the showtime (morning, afternoon, or evening)?"
+          },
+          "number_of_tickets": {
+            "mandatory": false,
+            "question": "How many tickets would you like to book?"
+          }
+        }
+      }
+    ]
+  }
+  

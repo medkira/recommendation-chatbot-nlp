@@ -1,0 +1,71 @@
+{
+    "name": "Restaurant Features Corpus (Ultra Fancy Edition)",
+    "locale": "en-US",
+    "entities": {
+      "cuisine": {
+        "options": {
+          "italian": ["Italian", "A taste of Tuscany", "A trip to Rome through your tastebuds"],
+          "japanese": ["Japanese", "Fresh flavors from the Land of the Rising Sun", "An authentic Japanese culinary experience"],
+          "mexican": ["Mexican", "A fiesta for your senses", "A south-of-the-border adventure on your plate"]
+        }
+      },
+      "ambiance": {
+        "options": {
+          "cozy": ["Cozy", "Intimate and warm", "A fireside escape"],
+          "elegant": ["Elegant", "Upscale and sophisticated", "A touch of luxury"],
+          "casual": ["Casual", "Relaxed and inviting", "A place to unwind"]
+        }
+      },
+      "location": {
+        "options": {
+          "downtown": ["Downtown", "In the heart of the city", "Bustling with urban energy"],
+          "suburbs": ["Suburbs", "A charming neighborhood setting", "Relaxed and convenient"],
+          "beachfront": ["Beachfront", "Ocean views and fresh air", "A taste of paradise"]
+        }
+      },
+      "price_range": {
+        "options": {
+          "cheap": ["Budget-friendly", "Easy on the wallet", "Budget"],
+          "moderate": ["Moderately priced", "A good value"],
+          "expensive": ["Fine dining", "A splurge-worthy experience", "expensive"]
+        }
+      }
+    },
+    "data": [
+      {
+        "intent": "restaurant.preferences",
+        "utterances": [
+            "I prefer @cuisine cuisine",
+            "I like @ambiance ambiance",
+            "I would prefer a restaurant located in @location",
+          "I'm craving some @cuisine cuisine.",
+          "I'm in the mood for a(n) @ambiance ambiance experience.",
+          "Somewhere in the @location location sounds perfect.",
+          "Ideally, I'd like a @price_range price_range restaurant."
+        ],
+        "answers": [
+          "Sounds delightful! You're looking for an {{ ambiance }} {{ cuisine }} restaurant located in {{ location }}. Perhaps with a {{ price_range }} price point?",
+          "Excellent choices! Let's find you the perfect spot for a {{ ambiance }} {{ cuisine }} adventure in {{ location }}. Budget in mind? We can explore {{ price_range }} options."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of cuisine are you craving?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What kind of ambiance are you looking for?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        }
+      }
+    ]
+  }
+  

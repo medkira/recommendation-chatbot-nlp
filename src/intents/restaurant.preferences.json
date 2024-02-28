@@ -1,0 +1,49 @@
+{
+    "questions": [
+        "I prefer {{ preference }}",
+        "I require {{ preference }}",
+        "I would like {{ preference }}",
+
+        "I want to travel",
+        
+        "I'm {{ user_name }}",
+        "You can call me {{ user_name }}",
+
+        "My name is",
+        "I prefer {{ cuisine }} cuisine",
+        "I like {{ ambiance }} ambiance",
+        "I would prefer a restaurant located in {{ location }}",
+        "i want it located {{ location }}",
+        "i want to try {{ cuisine }}",
+        "I like",
+
+
+        "I'm in the mood for a(n) @ambiance ambiance experience.",
+        "Somewhere in the @location location sounds perfect.",
+        "Ideally, I'd like a @price_range price_range restaurant.",
+
+        "i want to go to a restaurants",
+
+        "Can you recommend any  places with a @cuisine cuisine menu?",
+        "Can you recommend restaurant",
+        "recommend me a restaurant",
+
+
+        "Halal @cuisine food sounds good.",   
+        "I want some halal @cuisine.",    
+        "Any halal restaurants with @ambiance ambiance?",    
+        "Find a halal place near @location.",    
+        "Halal, @location, any ideas?",    
+        "Craving halal!",
+        "Can you recommend any halal places with a @cuisine cuisine menu?",  
+        "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?", 
+        "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
+        "Family night out! Any  kid-friendly?",
+        "Where can we take the kids, Open to locations!",
+        "I'm looking for a good @cuisine restaurant.",
+        "Any recommendations for a delicious @price_range meal?",
+        "I need to find a place for a(n) @occasion . Any ideas?",
+        "Looking for a restaurant for a group of @group_size . Suggestions?",
+        "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible."
+    ]
+}

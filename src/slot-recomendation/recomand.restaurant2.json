@@ -1,0 +1,103 @@
+{
+    "name": "Restaurant Guru (Your Dining Concierge)",
+    "locale": "en-US",
+    "entities": {
+      "cuisine": {
+        "options": {
+          "italian": ["Italian"],
+          "japanese": ["Japanese"],
+          "mexican": ["Mexican"],
+          "indian": ["Indian"],
+          "thai": ["Thai"],
+          "american": ["American"],
+          "french": ["French"],
+          "chinese": ["Chinese"],
+          "greek": ["Greek"],
+          "vietnamese": ["Vietnamese"]
+        }
+      },
+      "price_range": {
+        "options": {
+          "cheap": ["Budget-friendly"],
+          "moderate": ["Moderately priced"],
+          "expensive": ["Fine dining"]
+        }
+      },
+      "occasion": {
+        "options": {
+          "casual_dining": ["Casual Dining"],
+          "special_occasion": ["Special Occasion"],
+          "quick_bite": ["Quick Bite"],
+          "romantic": ["Romantic"],
+          "family_friendly": ["Family-Friendly"]
+        }
+      },
+      "group_size": {
+        "options": {
+          "solo": ["Solo"],
+          "small_group": ["Small Group (2-4 people)"],
+          "large_group": ["Large Group (5+ people)"]
+        }
+      },
+      "dietary_restrictions": {
+        "options": {
+          "vegetarian": ["Vegetarian"],
+          "vegan": ["Vegan"],
+          "gluten-free": ["Gluten-free"],
+          "dairy-free": ["Dairy-free"]
+        }
+      },
+      "outdoor_seating": {
+        "options": {
+          "yes": ["Yes"],
+          "no": ["No"],
+          "unimportant": ["Doesn't Matter"]
+        }
+      }
+    },
+    "data": [
+      {
+        "intent": "restaurant.preferences",
+        "utterances": [
+          "I'm looking for a good @cuisine restaurant.",
+          "Any recommendations for a delicious @price_range meal?",
+          "I need to find a place for a(n) @occasion . Any ideas?",
+          "Looking for a restaurant for a group of @group_size . Suggestions?",
+          "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible."
+        ],
+        "answers": [
+          "Let's find your perfect match!  We have a wide variety of cuisines to explore. What are you craving today (Italian, Japanese, Mexican, etc.)?",
+          "Price is definitely a factor!  Are you looking for a budget-friendly, moderately priced, or fine dining experience?",
+          "Ah, a special occasion!  Let me know what kind of vibe you're looking for (romantic, family-friendly, etc.) and I can suggest some truly memorable places.",
+          "No problem accommodating your group!  Tell me what kind of cuisine you have in mind and the size of your party, and we'll find the perfect spot.",
+          "Excellent!  We can definitely explore all options.  What kind of cuisine are you leaning towards?  Also, tell me a bit about the occasion and group size."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of cuisine are you interested in (we have Italian, Japanese, Mexican, Indian, Thai, and many more)?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (budget-friendly, moderately priced, or fine dining)?"
+          },
+          "occasion": {
+            "mandatory": true,
+            "question": "Is this for a casual dining experience, a special occasion (romantic, family-friendly, etc.), or a quick bite?"
+          },
+          "group_size": {
+            "mandatory": true,
+            "question": "Will you be dining alone, with a small group (2-4 people), or a large group (5+ people)?"
+          },
+          "dietary_restrictions": {
+            "mandatory": true,
+            "question": "Do you have any dietary restrictions to consider (vegetarian, vegan, gluten-free, dairy-free)?"
+          },
+          "outdoor_seating": {
+            "mandatory": true,
+            "question": "Would you prefer a restaurant"
+        }
+    }
+  }
+]
+}

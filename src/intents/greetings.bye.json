@@ -1,0 +1,17 @@
+{
+    "questions": [
+        "goodbye",
+        "bye take care",
+        "see you later",
+        "bye for now",
+        "i must go",
+        "i will go now",
+        "i will go"
+    ],
+    "answers": [
+        "see you soon! {{ user_name }}",
+        "Till next time {{ user_name }}",
+        "bye bye {{ user_name }}",
+        "have a great day {{ user_name }}"
+    ]
+}

@@ -1,0 +1,2130 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,can,go,place,recommend,to,you": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "am,do,for,fun,i,look,someth,to": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "ani,go,on,suggest,to,where": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "are,around,here,place,popular,some,what": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "for,i,idea,need,place,to,visit": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "activ,for,go,i,should,where": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "am,bore,do,i,should,what": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "bore,i,m": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "a,go,i,place,to,want": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "ani,go,good,place,to": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "recomend,your": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "me,place,recomend,some": {
+            "intent": "find.place",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "go,i,now,will": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "go,i,will": {
+            "intent": "greetings.bye",
+            "domain": "greetings"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "greet": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "i,prefer,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,prefer,requir,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,like,prefer,would,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,to,travel,want": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "am,i,user_nam,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "call,can,me,user_nam,you,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "is,my,name": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "cuisin,i,prefer,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "ambianc,i,like,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "a,i,in,locat,prefer,restaur,would,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,it,locat,want,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "cuisin,i,to,tri,want,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,like": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@ambianc,a,am,ambianc,experi,for,i,in,mood,n,the": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@locat,in,locat,perfect,somewher,sound,the": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@price_rang,a,had,i,ideal,like,price_rang,restaur": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "a,go,i,restaur,to,want": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@cuisin,a,ani,can,cuisin,menu,place,recommend,with,you": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "can,recommend,restaur,you": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "a,me,recommend,restaur": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@cuisin,food,good,halal,sound": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@cuisin,halal,i,some,want": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@ambianc,ambianc,ani,halal,restaur,with": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@locat,a,find,halal,near,place": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@locat,ani,halal,idea": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "crave,halal": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@cuisin,a,ani,can,cuisin,halal,menu,place,recommend,with,you": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@dietary_restrict,a,ani,cater,dietari,for,look,restaur,restrict,suggest,that,to": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@locat,a,by,for,halal,is,meal,nice,peac,place,the,there,waterfront": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "ani,famili,kid-friend,night,out": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "can,kid,locat,open,take,the,to,we,where": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@cuisin,a,am,for,good,i,look,restaur": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@price_rang,a,ani,delici,for,meal,recommend": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@occas,a,ani,find,for,i,idea,n,need,place,to": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@group_siz,a,for,group,look,of,restaur,suggest": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "@cuisin,@group_siz,@occas,a,budget,delici,find,flexibl,for,group,help,is,me,n,restaur,with": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          }
+        },
+        "intentDict": {
+          "find.place": "default",
+          "greetings.bye": "greetings",
+          "greetings.hello": "greetings",
+          "restaurant.preferences": "FeaturesGather"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Can you recommend a place to go?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm looking for something fun to do.",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "Any suggestions on where to go?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some popular places around here?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need ideas for places to visit.",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "Where should I go for [activity]?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm bored, what should I do?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i'm bored, what should I do?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i m bored",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i want to go to a place",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "any good place to go",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "your recomendation?",
+            "intent": "find.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "recomend me some place",
+            "intent": "find.place"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "goodbye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "i will go now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "i will go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "Greetings",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I prefer {{ preference }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I require {{ preference }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I would like {{ preference }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I want to travel",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I'm {{ user_name }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "You can call me {{ user_name }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "My name is",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I prefer {{ cuisine }} cuisine",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I like {{ ambiance }} ambiance",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I would prefer a restaurant located in {{ location }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "i want it located {{ location }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "i want to try {{ cuisine }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I like",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I'm in the mood for a(n) @ambiance ambiance experience.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Somewhere in the @location location sounds perfect.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Ideally, I'd like a @price_range price_range restaurant.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "i want to go to a restaurants",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Can you recommend any  places with a @cuisine cuisine menu?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Can you recommend restaurant",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "recommend me a restaurant",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Halal @cuisine food sounds good.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I want some halal @cuisine.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Any halal restaurants with @ambiance ambiance?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Find a halal place near @location.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Halal, @location, any ideas?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Craving halal!",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Can you recommend any halal places with a @cuisine cuisine menu?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Family night out! Any  kid-friendly?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Where can we take the kids, Open to locations!",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I'm looking for a good @cuisine restaurant.",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Any recommendations for a delicious @price_range meal?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I need to find a place for a(n) @occasion . Any ideas?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Looking for a restaurant for a group of @group_size . Suggestions?",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible.",
+            "intent": "restaurant.preferences"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "can": 1,
+              "you": 1,
+              "recommend": 1,
+              "a": 1,
+              "place": 1,
+              "to": 1,
+              "go": 1,
+              "i": 1,
+              "am": 1,
+              "look": 1,
+              "for": 1,
+              "someth": 1,
+              "fun": 1,
+              "do": 1,
+              "ani": 1,
+              "suggest": 1,
+              "on": 1,
+              "where": 1,
+              "what": 1,
+              "are": 1,
+              "some": 1,
+              "popular": 1,
+              "around": 1,
+              "here": 1,
+              "need": 1,
+              "idea": 1,
+              "visit": 1,
+              "should": 1,
+              "activ": 1,
+              "bore": 1,
+              "m": 1,
+              "want": 1,
+              "good": 1,
+              "your": 1,
+              "recomend": 1,
+              "me": 1,
+              "goodby": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "see": 1,
+              "later": 1,
+              "now": 1,
+              "must": 1,
+              "will": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "greet": 1,
+              "prefer": 1,
+              "{{": 1,
+              "}}": 1,
+              "requir": 1,
+              "would": 1,
+              "like": 1,
+              "travel": 1,
+              "user_nam": 1,
+              "call": 1,
+              "my": 1,
+              "name": 1,
+              "is": 1,
+              "cuisin": 1,
+              "ambianc": 1,
+              "restaur": 1,
+              "locat": 1,
+              "in": 1,
+              "it": 1,
+              "tri": 1,
+              "the": 1,
+              "mood": 1,
+              "n": 1,
+              "@ambianc": 1,
+              "experi": 1,
+              "somewher": 1,
+              "@locat": 1,
+              "sound": 1,
+              "perfect": 1,
+              "ideal": 1,
+              "had": 1,
+              "@price_rang": 1,
+              "price_rang": 1,
+              "with": 1,
+              "@cuisin": 1,
+              "menu": 1,
+              "halal": 1,
+              "food": 1,
+              "find": 1,
+              "near": 1,
+              "crave": 1,
+              "that": 1,
+              "cater": 1,
+              "@dietary_restrict": 1,
+              "dietari": 1,
+              "restrict": 1,
+              "there": 1,
+              "nice": 1,
+              "peac": 1,
+              "meal": 1,
+              "by": 1,
+              "waterfront": 1,
+              "famili": 1,
+              "night": 1,
+              "out": 1,
+              "kid-friend": 1,
+              "we": 1,
+              "kid": 1,
+              "open": 1,
+              "delici": 1,
+              "@occas": 1,
+              "group": 1,
+              "of": 1,
+              "@group_siz": 1,
+              "help": 1,
+              "budget": 1,
+              "flexibl": 1
+            },
+            "intents": {
+              "find.place": 1,
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "restaurant.preferences": 1
+            },
+            "intentFeatures": {
+              "find.place": {
+                "can": 1,
+                "you": 1,
+                "recommend": 1,
+                "a": 1,
+                "place": 1,
+                "to": 1,
+                "go": 1,
+                "i": 1,
+                "am": 1,
+                "look": 1,
+                "for": 1,
+                "someth": 1,
+                "fun": 1,
+                "do": 1,
+                "ani": 1,
+                "suggest": 1,
+                "on": 1,
+                "where": 1,
+                "what": 1,
+                "are": 1,
+                "some": 1,
+                "popular": 1,
+                "around": 1,
+                "here": 1,
+                "need": 1,
+                "idea": 1,
+                "visit": 1,
+                "should": 1,
+                "activ": 1,
+                "bore": 1,
+                "m": 1,
+                "want": 1,
+                "good": 1,
+                "your": 1,
+                "recomend": 1,
+                "me": 1
+              },
+              "greetings.bye": {
+                "goodby": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "for": 1,
+                "now": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1,
+                "will": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1,
+                "greet": 1
+              },
+              "restaurant.preferences": {
+                "i": 1,
+                "prefer": 1,
+                "{{": 1,
+                "}}": 1,
+                "requir": 1,
+                "would": 1,
+                "like": 1,
+                "want": 1,
+                "to": 1,
+                "travel": 1,
+                "am": 1,
+                "user_nam": 1,
+                "you": 1,
+                "can": 1,
+                "call": 1,
+                "me": 1,
+                "my": 1,
+                "name": 1,
+                "is": 1,
+                "cuisin": 1,
+                "ambianc": 1,
+                "a": 1,
+                "restaur": 1,
+                "locat": 1,
+                "in": 1,
+                "it": 1,
+                "tri": 1,
+                "the": 1,
+                "mood": 1,
+                "for": 1,
+                "n": 1,
+                "@ambianc": 1,
+                "experi": 1,
+                "somewher": 1,
+                "@locat": 1,
+                "sound": 1,
+                "perfect": 1,
+                "ideal": 1,
+                "had": 1,
+                "@price_rang": 1,
+                "price_rang": 1,
+                "go": 1,
+                "recommend": 1,
+                "ani": 1,
+                "place": 1,
+                "with": 1,
+                "@cuisin": 1,
+                "menu": 1,
+                "halal": 1,
+                "food": 1,
+                "good": 1,
+                "some": 1,
+                "find": 1,
+                "near": 1,
+                "idea": 1,
+                "crave": 1,
+                "look": 1,
+                "that": 1,
+                "cater": 1,
+                "@dietary_restrict": 1,
+                "dietari": 1,
+                "restrict": 1,
+                "suggest": 1,
+                "there": 1,
+                "nice": 1,
+                "peac": 1,
+                "meal": 1,
+                "by": 1,
+                "waterfront": 1,
+                "famili": 1,
+                "night": 1,
+                "out": 1,
+                "kid-friend": 1,
+                "where": 1,
+                "we": 1,
+                "take": 1,
+                "kid": 1,
+                "open": 1,
+                "delici": 1,
+                "need": 1,
+                "@occas": 1,
+                "group": 1,
+                "of": 1,
+                "@group_siz": 1,
+                "help": 1,
+                "budget": 1,
+                "flexibl": 1
+              }
+            },
+            "featuresToIntent": {
+              "can": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "you": [
+                "find.place",
+                "greetings.bye",
+                "restaurant.preferences"
+              ],
+              "recommend": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "a": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "place": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "to": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "go": [
+                "find.place",
+                "greetings.bye",
+                "restaurant.preferences"
+              ],
+              "i": [
+                "find.place",
+                "greetings.bye",
+                "restaurant.preferences"
+              ],
+              "am": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "look": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "for": [
+                "find.place",
+                "greetings.bye",
+                "restaurant.preferences"
+              ],
+              "someth": [
+                "find.place"
+              ],
+              "fun": [
+                "find.place"
+              ],
+              "do": [
+                "find.place"
+              ],
+              "ani": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "suggest": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "on": [
+                "find.place"
+              ],
+              "where": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "what": [
+                "find.place"
+              ],
+              "are": [
+                "find.place"
+              ],
+              "some": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "popular": [
+                "find.place"
+              ],
+              "around": [
+                "find.place"
+              ],
+              "here": [
+                "find.place"
+              ],
+              "need": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "idea": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "visit": [
+                "find.place"
+              ],
+              "should": [
+                "find.place"
+              ],
+              "activ": [
+                "find.place"
+              ],
+              "bore": [
+                "find.place"
+              ],
+              "m": [
+                "find.place"
+              ],
+              "want": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "good": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "your": [
+                "find.place"
+              ],
+              "recomend": [
+                "find.place"
+              ],
+              "me": [
+                "find.place",
+                "restaurant.preferences"
+              ],
+              "goodby": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye",
+                "restaurant.preferences"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "will": [
+                "greetings.bye"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ],
+              "greet": [
+                "greetings.hello"
+              ],
+              "prefer": [
+                "restaurant.preferences"
+              ],
+              "{{": [
+                "restaurant.preferences"
+              ],
+              "}}": [
+                "restaurant.preferences"
+              ],
+              "requir": [
+                "restaurant.preferences"
+              ],
+              "would": [
+                "restaurant.preferences"
+              ],
+              "like": [
+                "restaurant.preferences"
+              ],
+              "travel": [
+                "restaurant.preferences"
+              ],
+              "user_nam": [
+                "restaurant.preferences"
+              ],
+              "call": [
+                "restaurant.preferences"
+              ],
+              "my": [
+                "restaurant.preferences"
+              ],
+              "name": [
+                "restaurant.preferences"
+              ],
+              "is": [
+                "restaurant.preferences"
+              ],
+              "cuisin": [
+                "restaurant.preferences"
+              ],
+              "ambianc": [
+                "restaurant.preferences"
+              ],
+              "restaur": [
+                "restaurant.preferences"
+              ],
+              "locat": [
+                "restaurant.preferences"
+              ],
+              "in": [
+                "restaurant.preferences"
+              ],
+              "it": [
+                "restaurant.preferences"
+              ],
+              "tri": [
+                "restaurant.preferences"
+              ],
+              "the": [
+                "restaurant.preferences"
+              ],
+              "mood": [
+                "restaurant.preferences"
+              ],
+              "n": [
+                "restaurant.preferences"
+              ],
+              "@ambianc": [
+                "restaurant.preferences"
+              ],
+              "experi": [
+                "restaurant.preferences"
+              ],
+              "somewher": [
+                "restaurant.preferences"
+              ],
+              "@locat": [
+                "restaurant.preferences"
+              ],
+              "sound": [
+                "restaurant.preferences"
+              ],
+              "perfect": [
+                "restaurant.preferences"
+              ],
+              "ideal": [
+                "restaurant.preferences"
+              ],
+              "had": [
+                "restaurant.preferences"
+              ],
+              "@price_rang": [
+                "restaurant.preferences"
+              ],
+              "price_rang": [
+                "restaurant.preferences"
+              ],
+              "with": [
+                "restaurant.preferences"
+              ],
+              "@cuisin": [
+                "restaurant.preferences"
+              ],
+              "menu": [
+                "restaurant.preferences"
+              ],
+              "halal": [
+                "restaurant.preferences"
+              ],
+              "food": [
+                "restaurant.preferences"
+              ],
+              "find": [
+                "restaurant.preferences"
+              ],
+              "near": [
+                "restaurant.preferences"
+              ],
+              "crave": [
+                "restaurant.preferences"
+              ],
+              "that": [
+                "restaurant.preferences"
+              ],
+              "cater": [
+                "restaurant.preferences"
+              ],
+              "@dietary_restrict": [
+                "restaurant.preferences"
+              ],
+              "dietari": [
+                "restaurant.preferences"
+              ],
+              "restrict": [
+                "restaurant.preferences"
+              ],
+              "there": [
+                "restaurant.preferences"
+              ],
+              "nice": [
+                "restaurant.preferences"
+              ],
+              "peac": [
+                "restaurant.preferences"
+              ],
+              "meal": [
+                "restaurant.preferences"
+              ],
+              "by": [
+                "restaurant.preferences"
+              ],
+              "waterfront": [
+                "restaurant.preferences"
+              ],
+              "famili": [
+                "restaurant.preferences"
+              ],
+              "night": [
+                "restaurant.preferences"
+              ],
+              "out": [
+                "restaurant.preferences"
+              ],
+              "kid-friend": [
+                "restaurant.preferences"
+              ],
+              "we": [
+                "restaurant.preferences"
+              ],
+              "kid": [
+                "restaurant.preferences"
+              ],
+              "open": [
+                "restaurant.preferences"
+              ],
+              "delici": [
+                "restaurant.preferences"
+              ],
+              "@occas": [
+                "restaurant.preferences"
+              ],
+              "group": [
+                "restaurant.preferences"
+              ],
+              "of": [
+                "restaurant.preferences"
+              ],
+              "@group_siz": [
+                "restaurant.preferences"
+              ],
+              "help": [
+                "restaurant.preferences"
+              ],
+              "budget": [
+                "restaurant.preferences"
+              ],
+              "flexibl": [
+                "restaurant.preferences"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "can",
+                "you",
+                "recommend",
+                "a",
+                "place",
+                "to",
+                "go",
+                "i",
+                "am",
+                "look",
+                "for",
+                "someth",
+                "fun",
+                "do",
+                "ani",
+                "suggest",
+                "on",
+                "where",
+                "what",
+                "are",
+                "some",
+                "popular",
+                "around",
+                "here",
+                "need",
+                "idea",
+                "visit",
+                "should",
+                "activ",
+                "bore",
+                "m",
+                "want",
+                "good",
+                "your",
+                "recomend",
+                "me",
+                "goodby",
+                "bye",
+                "take",
+                "care",
+                "see",
+                "later",
+                "now",
+                "must",
+                "will",
+                "hello",
+                "hi",
+                "howdi",
+                "greet",
+                "prefer",
+                "{{",
+                "}}",
+                "requir",
+                "would",
+                "like",
+                "travel",
+                "user_nam",
+                "call",
+                "my",
+                "name",
+                "is",
+                "cuisin",
+                "ambianc",
+                "restaur",
+                "locat",
+                "in",
+                "it",
+                "tri",
+                "the",
+                "mood",
+                "n",
+                "@ambianc",
+                "experi",
+                "somewher",
+                "@locat",
+                "sound",
+                "perfect",
+                "ideal",
+                "had",
+                "@price_rang",
+                "price_rang",
+                "with",
+                "@cuisin",
+                "menu",
+                "halal",
+                "food",
+                "find",
+                "near",
+                "crave",
+                "that",
+                "cater",
+                "@dietary_restrict",
+                "dietari",
+                "restrict",
+                "there",
+                "nice",
+                "peac",
+                "meal",
+                "by",
+                "waterfront",
+                "famili",
+                "night",
+                "out",
+                "kid-friend",
+                "we",
+                "kid",
+                "open",
+                "delici",
+                "@occas",
+                "group",
+                "of",
+                "@group_siz",
+                "help",
+                "budget",
+                "flexibl"
+              ],
+              "intents": [
+                "find.place",
+                "greetings.bye",
+                "greetings.hello",
+                "restaurant.preferences"
+              ],
+              "perceptrons": [
+                [
+                  -0.7642293572425842,
+                  -0.28764161467552185,
+                  0.5684399008750916,
+                  -1.1664379835128784,
+                  8.09239387512207,
+                  3.8833773136138916,
+                  3.48551869392395,
+                  0.026704836636781693,
+                  1.0707204341888428,
+                  1.0925968885421753,
+                  1.2144170999526978,
+                  2.176809549331665,
+                  2.176809549331665,
+                  2.1679465770721436,
+                  -1.9848732948303223,
+                  1.734285593032837,
+                  2.7288992404937744,
+                  3.9618079662323,
+                  1.1007975339889526,
+                  1.1097100973129272,
+                  0.17777219414710999,
+                  1.1097100973129272,
+                  1.1097100973129272,
+                  1.1097100973129272,
+                  -0.6250917315483093,
+                  -0.7735468745231628,
+                  1.9929413795471191,
+                  2.5565927028656006,
+                  2.565524101257324,
+                  6.887243747711182,
+                  6.896151542663574,
+                  -0.5235596299171448,
+                  0.33463621139526367,
+                  7.35746955871582,
+                  6.449073314666748,
+                  -0.9084891080856323,
+                  -0.9719120860099792,
+                  -1.1354204416275024,
+                  -1.7152724266052246,
+                  -0.3315665125846863,
+                  -0.8322153687477112,
+                  -0.8322153687477112,
+                  -2.1039743423461914,
+                  -3.9887382984161377,
+                  -3.995131492614746,
+                  -0.792264461517334,
+                  -0.7805941700935364,
+                  -0.7711613774299622,
+                  -0.7620412707328796,
+                  -0.6946697235107422,
+                  -1.6462241411209106,
+                  -1.6462241411209106,
+                  -0.15380717813968658,
+                  -0.09837307780981064,
+                  -0.6461688876152039,
+                  -3.861915349960327,
+                  -0.33643487095832825,
+                  0,
+                  -0.19973337650299072,
+                  -0.19973337650299072,
+                  -0.6452250480651855,
+                  -1.66696298122406,
+                  -0.516326904296875,
+                  -6.175706386566162,
+                  -1.2517175674438477,
+                  -0.48631080985069275,
+                  0,
+                  -0.25209036469459534,
+                  -2.3649158477783203,
+                  -0.4105629622936249,
+                  -3.209000825881958,
+                  -0.5032833814620972,
+                  -0.4105629622936249,
+                  -0.012348716147243977,
+                  -1.423007845878601,
+                  -0.035396330058574677,
+                  -0.012348716147243977,
+                  -0.024569185450673103,
+                  -0.024569185450673103,
+                  -0.024569185450673103,
+                  -0.024569185450673103,
+                  -1.3313000202178955,
+                  -1.4307403564453125,
+                  -1.2839709520339966,
+                  -1.6915861368179321,
+                  -0.016873257234692574,
+                  -3.452493667602539,
+                  -0.8344597220420837,
+                  0,
+                  -0.7710975408554077,
+                  -0.7710975408554077,
+                  -0.7710975408554077,
+                  -0.7710975408554077,
+                  -0.7710975408554077,
+                  -0.4153226315975189,
+                  -0.4153226315975189,
+                  -0.4153226315975189,
+                  -0.4153226315975189,
+                  -0.4153226315975189,
+                  -0.4153226315975189,
+                  -0.05855357274413109,
+                  -0.05855357274413109,
+                  -0.05855357274413109,
+                  -0.05855357274413109,
+                  -1.2272131443023682,
+                  -1.2272131443023682,
+                  -1.2272131443023682,
+                  0,
+                  -2.616774082183838,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.47615298197195827
+                ],
+                [
+                  -1.8609338998794556,
+                  2.6349215507507324,
+                  -1.718679428100586,
+                  -2.1188340187072754,
+                  -1.8303426504135132,
+                  -3.4394876956939697,
+                  5.419033050537109,
+                  0.23476868867874146,
+                  -0.900238573551178,
+                  -0.33880889415740967,
+                  2.4158029556274414,
+                  -0.23184791207313538,
+                  -0.23184791207313538,
+                  -0.28132501244544983,
+                  -1.8983068466186523,
+                  -0.5736395716667175,
+                  -0.39752712845802307,
+                  -3.948796033859253,
+                  -0.22416284680366516,
+                  -0.16432291269302368,
+                  -0.4119552969932556,
+                  -0.16432291269302368,
+                  -0.16432291269302368,
+                  -0.16432291269302368,
+                  -0.05071563273668289,
+                  -0.19163070619106293,
+                  -0.05071563273668289,
+                  -3.4605653285980225,
+                  -3.411088228225708,
+                  -1.5341863632202148,
+                  -1.48470938205719,
+                  -1.4262725114822388,
+                  -1.0358690023422241,
+                  -1.3819801807403564,
+                  -1.3979848623275757,
+                  -0.12664996087551117,
+                  11.51109790802002,
+                  8.295412063598633,
+                  1.6024113893508911,
+                  1.6622483730316162,
+                  4.436101913452148,
+                  4.436101913452148,
+                  0.6395195722579956,
+                  5.856419086456299,
+                  5.509634017944336,
+                  -2.780524969100952,
+                  -2.7800238132476807,
+                  -2.7795040607452393,
+                  -2.778964042663574,
+                  -0.9958898425102234,
+                  -1.5075148344039917,
+                  -1.5075148344039917,
+                  -0.2628558576107025,
+                  -0.12200695276260376,
+                  -3.0145509243011475,
+                  -0.4473339915275574,
+                  -0.3493598401546478,
+                  -0.10769587755203247,
+                  -0.9257146716117859,
+                  -0.9257146716117859,
+                  -0.933922290802002,
+                  -0.12634560465812683,
+                  -0.3637157082557678,
+                  -1.8763192892074585,
+                  -0.30785444378852844,
+                  -0.580862283706665,
+                  -0.014677503146231174,
+                  0,
+                  -0.6519412994384766,
+                  -0.2455383837223053,
+                  -0.2455383837223053,
+                  -0.28233128786087036,
+                  -0.2455383837223053,
+                  -0.21711064875125885,
+                  -0.38376545906066895,
+                  -0.4613328278064728,
+                  -0.21711064875125885,
+                  -0.13008803129196167,
+                  -0.13008803129196167,
+                  -0.17204143106937408,
+                  -0.13008803129196167,
+                  -0.12162091583013535,
+                  -0.585393488407135,
+                  -0.09993422031402588,
+                  -1.7087504863739014,
+                  -0.20561611652374268,
+                  -0.0053396872244775295,
+                  -0.0053396872244775295,
+                  -1.074896216392517,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.00410378398373723,
+                  -0.00410378398373723,
+                  -0.00410378398373723,
+                  -0.022087516263127327,
+                  -0.00410378398373723,
+                  -0.00410378398373723,
+                  -0.295001357793808,
+                  -0.295001357793808,
+                  -0.295001357793808,
+                  -0.295001357793808,
+                  -0.04108641296625137,
+                  -0.04108641296625137,
+                  -0.04108641296625137,
+                  -0.015931840986013412,
+                  0,
+                  -0.09576885402202606,
+                  -0.09576885402202606,
+                  -0.09576885402202606,
+                  0,
+                  0,
+                  0,
+                  2.786451834872725
+                ],
+                [
+                  -0.8139865398406982,
+                  -2.2440950870513916,
+                  -1.2854880094528198,
+                  -1.3480404615402222,
+                  -1.172926664352417,
+                  -1.0103694200515747,
+                  -1.0718064308166504,
+                  -3.932176351547241,
+                  -0.2928231656551361,
+                  -0.18367530405521393,
+                  -1.5683175325393677,
+                  0,
+                  0,
+                  -0.11543148010969162,
+                  -1.8218797445297241,
+                  -0.5530760884284973,
+                  -0.3598748743534088,
+                  -0.515899658203125,
+                  -0.742148220539093,
+                  -0.6166371703147888,
+                  -0.9356998205184937,
+                  -0.6166371703147888,
+                  -0.6166371703147888,
+                  -0.6166371703147888,
+                  0,
+                  -0.2431701123714447,
+                  0,
+                  -0.15530619025230408,
+                  -0.030665520578622818,
+                  -0.7681758403778076,
+                  -0.64266437292099,
+                  -0.49987170100212097,
+                  -0.5017345547676086,
+                  -2.509833812713623,
+                  -2.8068971633911133,
+                  -1.1401643753051758,
+                  -5.314568042755127,
+                  -2.53806734085083,
+                  -1.4472260475158691,
+                  -1.3300405740737915,
+                  -1.5356181859970093,
+                  -1.5356181859970093,
+                  -1.2089476585388184,
+                  -0.31277531385421753,
+                  -0.3113481104373932,
+                  8.970300674438477,
+                  8.970274925231934,
+                  8.970148086547852,
+                  8.969987869262695,
+                  -0.4891580045223236,
+                  -0.7497475743293762,
+                  -0.7497475743293762,
+                  -0.13606129586696625,
+                  -0.06649073213338852,
+                  -1.393837571144104,
+                  -0.44304677844047546,
+                  -0.23229925334453583,
+                  -0.13480740785598755,
+                  -1.772458553314209,
+                  -1.772458553314209,
+                  -1.772458553314209,
+                  -0.08005636185407639,
+                  -0.1943969875574112,
+                  -1.543755292892456,
+                  -0.6917447447776794,
+                  -0.658798098564148,
+                  0,
+                  0,
+                  -0.7759841680526733,
+                  -0.058826468884944916,
+                  -0.058826468884944916,
+                  -0.18303705751895905,
+                  -0.058826468884944916,
+                  -0.5745588541030884,
+                  -0.9700919985771179,
+                  -1.0717259645462036,
+                  -0.5745588541030884,
+                  -0.04183785244822502,
+                  -0.04183785244822502,
+                  -0.08855992555618286,
+                  -0.04183785244822502,
+                  -0.21247605979442596,
+                  -0.6237595081329346,
+                  -0.08005636185407639,
+                  -3.1806881427764893,
+                  -0.4859798848628998,
+                  -0.09681317210197449,
+                  -0.09681317210197449,
+                  -2.136164426803589,
+                  -0.011668885126709938,
+                  -0.011668885126709938,
+                  -0.011668885126709938,
+                  -0.011668885126709938,
+                  -0.011668885126709938,
+                  0,
+                  0,
+                  0,
+                  -0.030194886028766632,
+                  0,
+                  0,
+                  -0.8738546967506409,
+                  -0.8738546967506409,
+                  -0.8738546967506409,
+                  -0.8738546967506409,
+                  -0.1016492024064064,
+                  -0.1016492024064064,
+                  -0.1016492024064064,
+                  -0.030194886028766632,
+                  0,
+                  -0.16755734384059906,
+                  -0.16755734384059906,
+                  -0.16755734384059906,
+                  0,
+                  0,
+                  0,
+                  5.3153678471322
+                ],
+                [
+                  3.092313051223755,
+                  -0.4148079454898834,
+                  2.200782060623169,
+                  3.3784098625183105,
+                  -7.968177795410156,
+                  -0.8694400191307068,
+                  -6.882455348968506,
+                  4.843592643737793,
+                  -1.5672968626022339,
+                  -2.042577028274536,
+                  -1.3246471881866455,
+                  -1.7312670946121216,
+                  -1.7312670946121216,
+                  -2.8595523834228516,
+                  5.321711540222168,
+                  1.0154187679290771,
+                  -1.6835960149765015,
+                  -0.5188523530960083,
+                  -1.5003708600997925,
+                  -0.3552720248699188,
+                  -0.6849499344825745,
+                  -0.3552720248699188,
+                  -0.3552720248699188,
+                  -0.3552720248699188,
+                  0.6816074848175049,
+                  -0.3975529372692108,
+                  -1.982264757156372,
+                  -1.7293016910552979,
+                  -0.5140396356582642,
+                  -4.789544582366943,
+                  -3.6658284664154053,
+                  4.194641590118408,
+                  0.5827412605285645,
+                  -1.6495782136917114,
+                  -1.9558032751083374,
+                  -0.7838846445083618,
+                  -3.578157424926758,
+                  -2.2431278228759766,
+                  0.2783348262310028,
+                  -1.6394386291503906,
+                  -1.5998831987380981,
+                  -1.5998831987380981,
+                  -0.8108028769493103,
+                  -1.558491587638855,
+                  -1.5404431819915771,
+                  -3.5730533599853516,
+                  -3.5706684589385986,
+                  -3.5682504177093506,
+                  -3.56579852104187,
+                  2.3133111000061035,
+                  1.5594885349273682,
+                  1.5594885349273682,
+                  0.4124980866909027,
+                  -5.217546463012695,
+                  5.626888751983643,
+                  2.5841355323791504,
+                  4.213022708892822,
+                  1.3815526962280273,
+                  4.216492176055908,
+                  4.216492176055908,
+                  2.2401716709136963,
+                  0.5762174725532532,
+                  -2.7977216243743896,
+                  5.794580459594727,
+                  -1.4988933801651,
+                  -2.0324718952178955,
+                  0.08295358717441559,
+                  -1.1464592218399048,
+                  4.382314682006836,
+                  1.4644339084625244,
+                  1.7796775102615356,
+                  1.1031630039215088,
+                  1.4644339084625244,
+                  0.6089401841163635,
+                  4.476073265075684,
+                  4.177301406860352,
+                  0.6089401841163635,
+                  -2.697542667388916,
+                  -2.697542667388916,
+                  -0.7971633076667786,
+                  -2.697542667388916,
+                  -0.045950084924697876,
+                  1.0271291732788086,
+                  2.6891415119171143,
+                  1.1479501724243164,
+                  3.5688836574554443,
+                  4.872679233551025,
+                  4.551754474639893,
+                  9.23532485961914,
+                  -0.13872316479682922,
+                  -0.13872316479682922,
+                  -0.13872316479682922,
+                  -0.13872316479682922,
+                  -0.13872316479682922,
+                  0.39012137055397034,
+                  0.39012137055397034,
+                  0.39012137055397034,
+                  2.29455828666687,
+                  0.39012137055397034,
+                  0.39012137055397034,
+                  1.3312246799468994,
+                  1.3312246799468994,
+                  1.3312246799468994,
+                  1.3312246799468994,
+                  1.918381690979004,
+                  1.918381690979004,
+                  1.918381690979004,
+                  -0.4645840525627136,
+                  0.3138704001903534,
+                  0.4729467034339905,
+                  2.8383259773254395,
+                  0.4729467034339905,
+                  -2.366178274154663,
+                  -2.366178274154663,
+                  -2.366178274154663,
+                  3.641927916557607
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {
+      "en": {
+        "greetings.bye": "greetings",
+        "greetings.hello": "greetings",
+        "recomend.place": "recomends",
+        "user.name": "FeaturesGather",
+        "find.place": "FindPlace",
+        "recomand.restaurant": "FeaturesGather",
+        "restaurant.preferences": "FeaturesGather",
+        "restaurant.recommendation": "slotRecomendation"
+      }
+    },
+    "extraSentences": [
+      [
+        "en",
+        "Can you recommend a place to go?"
+      ],
+      [
+        "en",
+        "I'm looking for something fun to do."
+      ],
+      [
+        "en",
+        "Any suggestions on where to go?"
+      ],
+      [
+        "en",
+        "What are some popular places around here?"
+      ],
+      [
+        "en",
+        "I need ideas for places to visit."
+      ],
+      [
+        "en",
+        "Where should I go for [activity]?"
+      ],
+      [
+        "en",
+        "I'm bored, what should I do?"
+      ],
+      [
+        "en",
+        "i'm bored, what should I do?"
+      ],
+      [
+        "en",
+        "i m bored"
+      ],
+      [
+        "en",
+        "i want to go to a place"
+      ],
+      [
+        "en",
+        "any good place to go"
+      ],
+      [
+        "en",
+        "your recomendation?"
+      ],
+      [
+        "en",
+        "recomend me some place"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "bye take care"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "i will go now"
+      ],
+      [
+        "en",
+        "i will go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "Greetings"
+      ],
+      [
+        "en",
+        "I prefer {{ preference }}"
+      ],
+      [
+        "en",
+        "I require {{ preference }}"
+      ],
+      [
+        "en",
+        "I would like {{ preference }}"
+      ],
+      [
+        "en",
+        "I want to travel"
+      ],
+      [
+        "en",
+        "I'm {{ user_name }}"
+      ],
+      [
+        "en",
+        "You can call me {{ user_name }}"
+      ],
+      [
+        "en",
+        "My name is"
+      ],
+      [
+        "en",
+        "I prefer {{ cuisine }} cuisine"
+      ],
+      [
+        "en",
+        "I like {{ ambiance }} ambiance"
+      ],
+      [
+        "en",
+        "I would prefer a restaurant located in {{ location }}"
+      ],
+      [
+        "en",
+        "i want it located {{ location }}"
+      ],
+      [
+        "en",
+        "i want to try {{ cuisine }}"
+      ],
+      [
+        "en",
+        "I like"
+      ],
+      [
+        "en",
+        "I'm in the mood for a(n) @ambiance ambiance experience."
+      ],
+      [
+        "en",
+        "Somewhere in the @location location sounds perfect."
+      ],
+      [
+        "en",
+        "Ideally, I'd like a @price_range price_range restaurant."
+      ],
+      [
+        "en",
+        "i want to go to a restaurants"
+      ],
+      [
+        "en",
+        "Can you recommend any  places with a @cuisine cuisine menu?"
+      ],
+      [
+        "en",
+        "Can you recommend restaurant"
+      ],
+      [
+        "en",
+        "recommend me a restaurant"
+      ],
+      [
+        "en",
+        "Halal @cuisine food sounds good."
+      ],
+      [
+        "en",
+        "I want some halal @cuisine."
+      ],
+      [
+        "en",
+        "Any halal restaurants with @ambiance ambiance?"
+      ],
+      [
+        "en",
+        "Find a halal place near @location."
+      ],
+      [
+        "en",
+        "Halal, @location, any ideas?"
+      ],
+      [
+        "en",
+        "Craving halal!"
+      ],
+      [
+        "en",
+        "Can you recommend any halal places with a @cuisine cuisine menu?"
+      ],
+      [
+        "en",
+        "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?"
+      ],
+      [
+        "en",
+        "Is there a nice, peaceful place for a halal meal by the @location waterfront?"
+      ],
+      [
+        "en",
+        "Family night out! Any  kid-friendly?"
+      ],
+      [
+        "en",
+        "Where can we take the kids, Open to locations!"
+      ],
+      [
+        "en",
+        "I'm looking for a good @cuisine restaurant."
+      ],
+      [
+        "en",
+        "Any recommendations for a delicious @price_range meal?"
+      ],
+      [
+        "en",
+        "I need to find a place for a(n) @occasion . Any ideas?"
+      ],
+      [
+        "en",
+        "Looking for a restaurant for a group of @group_size . Suggestions?"
+      ],
+      [
+        "en",
+        "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible."
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

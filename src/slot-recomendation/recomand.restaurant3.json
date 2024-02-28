@@ -1,0 +1,74 @@
+{
+    "name": "Halal Restaurant Features Corpus (Ultra Fancy Edition)",
+    "locale": "en-US",
+    "entities": {
+      "cuisine": {
+        "options": {
+          " mediterranean": ["Mediterranean", "A flavorful journey through the Islamic world", "Explore halal delights from sun-drenched shores"],
+          " middle_eastern": ["Middle Eastern", "Aromatic spices and comforting flavors", "An authentic halal culinary experience"],
+          " indian": ["Indian", "A vibrant tapestry of halal flavors", "Tantalize your taste buds with halal Indian cuisine"]
+        }
+      },
+      "ambiance": {
+        "options": {
+          "family-friendly": ["Family-friendly", "Welcoming for all ages", "A place to gather with loved ones"],
+          "elegant": ["Elegant", "Upscale and sophisticated", "A touch of luxury with a halal twist"],
+          "peaceful": ["Peaceful", "Serene and tranquil", "A relaxing escape for a halal meal"]
+        }
+      },
+      "location": {
+        "options": {
+          "downtown": ["Downtown", "In the heart of the city", "Bustling with urban energy"],
+          "suburbs": ["Suburbs", "A charming neighborhood setting", "Relaxed and convenient"],
+          "waterfront": ["Waterfront", "Soothing water views and fresh air", "A tranquil escape for a halal meal"]
+        }
+      },
+      "dietary_restrictions": {
+        "options": {
+          "halal": ["Halal", "Following Islamic dietary guidelines"]
+        }
+      }
+    },
+    "data": [
+      {
+        "intent": "halal.restaurant.preferences",
+        "utterances": [
+          "Halal @cuisine food sounds good.",   
+          "I want some halal @cuisine.",    
+          "Any halal restaurants with @ambiance ambiance?",    
+          "Find a halal place near @location.",    
+          "Halal, @location, any ideas?",    
+          "Craving halal!",
+          "Can you recommend any halal places with a @cuisine cuisine menu?",  
+          "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?", 
+          "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
+          "Family night out! Any  kid-friendly?",
+          "Where can we take the kids, Open to locations!",
+          "recommend me halal restaurant"
+        ],
+        "answers": [
+          "Sure, looking for halal options! What kind of cuisine are you in the mood for?",
+          "Absolutely! Halal restaurants with a(n) {{ ambiance }} ambiance sound great. Where would you prefer it to be located?"
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of halal cuisine are you craving?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What kind of ambiance are you looking for (family-friendly, elegant, peaceful)?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located (downtown, suburbs, waterfront)?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        }
+      }
+    ]
+  }
+  
