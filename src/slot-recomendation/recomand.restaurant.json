@@ -1,0 +1,55 @@
+{
+    "name": "Restaurant Features Corpus",
+    "locale": "en-US",
+    "entities": {
+      "cuisine": {
+        "options": {
+          "italian": ["Italian"],
+          "japanese": ["Japanese"],
+          "mexican": ["Mexican"]
+        }
+      },
+      "ambiance": {
+        "options": {
+          "cozy": ["Cozy"],
+          "elegant": ["Elegant"],
+          "casual": ["Casual"]
+        }
+      },
+      "location": {
+        "options": {
+          "downtown": ["Downtown"],
+          "suburbs": ["Suburbs"],
+          "beachfront": ["Beachfront"]
+        }
+      }
+    },
+    "data": [
+      {
+        "intent": "restaurant.preferences",
+        "utterances": [
+          "I prefer @cuisine cuisine",
+          "I like @ambiance ambiance",
+          "I would prefer a restaurant located in @location"
+        ],
+        "answers": [
+          "Great! You prefer {{ cuisine }} cuisine, {{ ambiance }} ambiance, and would like a restaurant located in {{ location }}."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What cuisine do you prefer?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What ambiance do you like?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located?"
+          }
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,36 @@
+{
+    "name": "User Name Capture",
+    "locale": "en-US",
+    "entities": {
+              "user_name": {
+                "trim": [
+              
+                    {
+                        "position": "afterLast",
+                        "words": ["is", "name, I'm"]
+                    }
+                ]
+            }
+        },
+    
+    "data": [
+      {
+        "intent": "user.name",
+        "utterances": [
+          "My name is @user_name" ,
+          "I'm @user_name" ,
+          "You can call me @user_name"
+        ],
+        "answers": [
+          "Nice to meet you, {{ user_name }}!",
+          "Hi {{ user_name }}! How can I help you?"
+        ],
+        "slotFilling": {
+          "user_name": {
+            "mandatory": true
+          }
+        }
+      }
+    ]
+  }
+  

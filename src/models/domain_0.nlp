@@ -1,0 +1,1333 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "goodby": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,now,will": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,will": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "greet": {
+            "intent": "greetings.hello",
+            "domain": "greetings"
+          },
+          "me,place,recomend,some": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "a,for,me,recomend,restaur": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "recomend,your": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "ani,go,good,place,to": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "ani,good,restaur": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "a,go,i,place,to,want": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "a,go,i,restaur,to,want": {
+            "intent": "recomend.place",
+            "domain": "recomends"
+          },
+          "i,prefer,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,prefer,requir,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,like,prefer,would,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,to,travel,want": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "am,i,user_nam,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "call,can,me,user_nam,you,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "is,my,name": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "cuisin,i,prefer,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "ambianc,i,like,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "a,i,in,locat,prefer,restaur,would,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,it,locat,want,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "cuisin,i,to,tri,want,{{,}}": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "i,like": {
+            "intent": "restaurant.preferences",
+            "domain": "FeaturesGather"
+          },
+          "a,am,for,good,i,look,restaur": {
+            "intent": "restaurant.recommendation",
+            "domain": "default"
+          },
+          "a,can,recommend,restaur,you": {
+            "intent": "restaurant.recommendation",
+            "domain": "default"
+          },
+          "are,good,option,restaur,some,what,with": {
+            "intent": "restaurant.recommendation",
+            "domain": "default"
+          },
+          "a,am,cater,for,i,look,restaur,that,to": {
+            "intent": "restaurant.recommendation",
+            "domain": "default"
+          },
+          "am,ani,for,i,in,me,mood,near,some,suggest,the": {
+            "intent": "restaurant.recommendation",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "greetings",
+          "recomend.place": "recomends",
+          "restaurant.preferences": "FeaturesGather",
+          "restaurant.recommendation": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i will go now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i will go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "greetings",
+            "utterance": "Greetings",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "recomend me some place",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "recomend a restaurant for me",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "your recomendation?",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "any good place to go",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "any good restaurants?",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "i want to go to a place",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "recomends",
+            "utterance": "i want to go to a restaurant",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I prefer {{ preference }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I require {{ preference }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I would like {{ preference }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I want to travel",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I'm {{ user_name }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "You can call me {{ user_name }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "My name is",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I prefer {{ cuisine }} cuisine",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I like {{ ambiance }} ambiance",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I would prefer a restaurant located in {{ location }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "i want it located {{ location }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "i want to try {{ cuisine }}",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "FeaturesGather",
+            "utterance": "I like",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm looking for a good  restaurant.",
+            "intent": "restaurant.recommendation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Can you recommend a restaurant ?",
+            "intent": "restaurant.recommendation"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some good restaurants with options?",
+            "intent": "restaurant.recommendation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm looking for a restaurant that caters to",
+            "intent": "restaurant.recommendation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm in the mood for some  near me. Any suggestions?",
+            "intent": "restaurant.recommendation"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "for": 1,
+              "now": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "will": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "greet": 1,
+              "recomend": 1,
+              "me": 1,
+              "some": 1,
+              "place": 1,
+              "a": 1,
+              "restaur": 1,
+              "your": 1,
+              "ani": 1,
+              "good": 1,
+              "to": 1,
+              "want": 1,
+              "prefer": 1,
+              "{{": 1,
+              "}}": 1,
+              "requir": 1,
+              "would": 1,
+              "like": 1,
+              "travel": 1,
+              "am": 1,
+              "user_nam": 1,
+              "can": 1,
+              "call": 1,
+              "my": 1,
+              "name": 1,
+              "is": 1,
+              "cuisin": 1,
+              "ambianc": 1,
+              "locat": 1,
+              "in": 1,
+              "it": 1,
+              "tri": 1,
+              "look": 1,
+              "recommend": 1,
+              "what": 1,
+              "are": 1,
+              "with": 1,
+              "option": 1,
+              "that": 1,
+              "cater": 1,
+              "the": 1,
+              "mood": 1,
+              "near": 1,
+              "suggest": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "recomend.place": 1,
+              "restaurant.preferences": 1,
+              "restaurant.recommendation": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "for": 1,
+                "now": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1,
+                "will": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1,
+                "greet": 1
+              },
+              "recomend.place": {
+                "recomend": 1,
+                "me": 1,
+                "some": 1,
+                "place": 1,
+                "a": 1,
+                "restaur": 1,
+                "for": 1,
+                "your": 1,
+                "ani": 1,
+                "good": 1,
+                "to": 1,
+                "go": 1,
+                "i": 1,
+                "want": 1
+              },
+              "restaurant.preferences": {
+                "i": 1,
+                "prefer": 1,
+                "{{": 1,
+                "}}": 1,
+                "requir": 1,
+                "would": 1,
+                "like": 1,
+                "want": 1,
+                "to": 1,
+                "travel": 1,
+                "am": 1,
+                "user_nam": 1,
+                "you": 1,
+                "can": 1,
+                "call": 1,
+                "me": 1,
+                "my": 1,
+                "name": 1,
+                "is": 1,
+                "cuisin": 1,
+                "ambianc": 1,
+                "a": 1,
+                "restaur": 1,
+                "locat": 1,
+                "in": 1,
+                "it": 1,
+                "tri": 1
+              },
+              "restaurant.recommendation": {
+                "i": 1,
+                "am": 1,
+                "look": 1,
+                "for": 1,
+                "a": 1,
+                "good": 1,
+                "restaur": 1,
+                "can": 1,
+                "you": 1,
+                "recommend": 1,
+                "what": 1,
+                "are": 1,
+                "some": 1,
+                "with": 1,
+                "option": 1,
+                "that": 1,
+                "cater": 1,
+                "to": 1,
+                "in": 1,
+                "the": 1,
+                "mood": 1,
+                "near": 1,
+                "me": 1,
+                "ani": 1,
+                "suggest": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye",
+                "recomend.place",
+                "restaurant.recommendation"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye",
+                "recomend.place",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye",
+                "recomend.place"
+              ],
+              "will": [
+                "greetings.bye"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ],
+              "greet": [
+                "greetings.hello"
+              ],
+              "recomend": [
+                "recomend.place"
+              ],
+              "me": [
+                "recomend.place",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "some": [
+                "recomend.place",
+                "restaurant.recommendation"
+              ],
+              "place": [
+                "recomend.place"
+              ],
+              "a": [
+                "recomend.place",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "restaur": [
+                "recomend.place",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "your": [
+                "recomend.place"
+              ],
+              "ani": [
+                "recomend.place",
+                "restaurant.recommendation"
+              ],
+              "good": [
+                "recomend.place",
+                "restaurant.recommendation"
+              ],
+              "to": [
+                "recomend.place",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "want": [
+                "recomend.place",
+                "restaurant.preferences"
+              ],
+              "prefer": [
+                "restaurant.preferences"
+              ],
+              "{{": [
+                "restaurant.preferences"
+              ],
+              "}}": [
+                "restaurant.preferences"
+              ],
+              "requir": [
+                "restaurant.preferences"
+              ],
+              "would": [
+                "restaurant.preferences"
+              ],
+              "like": [
+                "restaurant.preferences"
+              ],
+              "travel": [
+                "restaurant.preferences"
+              ],
+              "am": [
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "user_nam": [
+                "restaurant.preferences"
+              ],
+              "can": [
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "call": [
+                "restaurant.preferences"
+              ],
+              "my": [
+                "restaurant.preferences"
+              ],
+              "name": [
+                "restaurant.preferences"
+              ],
+              "is": [
+                "restaurant.preferences"
+              ],
+              "cuisin": [
+                "restaurant.preferences"
+              ],
+              "ambianc": [
+                "restaurant.preferences"
+              ],
+              "locat": [
+                "restaurant.preferences"
+              ],
+              "in": [
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "it": [
+                "restaurant.preferences"
+              ],
+              "tri": [
+                "restaurant.preferences"
+              ],
+              "look": [
+                "restaurant.recommendation"
+              ],
+              "recommend": [
+                "restaurant.recommendation"
+              ],
+              "what": [
+                "restaurant.recommendation"
+              ],
+              "are": [
+                "restaurant.recommendation"
+              ],
+              "with": [
+                "restaurant.recommendation"
+              ],
+              "option": [
+                "restaurant.recommendation"
+              ],
+              "that": [
+                "restaurant.recommendation"
+              ],
+              "cater": [
+                "restaurant.recommendation"
+              ],
+              "the": [
+                "restaurant.recommendation"
+              ],
+              "mood": [
+                "restaurant.recommendation"
+              ],
+              "near": [
+                "restaurant.recommendation"
+              ],
+              "suggest": [
+                "restaurant.recommendation"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "bye",
+                "take",
+                "care",
+                "see",
+                "you",
+                "later",
+                "for",
+                "now",
+                "i",
+                "must",
+                "go",
+                "will",
+                "hello",
+                "hi",
+                "howdi",
+                "greet",
+                "recomend",
+                "me",
+                "some",
+                "place",
+                "a",
+                "restaur",
+                "your",
+                "ani",
+                "good",
+                "to",
+                "want",
+                "prefer",
+                "{{",
+                "}}",
+                "requir",
+                "would",
+                "like",
+                "travel",
+                "am",
+                "user_nam",
+                "can",
+                "call",
+                "my",
+                "name",
+                "is",
+                "cuisin",
+                "ambianc",
+                "locat",
+                "in",
+                "it",
+                "tri",
+                "look",
+                "recommend",
+                "what",
+                "are",
+                "with",
+                "option",
+                "that",
+                "cater",
+                "the",
+                "mood",
+                "near",
+                "suggest"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "recomend.place",
+                "restaurant.preferences",
+                "restaurant.recommendation"
+              ],
+              "perceptrons": [
+                [
+                  11.275373458862305,
+                  6.810896873474121,
+                  2.261169910430908,
+                  2.261169910430908,
+                  4.030823707580566,
+                  3.2159500122070312,
+                  4.030823707580566,
+                  3.577439069747925,
+                  0.7237570285797119,
+                  0.9405059218406677,
+                  4.538850784301758,
+                  5.825547695159912,
+                  4.133101940155029,
+                  -3.0070712566375732,
+                  -3.00590181350708,
+                  -3.004638195037842,
+                  -3.0032756328582764,
+                  -1.816522240638733,
+                  -1.3190592527389526,
+                  -0.8196311593055725,
+                  -2.356128692626953,
+                  -2.7615256309509277,
+                  -2.0900416374206543,
+                  -1.1953476667404175,
+                  -1.8824294805526733,
+                  -1.5363363027572632,
+                  -3.063800573348999,
+                  -1.8761845827102661,
+                  -1.1197782754898071,
+                  -1.7608283758163452,
+                  -1.7608283758163452,
+                  -0.301657497882843,
+                  -0.14213648438453674,
+                  -3.946432113647461,
+                  -0.18463730812072754,
+                  -0.9648593068122864,
+                  -0.4756116569042206,
+                  -0.814784586429596,
+                  -0.18292292952537537,
+                  -1.0044941902160645,
+                  -1.0044941902160645,
+                  -1.0044941902160645,
+                  -0.007751819211989641,
+                  -0.10490000993013382,
+                  0,
+                  -0.5085131525993347,
+                  0,
+                  0,
+                  -0.16207106411457062,
+                  -0.6254124641418457,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.5085131525993347,
+                  -0.5085131525993347,
+                  -0.5085131525993347,
+                  -0.5085131525993347,
+                  3.0143797169555357
+                ],
+                [
+                  -5.820106506347656,
+                  -2.8326034545898438,
+                  -1.4982109069824219,
+                  -1.4982109069824219,
+                  -1.774625301361084,
+                  -2.2797422409057617,
+                  -1.774625301361084,
+                  -1.6134380102157593,
+                  -1.3829612731933594,
+                  -4.012498378753662,
+                  -0.4406943917274475,
+                  -1.3925002813339233,
+                  -0.4239858388900757,
+                  8.455280303955078,
+                  8.45520305633545,
+                  8.454021453857422,
+                  8.452630996704102,
+                  -3.374052047729492,
+                  -1.0316001176834106,
+                  -0.8583333492279053,
+                  -1.0878583192825317,
+                  -0.816131591796875,
+                  -2.266458511352539,
+                  -2.4574778079986572,
+                  -1.6706302165985107,
+                  -1.895064353942871,
+                  -1.01377534866333,
+                  -0.6630401015281677,
+                  -0.5580614805221558,
+                  -0.8820695281028748,
+                  -0.8820695281028748,
+                  -0.15778236091136932,
+                  -0.05983980745077133,
+                  -1.820693016052246,
+                  -0.48557987809181213,
+                  -0.158614844083786,
+                  -0.2876754105091095,
+                  -0.4884192645549774,
+                  -0.10732804238796234,
+                  -1.9440380334854126,
+                  -1.9440380334854126,
+                  -1.9440380334854126,
+                  0,
+                  -0.017785103991627693,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.35958391427993774,
+                  -0.22048233449459076,
+                  -0.22048233449459076,
+                  -0.22048233449459076,
+                  -0.22048233449459076,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  5.829437599042789
+                ],
+                [
+                  -0.8234055042266846,
+                  -0.527909517288208,
+                  -0.30109262466430664,
+                  -0.30109262466430664,
+                  -0.06633161008358002,
+                  -3.2093682289123535,
+                  -0.06633161008358002,
+                  -3.9308598041534424,
+                  -0.635668933391571,
+                  -1.678990125656128,
+                  -1.270009160041809,
+                  1.9280880689620972,
+                  -1.2696301937103271,
+                  -0.8225305676460266,
+                  -0.8218905925750732,
+                  -0.8212260603904724,
+                  -0.8205356001853943,
+                  7.657013893127441,
+                  1.2585357427597046,
+                  0.01827572099864483,
+                  4.572381496429443,
+                  3.2169601917266846,
+                  5.251702308654785,
+                  5.78192663192749,
+                  5.706432819366455,
+                  2.1384434700012207,
+                  -0.5742006301879883,
+                  5.536794662475586,
+                  -1.3211979866027832,
+                  -1.978760004043579,
+                  -1.978760004043579,
+                  -0.13190895318984985,
+                  -0.7472503781318665,
+                  -0.2992066740989685,
+                  -4.1193132400512695,
+                  -3.1829421520233154,
+                  -0.2196904718875885,
+                  -3.1225717067718506,
+                  -0.11335638165473938,
+                  -0.48586133122444153,
+                  -0.48586133122444153,
+                  -0.48586133122444153,
+                  -0.231425940990448,
+                  -0.014203853905200958,
+                  -0.6355120539665222,
+                  -0.9994440078735352,
+                  -0.07871977984905243,
+                  -0.231425940990448,
+                  -2.617401599884033,
+                  -2.95015025138855,
+                  -2.063171863555908,
+                  -2.063171863555908,
+                  -2.063171863555908,
+                  -2.063171863555908,
+                  -0.5975831747055054,
+                  -0.5975831747055054,
+                  -0.36567097902297974,
+                  -0.36567097902297974,
+                  -0.36567097902297974,
+                  -0.36567097902297974,
+                  0.8328983556098991
+                ],
+                [
+                  -1.5668550729751587,
+                  -0.6316439509391785,
+                  -0.5757296681404114,
+                  -0.5757296681404114,
+                  -1.028931975364685,
+                  0.48074597120285034,
+                  -1.028931975364685,
+                  -2.925977945327759,
+                  -0.7113966941833496,
+                  7.91549825668335,
+                  -1.8941154479980469,
+                  -7.560108184814453,
+                  -1.8860732316970825,
+                  -1.5601149797439575,
+                  -1.5588679313659668,
+                  -1.5575683116912842,
+                  -1.556214451789856,
+                  -0.8661314249038696,
+                  1.1536870002746582,
+                  -1.7390652894973755,
+                  -1.6901620626449585,
+                  -1.8482064008712769,
+                  -0.44755810499191284,
+                  -0.7012907862663269,
+                  -1.4382504224777222,
+                  -0.8718624711036682,
+                  0.5102995038032532,
+                  -0.11463476717472076,
+                  1.1612199544906616,
+                  1.5253674983978271,
+                  1.5253674983978271,
+                  0.5443945527076721,
+                  -3.6219918727874756,
+                  4.369279861450195,
+                  4.483092308044434,
+                  -1.9553271532058716,
+                  3.670738697052002,
+                  1.5101678371429443,
+                  2.75350022315979,
+                  4.23755407333374,
+                  4.23755407333374,
+                  4.23755407333374,
+                  0.7896605134010315,
+                  -2.477001190185547,
+                  3.284726619720459,
+                  3.1657633781433105,
+                  -1.316715955734253,
+                  0.4994247257709503,
+                  -1.4320684671401978,
+                  -1.2446705102920532,
+                  -0.0685916319489479,
+                  -0.0685916319489479,
+                  -0.0685916319489479,
+                  -0.0685916319489479,
+                  -0.6974500417709351,
+                  -0.6974500417709351,
+                  -1.4370415210723877,
+                  -1.4370415210723877,
+                  -1.4370415210723877,
+                  -1.4370415210723877,
+                  1.5822484932823098
+                ],
+                [
+                  -0.21498733758926392,
+                  -0.696327269077301,
+                  -0.14926959574222565,
+                  -0.14926959574222565,
+                  -0.9995260834693909,
+                  2.977182626724243,
+                  -0.9995260834693909,
+                  1.6279784440994263,
+                  -0.701248049736023,
+                  1.1091281175613403,
+                  -0.19683219492435455,
+                  -2.297633647918701,
+                  -0.36107954382896423,
+                  -0.14421962201595306,
+                  -0.13852034509181976,
+                  -0.13304567337036133,
+                  -0.1277867704629898,
+                  -3.19124436378479,
+                  -1.5985627174377441,
+                  3.557169198989868,
+                  -0.8564201593399048,
+                  2.4694883823394775,
+                  1.7026287317276,
+                  -0.011530143208801746,
+                  -1.7182414531707764,
+                  1.0259839296340942,
+                  -0.7484935522079468,
+                  -1.4360525608062744,
+                  -0.7630100846290588,
+                  -1.7272961139678955,
+                  -1.7272961139678955,
+                  -0.025587057694792747,
+                  -0.6328679919242859,
+                  -0.0988282784819603,
+                  -0.018367089331150055,
+                  4.222056865692139,
+                  -0.8663018941879272,
+                  3.978314161300659,
+                  -0.18792487680912018,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.6062049269676208,
+                  1.057769536972046,
+                  0,
+                  0,
+                  3.1386427879333496,
+                  4.168362140655518,
+                  2.252549171447754,
+                  2.252549171447754,
+                  2.252549171447754,
+                  2.252549171447754,
+                  0.8872954845428467,
+                  0.8872954845428467,
+                  1.7596704959869385,
+                  1.7596704959869385,
+                  1.7596704959869385,
+                  1.7596704959869385,
+                  -1.0102714544935558
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {
+      "en": {
+        "greetings.bye": "greetings",
+        "greetings.hello": "greetings",
+        "recomend.place": "recomends",
+        "user.name": "FeaturesGather",
+        "restaurant.preferences": "FeaturesGather"
+      }
+    },
+    "extraSentences": [
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "bye take care"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "i will go now"
+      ],
+      [
+        "en",
+        "i will go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "Greetings"
+      ],
+      [
+        "en",
+        "recomend me some place"
+      ],
+      [
+        "en",
+        "recomend a restaurant for me"
+      ],
+      [
+        "en",
+        "your recomendation?"
+      ],
+      [
+        "en",
+        "any good place to go"
+      ],
+      [
+        "en",
+        "any good restaurants?"
+      ],
+      [
+        "en",
+        "i want to go to a place"
+      ],
+      [
+        "en",
+        "i want to go to a restaurant"
+      ],
+      [
+        "en",
+        "I prefer {{ preference }}"
+      ],
+      [
+        "en",
+        "I require {{ preference }}"
+      ],
+      [
+        "en",
+        "I would like {{ preference }}"
+      ],
+      [
+        "en",
+        "I want to travel"
+      ],
+      [
+        "en",
+        "I'm {{ user_name }}"
+      ],
+      [
+        "en",
+        "You can call me {{ user_name }}"
+      ],
+      [
+        "en",
+        "My name is"
+      ],
+      [
+        "en",
+        "I prefer {{ cuisine }} cuisine"
+      ],
+      [
+        "en",
+        "I like {{ ambiance }} ambiance"
+      ],
+      [
+        "en",
+        "I would prefer a restaurant located in {{ location }}"
+      ],
+      [
+        "en",
+        "i want it located {{ location }}"
+      ],
+      [
+        "en",
+        "i want to try {{ cuisine }}"
+      ],
+      [
+        "en",
+        "I like"
+      ],
+      [
+        "en",
+        "I'm looking for a good  restaurant."
+      ],
+      [
+        "en",
+        "Can you recommend a restaurant ?"
+      ],
+      [
+        "en",
+        "What are some good restaurants with options?"
+      ],
+      [
+        "en",
+        "I'm looking for a restaurant that caters to"
+      ],
+      [
+        "en",
+        "I'm in the mood for some  near me. Any suggestions?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

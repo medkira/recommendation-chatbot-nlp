@@ -1,0 +1,238 @@
+{
+    "name": "Preferences & Requirements Corpus",
+    "locale": "en-US",
+    "entities": {
+        "vegetarian": {
+          "options": ["vegetarian"]
+        },
+        "vegan": {
+          "options": ["vegan"]
+        },
+        "halal": {
+          "options": ["halal"]
+        },
+        "gluten_free": {
+          "options": ["gluten-free"]
+        },
+        "nut_free": {
+          "options": ["nut-free"]
+        },
+        "dairy_free": {
+          "options": ["dairy-free"]
+        },
+        "pescatarian": {
+          "options": ["pescatarian"]
+        },
+        "low_carb": {
+          "options": ["low-carb"]
+        },
+        "no_spicy": {
+          "options": ["no spicy"]
+        },
+        "no_onion_garlic": {
+          "options": ["no onion/garlic"]
+        },
+        "no_seafood": {
+          "options": ["no seafood"]
+        },
+        "no_red_meat": {
+          "options": ["no red meat"]
+        },
+        "no_poultry": {
+          "options": ["no poultry"]
+        },
+        "no_pork": {
+          "options": ["no pork"]
+        },
+        "no_beef": {
+          "options": ["no beef"]
+        },
+        "no_lamb": {
+          "options": ["no lamb"]
+        },
+        "no_shellfish": {
+          "options": ["no shellfish"]
+        },
+        "no_eggs": {
+          "options": ["no eggs"]
+        },
+        "no_soy": {
+          "options": ["no soy"]
+        },
+        "no_caffeine": {
+          "options": ["no caffeine"]
+        },
+        "no_sugar": {
+          "options": ["no sugar"]
+        },
+        "no_artificial_additives": {
+          "options": ["no artificial additives"]
+        },
+        "no_msg": {
+          "options": ["no MSG"]
+        },
+        "alcohol_free": {
+          "options": ["alcohol-free"]
+        },
+        "smoke_free": {
+          "options": ["smoke-free"]
+        },
+        "pet_friendly": {
+          "options": ["pet-friendly"]
+        },
+        "wheelchair_accessible": {
+          "options": ["wheelchair accessible"]
+        },
+        "family_friendly": {
+          "options": ["family-friendly"]
+        },
+        "quiet": {
+          "options": ["quiet"]
+        },
+        "outdoor_seating": {
+          "options": ["outdoor seating"]
+        },
+        "live_music": {
+          "options": ["live music"]
+        }
+      },
+    "data": [
+      {
+        "intent": "user.preferences.requirements",
+        "utterances": [
+          "I prefer {{ preference }}",
+          "I require {{ preference }}",
+          "I would like {{ preference }}"
+        ],
+        "answers": [
+          "Great! Your preference is {{ preference }}."
+        ],
+        "slotFilling": {
+          "vegetarian": {
+            "mandatory": true,
+            "question": "Are you vegetarian?"
+          },
+          "vegan": {
+            "mandatory": true,
+            "question": "Are you vegan?"
+          },
+          "halal": {
+            "mandatory": true,
+            "question": "Do you require halal options?"
+          },
+          "gluten_free": {
+            "mandatory": true,
+            "question": "Do you require gluten-free options?"
+          },
+          "nut_free": {
+            "mandatory": true,
+            "question": "Do you require nut-free options?"
+          },
+          "dairy_free": {
+            "mandatory": true,
+            "question": "Do you require dairy-free options?"
+          },
+          "pescatarian": {
+            "mandatory": true,
+            "question": "Are you pescatarian?"
+          },
+          "low_carb": {
+            "mandatory": true,
+            "question": "Do you prefer low-carb options?"
+          },
+          "no_spicy": {
+            "mandatory": true,
+            "question": "Do you prefer no spicy food?"
+          },
+          "no_onion_garlic": {
+            "mandatory": true,
+            "question": "Do you prefer no onion/garlic?"
+          },
+          "no_seafood": {
+            "mandatory": true,
+            "question": "Do you prefer no seafood?"
+          },
+          "no_red_meat": {
+            "mandatory": true,
+            "question": "Do you prefer no red meat?"
+          },
+          "no_poultry": {
+            "mandatory": true,
+            "question": "Do you prefer no poultry?"
+          },
+          "no_pork": {
+            "mandatory": true,
+            "question": "Do you prefer no pork?"
+          },
+          "no_beef": {
+            "mandatory": true,
+            "question": "Do you prefer no beef?"
+          },
+          "no_lamb": {
+            "mandatory": true,
+            "question": "Do you prefer no lamb?"
+          },
+          "no_shellfish": {
+            "mandatory": true,
+            "question": "Do you prefer no shellfish?"
+          },
+          "no_eggs": {
+            "mandatory": true,
+            "question": "Do you prefer no eggs?"
+          },
+          "no_soy": {
+            "mandatory": true,
+            "question": "Do you prefer no soy?"
+          },
+          "no_caffeine": {
+            "mandatory": true,
+            "question": "Do you prefer no caffeine?"
+          },
+          "no_sugar": {
+            "mandatory": true,
+            "question": "Do you prefer no sugar?"
+          },
+          "no_artificial_additives": {
+            "mandatory": true,
+            "question": "Do you prefer no artificial additives?"
+          },
+          "no_msg": {
+            "mandatory": true,
+            "question": "Do you prefer no MSG?"
+          },
+          "alcohol_free": {
+            "mandatory": true,
+            "question": "Do you prefer alcohol-free environment?"
+          },
+          "smoke_free": {
+            "mandatory": true,
+            "question": "Do you prefer smoke-free environment?"
+          },
+          "pet_friendly": {
+            "mandatory": true,
+            "question": "Do you require pet-friendly accommodations?"
+          },
+          "wheelchair_accessible": {
+            "mandatory": true,
+            "question": "Do you require wheelchair accessible facilities?"
+          },
+          "family_friendly": {
+            "mandatory": true,
+            "question": "Do you require family-friendly options?"
+          },
+          "quiet": {
+            "mandatory": true,
+            "question": "Do you prefer quiet environments?"
+          },
+          "outdoor_seating": {
+            "mandatory": true,
+            "question": "Do you prefer outdoor seating?"
+          },
+          "live_music": {
+            "mandatory": true,
+            "question": "Do you prefer places with live music?"
+          }
+        }
+      }
+    ]
+}

@@ -1,0 +1,361 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "me,place,recomend,some": {
+            "intent": "recomend.place",
+            "domain": "default"
+          },
+          "a,for,me,recomend,restaur": {
+            "intent": "recomend.place",
+            "domain": "default"
+          },
+          "recomend,your": {
+            "intent": "recomend.place",
+            "domain": "default"
+          },
+          "ani,go,good,place,to": {
+            "intent": "recomend.place",
+            "domain": "default"
+          },
+          "ani,good,restaur": {
+            "intent": "recomend.place",
+            "domain": "default"
+          },
+          "a,go,i,place,to,want": {
+            "intent": "recomend.place",
+            "domain": "default"
+          },
+          "a,go,i,restaur,to,want": {
+            "intent": "recomend.place",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "recomend.place": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "recomend me some place",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "recomend a restaurant for me",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "your recomendation?",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "any good place to go",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "any good restaurants?",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i want to go to a place",
+            "intent": "recomend.place"
+          },
+          {
+            "domain": "default",
+            "utterance": "i want to go to a restaurant",
+            "intent": "recomend.place"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "recomend": 1,
+              "me": 1,
+              "some": 1,
+              "place": 1,
+              "a": 1,
+              "restaur": 1,
+              "for": 1,
+              "your": 1,
+              "ani": 1,
+              "good": 1,
+              "to": 1,
+              "go": 1,
+              "i": 1,
+              "want": 1
+            },
+            "intents": {
+              "recomend.place": 1
+            },
+            "intentFeatures": {
+              "recomend.place": {
+                "recomend": 1,
+                "me": 1,
+                "some": 1,
+                "place": 1,
+                "a": 1,
+                "restaur": 1,
+                "for": 1,
+                "your": 1,
+                "ani": 1,
+                "good": 1,
+                "to": 1,
+                "go": 1,
+                "i": 1,
+                "want": 1
+              }
+            },
+            "featuresToIntent": {
+              "recomend": [
+                "recomend.place"
+              ],
+              "me": [
+                "recomend.place"
+              ],
+              "some": [
+                "recomend.place"
+              ],
+              "place": [
+                "recomend.place"
+              ],
+              "a": [
+                "recomend.place"
+              ],
+              "restaur": [
+                "recomend.place"
+              ],
+              "for": [
+                "recomend.place"
+              ],
+              "your": [
+                "recomend.place"
+              ],
+              "ani": [
+                "recomend.place"
+              ],
+              "good": [
+                "recomend.place"
+              ],
+              "to": [
+                "recomend.place"
+              ],
+              "go": [
+                "recomend.place"
+              ],
+              "i": [
+                "recomend.place"
+              ],
+              "want": [
+                "recomend.place"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "recomend",
+                "me",
+                "some",
+                "place",
+                "a",
+                "restaur",
+                "for",
+                "your",
+                "ani",
+                "good",
+                "to",
+                "go",
+                "i",
+                "want"
+              ],
+              "intents": [
+                "recomend.place"
+              ],
+              "perceptrons": [
+                [
+                  4.863523006439209,
+                  0.49786749482154846,
+                  1.161021113395691,
+                  2.737488031387329,
+                  1.5207091569900513,
+                  3.005479574203491,
+                  -0.6617926955223083,
+                  4.365736484527588,
+                  3.064141035079956,
+                  3.064141035079956,
+                  0.22705534100532532,
+                  0.22705534100532532,
+                  2.182346820831299,
+                  2.182346820831299,
+                  5.055244131817847
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "recomend me some place"
+      ],
+      [
+        "en",
+        "recomend a restaurant for me"
+      ],
+      [
+        "en",
+        "your recomendation?"
+      ],
+      [
+        "en",
+        "any good place to go"
+      ],
+      [
+        "en",
+        "any good restaurants?"
+      ],
+      [
+        "en",
+        "i want to go to a place"
+      ],
+      [
+        "en",
+        "i want to go to a restaurant"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "recomend.place": [
+          {
+            "answer": "What type of cuisine are you in the mood for?"
+          },
+          {
+            "answer": "Do you prefer casual dining or something more upscale?"
+          },
+          {
+            "answer": "Are there any dietary restrictions or preferences I should consider?"
+          },
+          {
+            "answer": "Are you looking for a specific ambiance or atmosphere?"
+          },
+          {
+            "answer": "Is there a particular area or neighborhood you'd like to dine in?"
+          },
+          {
+            "answer": "Are you looking for a restaurant with a special feature, like outdoor seating, live music, or a view?"
+          },
+          {
+            "answer": "What's your budget for the meal?"
+          },
+          {
+            "answer": "Are you interested in trying something new, or do you have a favorite type of restaurant?"
+          },
+          {
+            "answer": "How far are you willing to travel for a good meal?"
+          },
+          {
+            "answer": "Have you heard of any new or popular restaurants recently that you'd like to try?"
+          },
+          {
+            "answer": "What type of food do you enjoy?"
+          },
+          {
+            "answer": "Do you have a favorite cuisine?"
+          },
+          {
+            "answer": "Are you a coffee or tea person?"
+          },
+          {
+            "answer": "Any specific places you like to hang out?"
+          },
+          {
+            "answer": "Do you prefer indoor or outdoor activities?"
+          },
+          {
+            "answer": "Are you interested in family-friendly places?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

@@ -1,0 +1,30 @@
+{
+    "questions": [
+        "recomend me some place",
+        "recomend a restaurant for me",
+        "your recomendation?",
+        "any good place to go",
+        "any good restaurants?",
+        "i want to go to a place",
+        "i want to go to a restaurant"
+    ],
+    "answers": [
+        "What type of cuisine are you in the mood for?",
+        "Do you prefer casual dining or something more upscale?",
+        "Are there any dietary restrictions or preferences I should consider?",
+        "Are you looking for a specific ambiance or atmosphere?",
+        "Is there a particular area or neighborhood you'd like to dine in?",
+        "Are you looking for a restaurant with a special feature, like outdoor seating, live music, or a view?",
+        "What's your budget for the meal?",
+        "Are you interested in trying something new, or do you have a favorite type of restaurant?",
+        "How far are you willing to travel for a good meal?",
+        "Have you heard of any new or popular restaurants recently that you'd like to try?",
+        "What type of food do you enjoy?",
+        "Do you have a favorite cuisine?",
+        "Are you a coffee or tea person?",
+        "Any specific places you like to hang out?",
+        "Do you prefer indoor or outdoor activities?",
+        "Are you interested in family-friendly places?"
+      
+    ]
+}

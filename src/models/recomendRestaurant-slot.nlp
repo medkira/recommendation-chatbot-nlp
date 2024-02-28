@@ -1,0 +1,1254 @@
+{
+  "settings": {
+    "tag": "nlp",
+    "forceNER": true,
+    "languages": [
+      "en"
+    ],
+    "corpora": [
+      "./src/slot-recomendation/recomand.restaurant.json",
+      "./src/slot-name-gather/gather-name.json",
+      "./src/slot-preferences-requirements/gather-preferences-requirements.json"
+    ],
+    "calculateSentiment": true,
+    "executeActionsBeforeAnswers": false
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "@cuisin,cuisin,i,prefer": {
+            "intent": "restaurant.preferences",
+            "domain": "default"
+          },
+          "@ambianc,ambianc,i,like": {
+            "intent": "restaurant.preferences",
+            "domain": "default"
+          },
+          "@locat,a,i,in,locat,prefer,restaur,would": {
+            "intent": "restaurant.preferences",
+            "domain": "default"
+          },
+          "@user_nam,is,my,name": {
+            "intent": "user.name",
+            "domain": "default"
+          },
+          "@user_nam,am,i": {
+            "intent": "user.name",
+            "domain": "default"
+          },
+          "@user_nam,call,can,me,you": {
+            "intent": "user.name",
+            "domain": "default"
+          },
+          "i,prefer,{{,}}": {
+            "intent": "user.preferences.requirements",
+            "domain": "default"
+          },
+          "i,prefer,requir,{{,}}": {
+            "intent": "user.preferences.requirements",
+            "domain": "default"
+          },
+          "i,like,prefer,would,{{,}}": {
+            "intent": "user.preferences.requirements",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "restaurant.preferences": "default",
+          "user.name": "default",
+          "user.preferences.requirements": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "I prefer @cuisine cuisine",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "I like @ambiance ambiance",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would prefer a restaurant located in @location",
+            "intent": "restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "My name is @user_name",
+            "intent": "user.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm @user_name",
+            "intent": "user.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "You can call me @user_name",
+            "intent": "user.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "I prefer {{ preference }}",
+            "intent": "user.preferences.requirements"
+          },
+          {
+            "domain": "default",
+            "utterance": "I require {{ preference }}",
+            "intent": "user.preferences.requirements"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like {{ preference }}",
+            "intent": "user.preferences.requirements"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "i": 1,
+              "prefer": 1,
+              "@cuisin": 1,
+              "cuisin": 1,
+              "like": 1,
+              "@ambianc": 1,
+              "ambianc": 1,
+              "would": 1,
+              "a": 1,
+              "restaur": 1,
+              "locat": 1,
+              "in": 1,
+              "@locat": 1,
+              "my": 1,
+              "name": 1,
+              "is": 1,
+              "@user_nam": 1,
+              "am": 1,
+              "you": 1,
+              "can": 1,
+              "call": 1,
+              "me": 1,
+              "{{": 1,
+              "}}": 1,
+              "requir": 1
+            },
+            "intents": {
+              "restaurant.preferences": 1,
+              "user.name": 1,
+              "user.preferences.requirements": 1
+            },
+            "intentFeatures": {
+              "restaurant.preferences": {
+                "i": 1,
+                "prefer": 1,
+                "@cuisin": 1,
+                "cuisin": 1,
+                "like": 1,
+                "@ambianc": 1,
+                "ambianc": 1,
+                "would": 1,
+                "a": 1,
+                "restaur": 1,
+                "locat": 1,
+                "in": 1,
+                "@locat": 1
+              },
+              "user.name": {
+                "my": 1,
+                "name": 1,
+                "is": 1,
+                "@user_nam": 1,
+                "i": 1,
+                "am": 1,
+                "you": 1,
+                "can": 1,
+                "call": 1,
+                "me": 1
+              },
+              "user.preferences.requirements": {
+                "i": 1,
+                "prefer": 1,
+                "{{": 1,
+                "}}": 1,
+                "requir": 1,
+                "would": 1,
+                "like": 1
+              }
+            },
+            "featuresToIntent": {
+              "i": [
+                "restaurant.preferences",
+                "user.name",
+                "user.preferences.requirements"
+              ],
+              "prefer": [
+                "restaurant.preferences",
+                "user.preferences.requirements"
+              ],
+              "@cuisin": [
+                "restaurant.preferences"
+              ],
+              "cuisin": [
+                "restaurant.preferences"
+              ],
+              "like": [
+                "restaurant.preferences",
+                "user.preferences.requirements"
+              ],
+              "@ambianc": [
+                "restaurant.preferences"
+              ],
+              "ambianc": [
+                "restaurant.preferences"
+              ],
+              "would": [
+                "restaurant.preferences",
+                "user.preferences.requirements"
+              ],
+              "a": [
+                "restaurant.preferences"
+              ],
+              "restaur": [
+                "restaurant.preferences"
+              ],
+              "locat": [
+                "restaurant.preferences"
+              ],
+              "in": [
+                "restaurant.preferences"
+              ],
+              "@locat": [
+                "restaurant.preferences"
+              ],
+              "my": [
+                "user.name"
+              ],
+              "name": [
+                "user.name"
+              ],
+              "is": [
+                "user.name"
+              ],
+              "@user_nam": [
+                "user.name"
+              ],
+              "am": [
+                "user.name"
+              ],
+              "you": [
+                "user.name"
+              ],
+              "can": [
+                "user.name"
+              ],
+              "call": [
+                "user.name"
+              ],
+              "me": [
+                "user.name"
+              ],
+              "{{": [
+                "user.preferences.requirements"
+              ],
+              "}}": [
+                "user.preferences.requirements"
+              ],
+              "requir": [
+                "user.preferences.requirements"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "i",
+                "prefer",
+                "@cuisin",
+                "cuisin",
+                "like",
+                "@ambianc",
+                "ambianc",
+                "would",
+                "a",
+                "restaur",
+                "locat",
+                "in",
+                "@locat",
+                "my",
+                "name",
+                "is",
+                "@user_nam",
+                "am",
+                "you",
+                "can",
+                "call",
+                "me",
+                "{{",
+                "}}",
+                "requir"
+              ],
+              "intents": [
+                "restaurant.preferences",
+                "user.name",
+                "user.preferences.requirements"
+              ],
+              "perceptrons": [
+                [
+                  3.3196377754211426,
+                  1.6644198894500732,
+                  3.916489839553833,
+                  3.916489839553833,
+                  1.7807024717330933,
+                  3.8583669662475586,
+                  3.8583669662475586,
+                  -0.4258876442909241,
+                  1.6517775058746338,
+                  1.6517775058746338,
+                  1.6517775058746338,
+                  1.6517775058746338,
+                  1.6517775058746338,
+                  -0.18679580092430115,
+                  -0.18679580092430115,
+                  -0.18679580092430115,
+                  -2.58538818359375,
+                  -2.2030699253082275,
+                  -0.10947418957948685,
+                  -0.10947418957948685,
+                  -0.10947418957948685,
+                  -0.10947418957948685,
+                  -3.9038243293762207,
+                  -3.9038243293762207,
+                  -0.6357561349868774,
+                  1.4686595205661563
+                ],
+                [
+                  1.170259952545166,
+                  -1.7992992401123047,
+                  -0.7321016788482666,
+                  -0.7321016788482666,
+                  -1.2028926610946655,
+                  -1.0302927494049072,
+                  -1.0302927494049072,
+                  -0.3939288854598999,
+                  -0.22274719178676605,
+                  -0.22274719178676605,
+                  -0.22274719178676605,
+                  -0.22274719178676605,
+                  -0.22274719178676605,
+                  1.7248458862304688,
+                  1.7248458862304688,
+                  1.7248458862304688,
+                  7.018243789672852,
+                  3.9998278617858887,
+                  1.2933988571166992,
+                  1.2933988571166992,
+                  1.2933988571166992,
+                  1.2933988571166992,
+                  -0.793624222278595,
+                  -0.793624222278595,
+                  -0.22401989996433258,
+                  2.0942190396559464
+                ],
+                [
+                  0.8865323662757874,
+                  2.34162974357605,
+                  -1.7885570526123047,
+                  -1.7885570526123047,
+                  0.28576263785362244,
+                  -0.857599139213562,
+                  -0.857599139213562,
+                  0.1704072207212448,
+                  -0.8653168082237244,
+                  -0.8653168082237244,
+                  -0.8653168082237244,
+                  -0.8653168082237244,
+                  -0.8653168082237244,
+                  -0.052099768072366714,
+                  -0.052099768072366714,
+                  -0.052099768072366714,
+                  -0.6830413341522217,
+                  -0.5638636350631714,
+                  -0.028358763083815575,
+                  -0.028358763083815575,
+                  -0.028358763083815575,
+                  -0.028358763083815575,
+                  5.1382575035095215,
+                  5.1382575035095215,
+                  0.5903794765472412,
+                  0.381007988934131
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "I prefer @cuisine cuisine"
+      ],
+      [
+        "en",
+        "I like @ambiance ambiance"
+      ],
+      [
+        "en",
+        "I would prefer a restaurant located in @location"
+      ],
+      [
+        "en",
+        "My name is @user_name"
+      ],
+      [
+        "en",
+        "I'm @user_name"
+      ],
+      [
+        "en",
+        "You can call me @user_name"
+      ],
+      [
+        "en",
+        "I prefer {{ preference }}"
+      ],
+      [
+        "en",
+        "I require {{ preference }}"
+      ],
+      [
+        "en",
+        "I would like {{ preference }}"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {
+      "en": {
+        "cuisine": {
+          "name": "cuisine",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "italian",
+              "texts": [
+                "Italian"
+              ]
+            },
+            {
+              "option": "japanese",
+              "texts": [
+                "Japanese"
+              ]
+            },
+            {
+              "option": "mexican",
+              "texts": [
+                "Mexican"
+              ]
+            }
+          ]
+        },
+        "ambiance": {
+          "name": "ambiance",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "cozy",
+              "texts": [
+                "Cozy"
+              ]
+            },
+            {
+              "option": "elegant",
+              "texts": [
+                "Elegant"
+              ]
+            },
+            {
+              "option": "casual",
+              "texts": [
+                "Casual"
+              ]
+            }
+          ]
+        },
+        "location": {
+          "name": "location",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "downtown",
+              "texts": [
+                "Downtown"
+              ]
+            },
+            {
+              "option": "suburbs",
+              "texts": [
+                "Suburbs"
+              ]
+            },
+            {
+              "option": "beachfront",
+              "texts": [
+                "Beachfront"
+              ]
+            }
+          ]
+        },
+        "user_name": {
+          "name": "user_name",
+          "type": "trim",
+          "rules": [
+            {
+              "type": "afterLast",
+              "words": [
+                "is",
+                "name, I'm"
+              ],
+              "options": {}
+            }
+          ]
+        },
+        "vegetarian": {
+          "name": "vegetarian",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "vegetarian"
+              ]
+            }
+          ]
+        },
+        "vegan": {
+          "name": "vegan",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "vegan"
+              ]
+            }
+          ]
+        },
+        "halal": {
+          "name": "halal",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "halal"
+              ]
+            }
+          ]
+        },
+        "gluten_free": {
+          "name": "gluten_free",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "gluten-free"
+              ]
+            }
+          ]
+        },
+        "nut_free": {
+          "name": "nut_free",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "nut-free"
+              ]
+            }
+          ]
+        },
+        "dairy_free": {
+          "name": "dairy_free",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "dairy-free"
+              ]
+            }
+          ]
+        },
+        "pescatarian": {
+          "name": "pescatarian",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "pescatarian"
+              ]
+            }
+          ]
+        },
+        "low_carb": {
+          "name": "low_carb",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "low-carb"
+              ]
+            }
+          ]
+        },
+        "no_spicy": {
+          "name": "no_spicy",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no spicy"
+              ]
+            }
+          ]
+        },
+        "no_onion_garlic": {
+          "name": "no_onion_garlic",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no onion/garlic"
+              ]
+            }
+          ]
+        },
+        "no_seafood": {
+          "name": "no_seafood",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no seafood"
+              ]
+            }
+          ]
+        },
+        "no_red_meat": {
+          "name": "no_red_meat",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no red meat"
+              ]
+            }
+          ]
+        },
+        "no_poultry": {
+          "name": "no_poultry",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no poultry"
+              ]
+            }
+          ]
+        },
+        "no_pork": {
+          "name": "no_pork",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no pork"
+              ]
+            }
+          ]
+        },
+        "no_beef": {
+          "name": "no_beef",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no beef"
+              ]
+            }
+          ]
+        },
+        "no_lamb": {
+          "name": "no_lamb",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no lamb"
+              ]
+            }
+          ]
+        },
+        "no_shellfish": {
+          "name": "no_shellfish",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no shellfish"
+              ]
+            }
+          ]
+        },
+        "no_eggs": {
+          "name": "no_eggs",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no eggs"
+              ]
+            }
+          ]
+        },
+        "no_soy": {
+          "name": "no_soy",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no soy"
+              ]
+            }
+          ]
+        },
+        "no_caffeine": {
+          "name": "no_caffeine",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no caffeine"
+              ]
+            }
+          ]
+        },
+        "no_sugar": {
+          "name": "no_sugar",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no sugar"
+              ]
+            }
+          ]
+        },
+        "no_artificial_additives": {
+          "name": "no_artificial_additives",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no artificial additives"
+              ]
+            }
+          ]
+        },
+        "no_msg": {
+          "name": "no_msg",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "no MSG"
+              ]
+            }
+          ]
+        },
+        "alcohol_free": {
+          "name": "alcohol_free",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "alcohol-free"
+              ]
+            }
+          ]
+        },
+        "smoke_free": {
+          "name": "smoke_free",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "smoke-free"
+              ]
+            }
+          ]
+        },
+        "pet_friendly": {
+          "name": "pet_friendly",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "pet-friendly"
+              ]
+            }
+          ]
+        },
+        "wheelchair_accessible": {
+          "name": "wheelchair_accessible",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "wheelchair accessible"
+              ]
+            }
+          ]
+        },
+        "family_friendly": {
+          "name": "family_friendly",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "family-friendly"
+              ]
+            }
+          ]
+        },
+        "quiet": {
+          "name": "quiet",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "quiet"
+              ]
+            }
+          ]
+        },
+        "outdoor_seating": {
+          "name": "outdoor_seating",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "outdoor seating"
+              ]
+            }
+          ]
+        },
+        "live_music": {
+          "name": "live_music",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "0",
+              "texts": [
+                "live music"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "restaurant.preferences": [
+          {
+            "answer": "Great! You prefer {{ cuisine }} cuisine{{#ambiance}}, {{ ambiance }} ambiance{{/ambiance}}{{^ambiance}} and{{/ambiance}}{{#location}}, and would like a restaurant located in {{ location }}.{{/location}}{{^location}}.{{/location}}"
+          }
+        ],
+        "user.name": [
+          {
+            "answer": "Nice to meet you, {{ user_name }}!"
+          },
+          {
+            "answer": "Hi {{ user_name }}! How can I help you?"
+          }
+        ],
+        "user.preferences.requirements": [
+          {
+            "answer": "Great! Your preference is {{ preference }}."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "restaurant.preferences": {
+      "cuisine": {
+        "intent": "restaurant.preferences",
+        "entity": "cuisine",
+        "mandatory": true,
+        "locales": {
+          "en": "What cuisine do you prefer?"
+        }
+      },
+      "ambiance": {
+        "intent": "restaurant.preferences",
+        "entity": "ambiance",
+        "mandatory": true,
+        "locales": {
+          "en": "What ambiance do you like?"
+        }
+      },
+      "location": {
+        "intent": "restaurant.preferences",
+        "entity": "location",
+        "mandatory": false,
+        "locales": {
+          "en": "Where would you prefer the restaurant to be located?"
+        }
+      }
+    },
+    "user.name": {
+      "user_name": {
+        "intent": "user.name",
+        "entity": "user_name",
+        "mandatory": true,
+        "locales": {}
+      }
+    },
+    "user.preferences.requirements": {
+      "vegetarian": {
+        "intent": "user.preferences.requirements",
+        "entity": "vegetarian",
+        "mandatory": true,
+        "locales": {
+          "en": "Are you vegetarian?"
+        }
+      },
+      "vegan": {
+        "intent": "user.preferences.requirements",
+        "entity": "vegan",
+        "mandatory": true,
+        "locales": {
+          "en": "Are you vegan?"
+        }
+      },
+      "halal": {
+        "intent": "user.preferences.requirements",
+        "entity": "halal",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require halal options?"
+        }
+      },
+      "gluten_free": {
+        "intent": "user.preferences.requirements",
+        "entity": "gluten_free",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require gluten-free options?"
+        }
+      },
+      "nut_free": {
+        "intent": "user.preferences.requirements",
+        "entity": "nut_free",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require nut-free options?"
+        }
+      },
+      "dairy_free": {
+        "intent": "user.preferences.requirements",
+        "entity": "dairy_free",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require dairy-free options?"
+        }
+      },
+      "pescatarian": {
+        "intent": "user.preferences.requirements",
+        "entity": "pescatarian",
+        "mandatory": true,
+        "locales": {
+          "en": "Are you pescatarian?"
+        }
+      },
+      "low_carb": {
+        "intent": "user.preferences.requirements",
+        "entity": "low_carb",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer low-carb options?"
+        }
+      },
+      "no_spicy": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_spicy",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no spicy food?"
+        }
+      },
+      "no_onion_garlic": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_onion_garlic",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no onion/garlic?"
+        }
+      },
+      "no_seafood": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_seafood",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no seafood?"
+        }
+      },
+      "no_red_meat": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_red_meat",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no red meat?"
+        }
+      },
+      "no_poultry": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_poultry",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no poultry?"
+        }
+      },
+      "no_pork": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_pork",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no pork?"
+        }
+      },
+      "no_beef": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_beef",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no beef?"
+        }
+      },
+      "no_lamb": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_lamb",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no lamb?"
+        }
+      },
+      "no_shellfish": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_shellfish",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no shellfish?"
+        }
+      },
+      "no_eggs": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_eggs",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no eggs?"
+        }
+      },
+      "no_soy": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_soy",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no soy?"
+        }
+      },
+      "no_caffeine": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_caffeine",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no caffeine?"
+        }
+      },
+      "no_sugar": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_sugar",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no sugar?"
+        }
+      },
+      "no_artificial_additives": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_artificial_additives",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no artificial additives?"
+        }
+      },
+      "no_msg": {
+        "intent": "user.preferences.requirements",
+        "entity": "no_msg",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer no MSG?"
+        }
+      },
+      "alcohol_free": {
+        "intent": "user.preferences.requirements",
+        "entity": "alcohol_free",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer alcohol-free environment?"
+        }
+      },
+      "smoke_free": {
+        "intent": "user.preferences.requirements",
+        "entity": "smoke_free",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer smoke-free environment?"
+        }
+      },
+      "pet_friendly": {
+        "intent": "user.preferences.requirements",
+        "entity": "pet_friendly",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require pet-friendly accommodations?"
+        }
+      },
+      "wheelchair_accessible": {
+        "intent": "user.preferences.requirements",
+        "entity": "wheelchair_accessible",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require wheelchair accessible facilities?"
+        }
+      },
+      "family_friendly": {
+        "intent": "user.preferences.requirements",
+        "entity": "family_friendly",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you require family-friendly options?"
+        }
+      },
+      "quiet": {
+        "intent": "user.preferences.requirements",
+        "entity": "quiet",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer quiet environments?"
+        }
+      },
+      "outdoor_seating": {
+        "intent": "user.preferences.requirements",
+        "entity": "outdoor_seating",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer outdoor seating?"
+        }
+      },
+      "live_music": {
+        "intent": "user.preferences.requirements",
+        "entity": "live_music",
+        "mandatory": true,
+        "locales": {
+          "en": "Do you prefer places with live music?"
+        }
+      }
+    }
+  }
+}
