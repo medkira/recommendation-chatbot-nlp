@@ -1,21 +1,30 @@
-// Let's start with importing `NlpManager` from `node-nlp`. This will be responsible for training, saving, loading and processing.
 const { NlpManager } = require("node-nlp");
-// Creating new Instance of NlpManager class.
 const managerDomain = new NlpManager({ languages: ["en"], autoSave: false, });
-const fs = require("fs");// Let's read all our intents files in the folder intents
-const files = fs.readdirSync("./src/intents");// Looping through the files and Parsing the string to object and passing it to manager instance to train and process it.
+const fs = require("fs");
+const files = fs.readdirSync("./src/intents");
 
+// ? off domain
 let dataDomain = fs.readFileSync('src/corpus/off.domain.json');
 dataDomain = JSON.parse(dataDomain);
 // console.log(dataDomain.data.length);
-
 dataDomain.data.map((obj: any) => {
     managerDomain.assignDomain("en", obj.intent, "OffDomain");
 })
+// ? off domain
+
+// ? intereption domain 
+let intereptionDomain = fs.readFileSync('src/corpus/intereption/intereption.json');
+intereptionDomain = JSON.parse(intereptionDomain);
+intereptionDomain.data.map((obj: any) => {
+    managerDomain.assignDomain("en", obj.intent, "IntereptionDomain");
+})
+// ? intereptions domain
+
 
 const corpora = [
     'src/corpus/off.domain.json',
-    'src/slot-recomendation/recomand.restaurant2.json'
+    'src/slot-recomendation/recomand.restaurant2.json',
+    'src/corpus/intereption/intereption.json'
 ]
 managerDomain.addCorpora(corpora);
 
@@ -166,11 +175,11 @@ const nlpRecommendRestaurant = async () => {
 
 
     const corpora = [
-        `./src/slot-recomendation/${filename0}`,
-        `./src/slot-recomendation/${filename1}`,
+        // `./src/slot-recomendation/${filename0}`,
+        // `./src/slot-recomendation/${filename1}`,
         `./src/slot-recomendation/${filename2}`,
         `./src/slot-recomendation/${filename3}`,
-        `./src/slot-recomendation/${filename4}`,
+        // `./src/slot-recomendation/${filename4}`,
 
     ]
     const manager = new NlpManager({ languages: ["en"], autoSave: false, });
@@ -230,6 +239,17 @@ const nlpOffDomain = async () => {
 
 }
 
+const nlpIntereption = async () => {
+    const corpora = [
+        'src/corpus/intereption/intereption.json'
+    ]
+    const manager = new NlpManager({ languages: ["en"], autoSave: false, });
+    manager.addCorpora(corpora);
+    await manager.train();
+
+    manager.save('./src/models/intereption.nlp');
+}
+
 
 async function train_save() {
     await nlpFindPlace();
@@ -237,12 +257,17 @@ async function train_save() {
     await nlpgreeting();
     await nlpTestAction();
     await nlpOffDomain();
+    await nlpIntereption();
     await managerDomain.train();
     managerDomain.save("./src/models/domain_0.nlp");
 }
 
 
 train_save();
+
+
+
+
 
 
 

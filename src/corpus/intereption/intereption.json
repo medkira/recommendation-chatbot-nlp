@@ -1,0 +1,77 @@
+{
+    "name" : "restaurant halal intereption corpus",
+    "locale": "en-US",
+    "entities": {
+        "cuisine": {
+            "options": {
+              "italian": ["Italian"],
+              "japanese": ["Japanese"],
+              "mexican": ["Mexican"],
+              "indian": ["Indian"],
+              "thai": ["Thai"],
+              "american": ["American"],
+              "french": ["French"],
+              "chinese": ["Chinese"],
+              "greek": ["Greek"],
+              "vietnamese": ["Vietnamese"]
+            }
+          },
+        "dietary_restrictions": {
+            "options": {
+              "halal": ["Halal", "Following Islamic dietary guidelines", "hala"]
+            }
+          },
+          "ambiance": {
+            "options": {
+              "cozy": ["Cozy", "Intimate and warm", "A fireside escape"],
+              "elegant": ["Elegant", "Upscale and sophisticated", "A touch of luxury"],
+              "casual": ["Casual", "Relaxed and inviting", "A place to unwind"]
+            }
+          },
+          "location": {
+            "options": {
+              "downtown": ["Downtown", "In the heart of the city", "Bustling with urban energy"],
+              "suburbs": ["Suburbs", "A charming neighborhood setting", "Relaxed and convenient"],
+              "beachfront": ["Beachfront", "Ocean views and fresh air", "A taste of paradise"]
+            }
+          },
+          "price_range": {
+            "options": {
+              "cheap": ["Budget-friendly", "Easy on the wallet", "Budget"],
+              "moderate": ["Moderately priced", "A good value"],
+              "expensive": ["Fine dining", "A splurge-worthy experience", "expensive"]
+            }
+          }
+          
+    },
+
+    "data" : [
+        {
+            "intent" : "halal.restaurant.preferences",
+            "utterances": [
+                "Halal @cuisine food sounds good.",   
+                "I want some halal @cuisine.",    
+                "Find a halal place near @location.",    
+                "Halal, @location, any ideas?",    
+                "Can you recommend any halal places with a @cuisine cuisine menu?",  
+                "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?", 
+                "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
+                "Family night out! Any  kid-friendly?",
+                "Where can we take the kids, Open to locations!",
+
+                "Any halal restaurants with @ambiance ambiance?",    
+                "need it halal!",
+                "Craving halal!",
+                "recommend me halal restaurant"
+              ],
+              "answers": [
+                "Sure, looking for halal options! What type of halal cuisine are you craving?",
+                "Sure, looking for halal options! What kind of ambiance are you looking for (family-friendly, elegant, peaceful)?",
+                "Sure, looking for halal options! Where would you prefer the restaurant to be located (downtown, suburbs, waterfront)?",
+                "Sure, looking for halal options! Do you have a budget in mind (cheap, moderate, or expensive)?"
+              ]
+
+        }
+    ]
+
+}

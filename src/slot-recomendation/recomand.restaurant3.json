@@ -44,7 +44,8 @@
           "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
           "Family night out! Any  kid-friendly?",
           "Where can we take the kids, Open to locations!",
-          "recommend me halal restaurant"
+          "recommend me halal restaurant",
+          "@ambiance ambiance"
         ],
         "answers": [
           "Sure, looking for halal options! What kind of cuisine are you in the mood for?",

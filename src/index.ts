@@ -17,13 +17,21 @@ TestAction.load('./src/models/actiontest.nlp');
 
 
 TestAction.addAction('whatTimeIsIt', 'handleWhatsTimeAction', [], async (data: any, locale: any) => {
-    console.log(data.context.entities?.cuntry?.option ?? "")
+    // console.log(data.context.entities?.cuntry?.option ?? "")
     console.log("i am working");
     const res = new Date().toLocaleTimeString((data.context.entities?.cuntry?.option ?? "en-US"));
     data.context.time = res;
     // data.context.test = data.context.cuntry;
+    data.context.slotFill = {
+        localeIso2: 'en',
+        intent: 'halal.restaurant.preferences',
+        entities: [],
+        answer: undefined,
+        srcAnswer: undefined,
+        currentSlot: 'cuisine'
+    },
 
-    // console.log("DATA", data)
+        console.log("DATA", data.context)
     // console.log(data)
     // console.log("we can do anything here");
     return data;
@@ -99,14 +107,55 @@ rl.on("line", async function (line: string) {
     } else if (intentDomain == "FindPlace") {
         const response = await FindPlaceModel.process('en', line, context);
         console.log(response.answer);
+    } else if (intentDomain == "IntereptionDomain") {
+
+        const IntereptionModel = new NlpManager({ languages: ["en"] });
+
+        IntereptionModel.load('./src/models/intereption.nlp');
+
+        IntereptionModel.addAction('halal.restaurant.preferences', 'changeContext', [], async (data: any) => {
+            // console.log("i am working");
+            // console.log(data.context.slotFill.entities)
+
+            // console.log("---------------------")
+            // console.log(data.context.entities);
+            // console.log("data", data);
+            if (data.context && data.context.slotFill) {
+                data.context.slotFill = {
+                    localeIso2: 'en',
+                    intent: data.intent,
+                    entities: data.context.slotFill.entities,
+                    // answer: undefined,
+                    // srcAnswer: undefined,
+                    // currentSlot: 'cuisine'
+                };
+            } else {
+            }
+
+
+            // console.log("---------------------")
+
+            // console.log("DATA", data)
+
+            return data;
+        });
+
+        const response = await IntereptionModel.process("en", line, context);
+        // console.log("response", response);
+        console.log(response.answer);
+
+
+
+
+
     } else {
-        console.log("no model available");
+        // console.log("no model available");
         // if (true) {
-        // const response = await TestAction.process('en', line, context);
 
         // const actions = await TestAction.getActions("whatTimeIsIt")
         // // console.log(actions)
         // // console.log("--------------------------------------------------------------------------------------------------------")
+        // const response = await TestAction.process('en', line, context);
         // console.log(response.answer);
         // // }
         const response = await FeaturesGathermanager.process('en', line, context);
