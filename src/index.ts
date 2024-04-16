@@ -16,6 +16,19 @@ const TestAction = new NlpManager({ languages: ["en"], executeActionsBeforeAnswe
 TestAction.load('./src/models/actiontest.nlp');
 
 
+TestAction.addAction('whatTimeIsIt', 'handleWhatsTimeAction', [], async (data: any, locale: any) => {
+    console.log(data.context.entities?.cuntry?.option ?? "")
+    console.log("i am working");
+    const res = new Date().toLocaleTimeString((data.context.entities?.cuntry?.option ?? "en-US"));
+    data.context.time = res;
+    // data.context.test = data.context.cuntry;
+
+    // console.log("DATA", data)
+    // console.log(data)
+    // console.log("we can do anything here");
+    return data;
+});
+
 const context =
 {
     // channel: undefined,
@@ -53,62 +66,56 @@ rl.on("line", async function (line: string) {
     }
 
 
-    // manager.load("./src/models/domain_0.nlp");
+    manager.load("./src/models/domain_0.nlp");
     // console.log("chatbot domains", manager.nlp.getDomains());
 
-    // const response = await manager.process("en", line);
+    const response = await manager.process("en", line);
     // console.log("RESPONSE", response)
-    // const intentDomain = manager.getIntentDomain("en", response.intent);
+    const intentDomain = manager.getIntentDomain("en", response.intent);
 
-    // console.log("user response intent domain: ", intentDomain);
-    TestAction.addAction('whatTimeIsIt', 'handleWhatsTimeAction', [], async (data: any, locale: any) => {
-        console.log(data.context.entities?.cuntry?.option ?? "")
-        console.log("i am working");
-        const res = new Date().toLocaleTimeString((data.context.entities?.cuntry?.option ?? "en-US"));
-        data.context.time = res;
-        // data.context.test = data.context.cuntry;
-
-        // console.log("DATA", data)
-        console.log(data)
-        // console.log("we can do anything here");
-        return data;
-    });
+    console.log("user response intent domain: ", intentDomain);
 
 
-    if (true) {
-        const response = await TestAction.process('en', line, context);
 
-        const actions = await TestAction.getActions("whatTimeIsIt")
-        // console.log(actions)
-        // console.log("--------------------------------------------------------------------------------------------------------")
+
+    if (intentDomain == "recomends") {
+        manager.load('./src/models/recomend.nlp');
+        const response = await manager.process("en", line);
         console.log(response.answer);
+
+    } else if (intentDomain == "greetings") {
+        manager.load('./src/models/greeting.nlp');
+        const response = await manager.process("en", line, context);
+        console.log(response.answer);
+
     }
-    // if (intentDomain == "recomends") {
-    //     manager.load('./src/models/recomend.nlp');
-    //     const response = await manager.process("en", line);
-    //     console.log(response.answer);
+    else if (intentDomain == "FeaturesGather") {
+        // const context = {}
+        // manager.load('./src/models/recomendRestaurant-slot.nlp');
 
-    // } else if (intentDomain == "greetings") {
-    //     manager.load('./src/models/greeting.nlp');
-    //     const response = await manager.process("en", line, context);
-    //     console.log(response.answer);
+        const response = await FeaturesGathermanager.process('en', line, context);
+        console.log(response.answer);
+        // console.log(response);
+    } else if (intentDomain == "FindPlace") {
+        const response = await FindPlaceModel.process('en', line, context);
+        console.log(response.answer);
+    } else {
+        console.log("no model available");
+        // if (true) {
+        // const response = await TestAction.process('en', line, context);
 
-    // }
-    // else if (intentDomain == "FeaturesGather") {
-    //     // manager.load('./src/models/recomendRestaurant-slot.nlp');
+        // const actions = await TestAction.getActions("whatTimeIsIt")
+        // // console.log(actions)
+        // // console.log("--------------------------------------------------------------------------------------------------------")
+        // console.log(response.answer);
+        // // }
+        // const response = await FeaturesGathermanager.process('en', line, context);
+        // console.log(response.answer);
+        manager.load('./src/models/offDomain.nlp');
 
-    //     const response = await FeaturesGathermanager.process('en', line, context);
-    //     console.log(response.answer);
-    //     // console.log(response);
-    // } else if (intentDomain == "FindPlace") {
-    //     const response = await FindPlaceModel.process('en', line, context);
-    //     console.log(response.answer);
-    // } else {
-    //     console.log("no model available");
-
-    //     const response = await FeaturesGathermanager.process('en', line, context);
-    //     console.log(response.answer);
-    // }
+        const response = await manager.process("en", line);
+        console.log(response.answer)
+    }
 
 
     // console.log("context: ", context);

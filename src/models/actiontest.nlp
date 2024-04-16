@@ -1,15 +1,15 @@
 {
   "settings": {
-    "tag": "nlp",
-    "forceNER": true,
     "languages": [
       "en"
     ],
-    "corpora": [
-      "./src/testAction/test.json"
-    ],
-    "calculateSentiment": true,
-    "executeActionsBeforeAnswers": false
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
   },
   "nluManager": {
     "settings": {
@@ -179,7 +179,9 @@
   },
   "ner": {
     "settings": {
-      "tag": "ner"
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
     },
     "rules": {
       "en": {

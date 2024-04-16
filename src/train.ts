@@ -5,22 +5,28 @@ const managerDomain = new NlpManager({ languages: ["en"], autoSave: false, });
 const fs = require("fs");// Let's read all our intents files in the folder intents
 const files = fs.readdirSync("./src/intents");// Looping through the files and Parsing the string to object and passing it to manager instance to train and process it.
 
+let dataDomain = fs.readFileSync('src/corpus/off.domain.json');
+dataDomain = JSON.parse(dataDomain);
+// console.log(dataDomain.data.length);
+
+dataDomain.data.map((obj: any) => {
+    managerDomain.assignDomain("en", obj.intent, "OffDomain");
+})
+
+const corpora = [
+    'src/corpus/off.domain.json',
+]
+managerDomain.addCorpora(corpora);
 
 
 for (const file of files) {
     let data = fs.readFileSync(`./src/intents/${file}`);
     data = JSON.parse(data);
     const intent = file.replace(".json", "");
-    // console.log(intent);
 
     for (const question of data.questions) {
         managerDomain.addDocument("en", question, intent);
     }
-
-    // for (const answer of data.answers) {
-    //     manager.addAnswer("en", intent, answer);
-    // }
-
 
     // todo: i need a function that loop throw the folder of the domain and extract the folder name(domain )
     // todo: and extract the file names(intents name)
@@ -39,6 +45,8 @@ for (const file of files) {
     managerDomain.assignDomain("en", "restaurant.preferences", "FeaturesGather");
 
     managerDomain.assignDomain("en", "restaurant.recommendation", "slotRecomendation");
+
+
 }
 
 const nlpgreeting = async () => {
@@ -74,52 +82,55 @@ const nlpgreeting = async () => {
 
 // model for find place where model help user to find where he want to go
 const nlpFindPlace = async () => {
-    const { dockStart } = require('@nlpjs/basic');
+    // const { dockStart } = require('@nlpjs/basic');
     const manager = new NlpManager({ languages: ["en"], autoSave: false, });
-    const filename = "find.place.json";
-    const intent = filename.replace(".json", "");
+    // const filename = "find.place.json";
+    // const intent = filename.replace(".json", "");
 
-    let data = fs.readFileSync(`./src/intents/${filename}`);
-    data = JSON.parse(data);
-
-
-    for (const question of data.questions) {
-        manager.addDocument("en", question, intent);
-    }
-
-    for (const answer of data.answers) {
-        manager.addAnswer("en", intent, answer);
-    }
+    // let data = fs.readFileSync(`./src/intents/${filename}`);
+    // data = JSON.parse(data);
 
 
+    // for (const question of data.questions) {
+    //     manager.addDocument("en", question, intent);
+    // }
+
+    // for (const answer of data.answers) {
+    //     manager.addAnswer("en", intent, answer);
+    // }
+
+    const corpora = [
+        'src/find-place/find-place.json'
+    ]
+    manager.addCorpora(corpora);
     await manager.train();
     manager.save("./src/models/findPlace.nlp");
 }
 
-const nlpRecommend = async () => {
-    const { dockStart } = require('@nlpjs/basic');
-    const manager = new NlpManager({ languages: ["en"], autoSave: false, });
-    const filename = "recomend.place.json";
-    const intent = filename.replace(".json", "");
+// const nlpRecommend = async () => {
+//     const { dockStart } = require('@nlpjs/basic');
+//     const manager = new NlpManager({ languages: ["en"], autoSave: false, });
+//     const filename = "recomend.place.json";
+//     const intent = filename.replace(".json", "");
 
-    let data = fs.readFileSync(`./src/intents/${filename}`);
-    data = JSON.parse(data);
-
-
-    for (const question of data.questions) {
-        manager.addDocument("en", question, intent);
-    }
-
-    for (const answer of data.answers) {
-        manager.addAnswer("en", intent, answer);
-    }
+//     let data = fs.readFileSync(`./src/intents/${filename}`);
+//     data = JSON.parse(data);
 
 
+//     for (const question of data.questions) {
+//         manager.addDocument("en", question, intent);
+//     }
+
+//     for (const answer of data.answers) {
+//         manager.addAnswer("en", intent, answer);
+//     }
 
 
-    await manager.train();
-    manager.save("./src/models/recomend.nlp");
-}
+
+
+//     await manager.train();
+//     manager.save("./src/models/recomend.nlp");
+// }
 
 
 const nlpRecommendRestaurant = async () => {
@@ -129,34 +140,48 @@ const nlpRecommendRestaurant = async () => {
     const filename1 = "recomand.restaurant1.json";
     const filename2 = "recomand.restaurant2.json";
     const filename3 = "recomand.restaurant3.json";
-
     const filename4 = "recomand.movie.json"
-    const filename5 = "gather-preferences-requirements.json";
-    const dock = await dockStart({
-        settings: {
-            nlp: {
-                forceNER: true,
-                languages: ['en'],
-                corpora: [
-                    `./src/slot-recomendation/${filename0}`,
-                    `./src/slot-recomendation/${filename1}`,
-                    `./src/slot-recomendation/${filename2}`,
-                    `./src/slot-recomendation/${filename3}`,
-                    `./src/slot-recomendation/${filename4}`,
+    // const filename5 = "gather-preferences-requirements.json";
 
-                ]
-            }
-        },
-        use: ['Basic', 'LangEn'],
-    });
-    const manager = dock.get('nlp');
 
+    // const dock = await dockStart({
+    //     settings: {
+    //         nlp: {
+    //             trainByDomain: true,
+    //             forceNER: true,
+    //             languages: ['en'],
+    //             corpora: [
+    //                 `./src/slot-recomendation/${filename0}`,
+    //                 `./src/slot-recomendation/${filename1}`,
+    //                 `./src/slot-recomendation/${filename2}`,
+    //                 `./src/slot-recomendation/${filename3}`,
+    //                 `./src/slot-recomendation/${filename4}`,
+    //             ]
+    //         }
+    //     },
+    //     use: ['Basic', 'LangEn'],
+    // });
+    // const manager = dock.get('nlp');
+
+
+    const corpora = [
+        `./src/slot-recomendation/${filename0}`,
+        `./src/slot-recomendation/${filename1}`,
+        `./src/slot-recomendation/${filename2}`,
+        `./src/slot-recomendation/${filename3}`,
+        `./src/slot-recomendation/${filename4}`,
+
+    ]
+    const manager = new NlpManager({ languages: ["en"], autoSave: false, });
+    manager.addCorpora(corpora);
     await manager.train();
     manager.save("./src/models/recomendRestaurant-slot.nlp");
-
+    // manager.registerActionFunction('handleWhatsTimeAction', async (data: any, locale: any) => {
+    //     const res = new Date().toLocaleTimeString(locale);
+    //     data.context.time = res;
+    //     return data;
+    // });
 }
-
-
 
 
 
@@ -165,53 +190,52 @@ const nlpTestAction = async () => {
     const { dockStart } = require('@nlpjs/basic');
 
     const filename0 = "test.json";
-    // const filename1 = "recomand.restaurant1.json";
-    // const filename2 = "recomand.restaurant2.json";
-    // const filename3 = "recomand.restaurant3.json";
 
-    // const filename4 = "recomand.movie.json"
-    // const filename5 = "gather-preferences-requirements.json";
-    const dock = await dockStart({
-        settings: {
-            nlp: {
-                forceNER: true,
-                languages: ['en'],
-                corpora: [
-                    `./src/testAction/${filename0}`,
-                ]
-            }
-        },
-        use: ['Basic', 'LangEn'],
-    });
-    const manager = dock.get('nlp');
-
-    // manager.registerActionFunction('handleWhatsTimeAction', async (data: any, locale: any) => {
-    //     const res = new Date().toLocaleTimeString(locale);
-    //     data.context.time = res;
-    //     return data;
+    // const dock = await dockStart({
+    //     settings: {
+    //         nlp: {
+    //             forceNER: true,
+    //             languages: ['en'],
+    //             corpora: [
+    //                 `./src/testAction/${filename0}`,
+    //             ]
+    //         }
+    //     },
+    //     use: ['Basic', 'LangEn'],
     // });
+    // const manager = dock.get('nlp');
+    const corpora = [
+        `./src/testAction/${filename0}`,
+    ]
+    const manager = new NlpManager({ languages: ["en"], autoSave: false, });
+    manager.addCorpora(corpora);
+
     await manager.train();
 
-    // manager.addAction('whatTimeIsIt', 'handleWhatsTimeAction', ['en-US', 'parameter 2'], async (data, locale) => {
-    //     // Inject a new entitiy into context used for answer generation
-    //     data.context.time = new Date().toLocaleTimeString(locale);
-    //     return data;
-    // });
     manager.save('./src/models/actiontest.nlp');
 
-    // const res = await manager.process("what time is it ")
-    // console.log("res", res.answer);
+
+}
+
+const nlpOffDomain = async () => {
+    const corpora = [
+        'src/corpus/off.domain.json',
+    ]
+    const manager = new NlpManager({ languages: ["en"], autoSave: false, });
+    manager.addCorpora(corpora);
+    await manager.train();
+    manager.save('./src/models/offDomain.nlp');
+
+
 }
 
 
-
-
 async function train_save() {
-    // await nlpRecommend();
-    // await nlpFindPlace();
-    // await nlpRecommendRestaurant();
+    await nlpFindPlace();
+    await nlpRecommendRestaurant();
     await nlpgreeting();
     await nlpTestAction();
+    await nlpOffDomain();
     await managerDomain.train();
     managerDomain.save("./src/models/domain_0.nlp");
 }
@@ -220,3 +244,35 @@ async function train_save() {
 train_save();
 
 
+
+
+// for (const intent of data.intent) {
+//     managerDomain.assignDomain("en", intent, "OffDomain");
+// }
+
+
+
+// for (const answer of data.answers) {
+//     manager.addAnswer("en", intent, answer);
+// }
+
+
+
+
+
+// const filename1 = "recomand.restaurant1.json";
+// const filename2 = "recomand.restaurant2.json";
+// const filename3 = "recomand.restaurant3.json";
+
+// const filename4 = "recomand.movie.json"
+// const filename5 = "gather-preferences-requirements.json";
+// manager.registerActionFunction('handleWhatsTimeAction', async (data: any, locale: any) => {
+//     const res = new Date().toLocaleTimeString(locale);
+//     data.context.time = res;
+//     return data;
+// });
+// manager.addAction('whatTimeIsIt', 'handleWhatsTimeAction', ['en-US', 'parameter 2'], async (data, locale) => {
+//     // Inject a new entitiy into context used for answer generation
+//     data.context.time = new Date().toLocaleTimeString(locale);
+//     return data;
+// });

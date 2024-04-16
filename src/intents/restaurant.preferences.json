@@ -44,6 +44,12 @@
         "Any recommendations for a delicious @price_range meal?",
         "I need to find a place for a(n) @occasion . Any ideas?",
         "Looking for a restaurant for a group of @group_size . Suggestions?",
-        "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible."
+        "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible.",
+
+        "yes @price_range budget",
+        "@price_range budget",
+        "i will go with @price_range budget ",
+        "i will pick @price_range"
+
     ]
 }

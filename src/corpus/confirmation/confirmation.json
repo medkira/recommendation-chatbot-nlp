@@ -1,0 +1,34 @@
+{
+    "name": "ConfirmationIntent Corpus",
+    "locale": "en-US",
+    "entities": {
+    },
+    "data": [
+      {
+        "intent": "user.confirmation.recommendation",
+        "utterances": [
+          "Enough, give me a recommendation already!",
+          "Alright, just recommend something, pick one!",
+          "Forget the details, give me some options now!",
+          "Give me a recommendation.",  
+          "Recommendations, please!",
+          "Can I get some suggestions?",
+          "Recommend something similar to [previous place/type].",
+          "Give me options like the last place we talked about.",
+          "Based on what we discussed, what do you recommend?"
+        ],
+        "answers": [
+          "Okay, on it! Here are a few recommendations for you.",
+          "Alright, no worries, here are some options to consider.",
+          "Let's not overthink it, here are some places you might like.",
+          "Sure, here are some recommendations for you!",
+          "Absolutely! Let me give you some suggestions.",
+          "Here are a few options that might be a good fit.",
+          "Great idea! Here are some options similar to [previous place/type].",
+          "Following up on our conversation, here are some recommendations based on your preferences.",
+          "Sure, considering what we talked about, I recommend checking out these places."
+        ]
+      }
+    ]
+  }
+  

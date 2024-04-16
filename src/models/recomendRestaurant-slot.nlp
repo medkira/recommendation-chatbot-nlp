@@ -1,19 +1,15 @@
 {
   "settings": {
-    "tag": "nlp",
-    "forceNER": true,
     "languages": [
       "en"
     ],
-    "corpora": [
-      "./src/slot-recomendation/recomand.restaurant.json",
-      "./src/slot-recomendation/recomand.restaurant1.json",
-      "./src/slot-recomendation/recomand.restaurant2.json",
-      "./src/slot-recomendation/recomand.restaurant3.json",
-      "./src/slot-recomendation/recomand.movie.json"
-    ],
-    "calculateSentiment": true,
-    "executeActionsBeforeAnswers": false
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
   },
   "nluManager": {
     "settings": {
@@ -172,9 +168,7 @@
           }
         },
         "intentDict": {
-          "restaurant.preferences": "default",
-          "halal.restaurant.preferences": "default",
-          "movie.booking": "default"
+          "restaurant.preferences": "default"
         },
         "sentences": [
           {
@@ -205,21 +199,6 @@
           {
             "domain": "default",
             "utterance": "recommend me a restaurant",
-            "intent": "restaurant.preferences"
-          },
-          {
-            "domain": "default",
-            "utterance": "I prefer @cuisine cuisine",
-            "intent": "restaurant.preferences"
-          },
-          {
-            "domain": "default",
-            "utterance": "I like @ambiance ambiance",
-            "intent": "restaurant.preferences"
-          },
-          {
-            "domain": "default",
-            "utterance": "I would prefer a restaurant located in @location",
             "intent": "restaurant.preferences"
           },
           {
@@ -407,65 +386,10 @@
               "ideal": 1,
               "had": 1,
               "@price_rang": 1,
-              "price_rang": 1,
-              "look": 1,
-              "good": 1,
-              "delici": 1,
-              "meal": 1,
-              "need": 1,
-              "to": 1,
-              "find": 1,
-              "@occas": 1,
-              "idea": 1,
-              "group": 1,
-              "of": 1,
-              "@group_siz": 1,
-              "suggest": 1,
-              "help": 1,
-              "budget": 1,
-              "is": 1,
-              "flexibl": 1,
-              "halal": 1,
-              "food": 1,
-              "want": 1,
-              "near": 1,
-              "that": 1,
-              "cater": 1,
-              "@dietary_restrict": 1,
-              "dietari": 1,
-              "restrict": 1,
-              "there": 1,
-              "nice": 1,
-              "peac": 1,
-              "by": 1,
-              "waterfront": 1,
-              "famili": 1,
-              "night": 1,
-              "out": 1,
-              "kid-friend": 1,
-              "where": 1,
-              "we": 1,
-              "take": 1,
-              "kid": 1,
-              "open": 1,
-              "book": 1,
-              "ticket": 1,
-              "@movie_titl": 1,
-              "get": 1,
-              "@showtim": 1,
-              "show": 1,
-              "how": 1,
-              "mani": 1,
-              "seat": 1,
-              "are": 1,
-              "avail": 1,
-              "watch": 1,
-              "movi": 1
+              "price_rang": 1
             },
             "intents": {
-              "restaurant.preferences": 1,
-              "halal.restaurant.preferences": 1,
-              "movie.booking": 1
+              "restaurant.preferences": 1
             },
             "intentFeatures": {
               "restaurant.preferences": {
@@ -504,222 +428,90 @@
                 "ideal": 1,
                 "had": 1,
                 "@price_rang": 1,
-                "price_rang": 1,
-                "look": 1,
-                "good": 1,
-                "delici": 1,
-                "meal": 1,
-                "need": 1,
-                "to": 1,
-                "find": 1,
-                "@occas": 1,
-                "idea": 1,
-                "group": 1,
-                "of": 1,
-                "@group_siz": 1,
-                "suggest": 1,
-                "help": 1,
-                "budget": 1,
-                "is": 1,
-                "flexibl": 1
-              },
-              "halal.restaurant.preferences": {
-                "halal": 1,
-                "@cuisin": 1,
-                "food": 1,
-                "sound": 1,
-                "good": 1,
-                "i": 1,
-                "want": 1,
-                "some": 1,
-                "ani": 1,
-                "restaur": 1,
-                "with": 1,
-                "@ambianc": 1,
-                "ambianc": 1,
-                "find": 1,
-                "a": 1,
-                "place": 1,
-                "near": 1,
-                "@locat": 1,
-                "idea": 1,
-                "crave": 1,
-                "can": 1,
-                "you": 1,
-                "recommend": 1,
-                "cuisin": 1,
-                "menu": 1,
-                "look": 1,
-                "for": 1,
-                "that": 1,
-                "cater": 1,
-                "to": 1,
-                "@dietary_restrict": 1,
-                "dietari": 1,
-                "restrict": 1,
-                "suggest": 1,
-                "is": 1,
-                "there": 1,
-                "nice": 1,
-                "peac": 1,
-                "meal": 1,
-                "by": 1,
-                "the": 1,
-                "waterfront": 1,
-                "famili": 1,
-                "night": 1,
-                "out": 1,
-                "kid-friend": 1,
-                "where": 1,
-                "we": 1,
-                "take": 1,
-                "kid": 1,
-                "open": 1,
-                "locat": 1,
-                "me": 1
-              },
-              "movie.booking": {
-                "i": 1,
-                "had": 1,
-                "like": 1,
-                "to": 1,
-                "book": 1,
-                "a": 1,
-                "ticket": 1,
-                "for": 1,
-                "@movie_titl": 1,
-                "can": 1,
-                "get": 1,
-                "the": 1,
-                "@showtim": 1,
-                "show": 1,
-                "of": 1,
-                "need": 1,
-                "how": 1,
-                "mani": 1,
-                "seat": 1,
-                "are": 1,
-                "avail": 1,
-                "look": 1,
-                "watch": 1,
-                "movi": 1,
-                "ani": 1,
-                "suggest": 1,
-                "recommend": 1,
-                "me": 1
+                "price_rang": 1
               }
             },
             "featuresToIntent": {
               "i": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "prefer": [
                 "restaurant.preferences"
               ],
               "@cuisin": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "cuisin": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "like": [
-                "restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "@ambianc": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "ambianc": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "would": [
                 "restaurant.preferences"
               ],
               "a": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "restaur": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "locat": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "in": [
                 "restaurant.preferences"
               ],
               "@locat": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "can": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "you": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "recommend": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "ani": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "place": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "with": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "menu": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "me": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "am": [
                 "restaurant.preferences"
               ],
               "crave": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "some": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "the": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "mood": [
                 "restaurant.preferences"
               ],
               "for": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "n": [
                 "restaurant.preferences"
@@ -731,8 +523,7 @@
                 "restaurant.preferences"
               ],
               "sound": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
+                "restaurant.preferences"
               ],
               "perfect": [
                 "restaurant.preferences"
@@ -741,186 +532,13 @@
                 "restaurant.preferences"
               ],
               "had": [
-                "restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "@price_rang": [
                 "restaurant.preferences"
               ],
               "price_rang": [
                 "restaurant.preferences"
-              ],
-              "look": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
-              ],
-              "good": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
-              ],
-              "delici": [
-                "restaurant.preferences"
-              ],
-              "meal": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
-              ],
-              "need": [
-                "restaurant.preferences",
-                "movie.booking"
-              ],
-              "to": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
-              ],
-              "find": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
-              ],
-              "@occas": [
-                "restaurant.preferences"
-              ],
-              "idea": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
-              ],
-              "group": [
-                "restaurant.preferences"
-              ],
-              "of": [
-                "restaurant.preferences",
-                "movie.booking"
-              ],
-              "@group_siz": [
-                "restaurant.preferences"
-              ],
-              "suggest": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
-              ],
-              "help": [
-                "restaurant.preferences"
-              ],
-              "budget": [
-                "restaurant.preferences"
-              ],
-              "is": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences"
-              ],
-              "flexibl": [
-                "restaurant.preferences"
-              ],
-              "halal": [
-                "halal.restaurant.preferences"
-              ],
-              "food": [
-                "halal.restaurant.preferences"
-              ],
-              "want": [
-                "halal.restaurant.preferences"
-              ],
-              "near": [
-                "halal.restaurant.preferences"
-              ],
-              "that": [
-                "halal.restaurant.preferences"
-              ],
-              "cater": [
-                "halal.restaurant.preferences"
-              ],
-              "@dietary_restrict": [
-                "halal.restaurant.preferences"
-              ],
-              "dietari": [
-                "halal.restaurant.preferences"
-              ],
-              "restrict": [
-                "halal.restaurant.preferences"
-              ],
-              "there": [
-                "halal.restaurant.preferences"
-              ],
-              "nice": [
-                "halal.restaurant.preferences"
-              ],
-              "peac": [
-                "halal.restaurant.preferences"
-              ],
-              "by": [
-                "halal.restaurant.preferences"
-              ],
-              "waterfront": [
-                "halal.restaurant.preferences"
-              ],
-              "famili": [
-                "halal.restaurant.preferences"
-              ],
-              "night": [
-                "halal.restaurant.preferences"
-              ],
-              "out": [
-                "halal.restaurant.preferences"
-              ],
-              "kid-friend": [
-                "halal.restaurant.preferences"
-              ],
-              "where": [
-                "halal.restaurant.preferences"
-              ],
-              "we": [
-                "halal.restaurant.preferences"
-              ],
-              "take": [
-                "halal.restaurant.preferences"
-              ],
-              "kid": [
-                "halal.restaurant.preferences"
-              ],
-              "open": [
-                "halal.restaurant.preferences"
-              ],
-              "book": [
-                "movie.booking"
-              ],
-              "ticket": [
-                "movie.booking"
-              ],
-              "@movie_titl": [
-                "movie.booking"
-              ],
-              "get": [
-                "movie.booking"
-              ],
-              "@showtim": [
-                "movie.booking"
-              ],
-              "show": [
-                "movie.booking"
-              ],
-              "how": [
-                "movie.booking"
-              ],
-              "mani": [
-                "movie.booking"
-              ],
-              "seat": [
-                "movie.booking"
-              ],
-              "are": [
-                "movie.booking"
-              ],
-              "avail": [
-                "movie.booking"
-              ],
-              "watch": [
-                "movie.booking"
-              ],
-              "movi": [
-                "movie.booking"
               ]
             },
             "neuralNetwork": {
@@ -971,342 +589,50 @@
                 "ideal",
                 "had",
                 "@price_rang",
-                "price_rang",
-                "look",
-                "good",
-                "delici",
-                "meal",
-                "need",
-                "to",
-                "find",
-                "@occas",
-                "idea",
-                "group",
-                "of",
-                "@group_siz",
-                "suggest",
-                "help",
-                "budget",
-                "is",
-                "flexibl",
-                "halal",
-                "food",
-                "want",
-                "near",
-                "that",
-                "cater",
-                "@dietary_restrict",
-                "dietari",
-                "restrict",
-                "there",
-                "nice",
-                "peac",
-                "by",
-                "waterfront",
-                "famili",
-                "night",
-                "out",
-                "kid-friend",
-                "where",
-                "we",
-                "take",
-                "kid",
-                "open",
-                "book",
-                "ticket",
-                "@movie_titl",
-                "get",
-                "@showtim",
-                "show",
-                "how",
-                "mani",
-                "seat",
-                "are",
-                "avail",
-                "watch",
-                "movi"
+                "price_rang"
               ],
               "intents": [
-                "restaurant.preferences",
-                "halal.restaurant.preferences",
-                "movie.booking"
+                "restaurant.preferences"
               ],
               "perceptrons": [
                 [
-                  3.8050079345703125,
-                  1.70334792137146,
-                  1.3946170806884766,
-                  4.526616096496582,
-                  2.5911636352539062,
-                  2.5164852142333984,
-                  2.5164852142333984,
-                  -1.893803358078003,
-                  1.1584863662719727,
-                  5.020635604858398,
-                  0.7274299263954163,
-                  0.7350231409072876,
-                  0.18500380218029022,
-                  0.44104060530662537,
-                  2.3457798957824707,
-                  3.6497108936309814,
-                  0.1384897232055664,
-                  0.8709150552749634,
-                  -2.799292802810669,
-                  -0.445447713136673,
-                  1.4983409643173218,
-                  0.44738835096359253,
-                  1.3595134019851685,
-                  -0.11329908668994904,
-                  0.5315181016921997,
-                  -0.6683740019798279,
-                  0.1623343825340271,
-                  0.8865901827812195,
-                  -0.6683740019798279,
-                  3.2979013919830322,
-                  2.650763511657715,
-                  3.2979013919830322,
-                  -0.5071395039558411,
-                  -2.2062604427337646,
-                  2.0731585025787354,
-                  -0.5071395039558411,
-                  0.33450964093208313,
-                  -0.9035894870758057,
-                  1.8389074802398682,
-                  2.3876936435699463,
-                  1.77872633934021,
-                  -1.7747985124588013,
-                  0.7661973834037781,
-                  1.555302619934082,
-                  2.0610029697418213,
-                  1.5462108850479126,
-                  1.0600910186767578,
-                  1.5462108850479126,
-                  0.5916916728019714,
-                  -0.7419257164001465,
-                  -0.7419257164001465,
-                  -0.9353819489479065,
-                  -0.7419257164001465,
-                  -14.055070877075195,
-                  -0.46016955375671387,
-                  -1.1739522218704224,
-                  -0.5485221743583679,
-                  -1.6964688301086426,
-                  -1.6964688301086426,
-                  -1.6964688301086426,
-                  -1.6964688301086426,
-                  -1.6964688301086426,
-                  -0.09672807902097702,
-                  -0.09672807902097702,
-                  -0.09672807902097702,
-                  -0.09672807902097702,
-                  -0.09672807902097702,
-                  -0.7458949089050293,
-                  -0.7458949089050293,
-                  -0.7458949089050293,
-                  -0.7458949089050293,
-                  -0.6705958247184753,
-                  -0.6705958247184753,
-                  -0.6705958247184753,
-                  -0.6705958247184753,
-                  -0.6705958247184753,
-                  -1.4573451280593872,
-                  -3.4239137172698975,
-                  -3.4239137172698975,
-                  -1.051807165145874,
-                  -1.051807165145874,
-                  -1.051807165145874,
-                  -0.4959113895893097,
-                  -0.4959113895893097,
-                  -0.4959113895893097,
-                  -0.4959113895893097,
-                  -0.4959113895893097,
-                  0,
-                  -7.925679683685303,
-                  2.8409282004769305
-                ],
-                [
-                  -3.3312323093414307,
-                  -1.2079929113388062,
-                  0.6899803280830383,
-                  -0.9368830323219299,
-                  -1.2667324542999268,
-                  -1.0060228109359741,
-                  -1.0060228109359741,
-                  -0.6827649474143982,
-                  -1.9060781002044678,
-                  0.247283935546875,
-                  0.2285217046737671,
-                  -1.7641425132751465,
-                  -0.7671880125999451,
-                  0.35120970010757446,
-                  -1.186741828918457,
-                  -0.8958966732025146,
-                  2.0778682231903076,
-                  1.244540810585022,
-                  -0.16459105908870697,
-                  0.4073934257030487,
-                  0.7446616888046265,
-                  -0.976388156414032,
-                  0.26600390672683716,
-                  0.9725017547607422,
-                  0.6942551732063293,
-                  0,
-                  -0.5673006772994995,
-                  -0.8303876519203186,
-                  0,
-                  -0.9841675758361816,
-                  -0.8793575167655945,
-                  -0.9841675758361816,
-                  0,
-                  -0.3419605493545532,
-                  -0.3289276659488678,
-                  0,
-                  0.3752923011779785,
-                  0.0740264356136322,
-                  -0.5623905062675476,
-                  -0.07902182638645172,
-                  -0.7552106380462646,
-                  1.4114363193511963,
-                  0.3140144348144531,
-                  -0.8303876519203186,
-                  -1.1331692934036255,
-                  -0.33982643485069275,
-                  -0.6738955974578857,
-                  -0.33982643485069275,
-                  0.536788284778595,
-                  -0.15518783032894135,
-                  -0.15518783032894135,
-                  0.04816073551774025,
-                  -0.15518783032894135,
-                  13.243240356445312,
-                  0.23552238941192627,
-                  1.7988288402557373,
-                  1.265108585357666,
-                  2.2292637825012207,
-                  2.2292637825012207,
-                  2.2292637825012207,
-                  2.2292637825012207,
-                  2.2292637825012207,
-                  0.28273144364356995,
-                  0.28273144364356995,
-                  0.28273144364356995,
-                  0.28273144364356995,
-                  0.28273144364356995,
-                  2.7979447841644287,
-                  2.7979447841644287,
-                  2.7979447841644287,
-                  2.7979447841644287,
-                  2.121450901031494,
-                  2.121450901031494,
-                  2.121450901031494,
-                  2.121450901031494,
-                  2.121450901031494,
-                  -0.3419605493545532,
-                  -1.1322349309921265,
-                  -1.1322349309921265,
-                  -0.29751771688461304,
-                  -2.0200939178466797,
-                  -0.29751771688461304,
-                  -0.08752743154764175,
-                  -0.08752743154764175,
-                  -0.08752743154764175,
-                  -0.08752743154764175,
-                  -0.08752743154764175,
-                  -1.4343557357788086,
-                  -2.0980143547058105,
-                  0.9952916524710744
-                ],
-                [
-                  0.03222507983446121,
-                  -0.8781638741493225,
-                  -1.2953649759292603,
-                  -0.9808197021484375,
-                  0.6575804948806763,
-                  -1.1086902618408203,
-                  -1.1086902618408203,
-                  -0.4391576945781708,
-                  0.5462160110473633,
-                  -5.481381893157959,
-                  -1.024693250656128,
-                  -1.0506558418273926,
-                  -0.6028772592544556,
-                  -0.3182058334350586,
-                  -0.8421359658241272,
-                  3.1643600463867188,
-                  -1.6795238256454468,
-                  -1.268272876739502,
-                  -0.4541553854942322,
-                  -0.4541553854942322,
-                  0.5550543665885925,
-                  -0.796548068523407,
-                  -0.5013381242752075,
-                  -0.019126493483781815,
-                  0.019128963351249695,
-                  -0.39562878012657166,
-                  0.06908176094293594,
-                  -1.1639982461929321,
-                  -0.39562878012657166,
-                  -0.0002783691161312163,
-                  -0.0002783691161312163,
-                  -0.0002783691161312163,
-                  -0.17664965987205505,
-                  1.3426705598831177,
-                  -1.3030539751052856,
-                  -0.17664965987205505,
-                  -0.08655659854412079,
-                  -0.21335488557815552,
-                  -1.0170265436172485,
-                  -1.0574270486831665,
-                  0.2667020261287689,
-                  1.2143088579177856,
-                  -0.5815029740333557,
-                  -0.5815029740333557,
-                  -0.5815029740333557,
-                  -0.4963859021663666,
-                  0.5642513036727905,
-                  -0.4963859021663666,
-                  0.24718865752220154,
-                  0,
-                  0,
-                  -0.018942559137940407,
-                  0,
-                  -0.7162759304046631,
-                  0,
-                  0,
-                  0,
-                  -0.2715355455875397,
-                  -0.2715355455875397,
-                  -0.2715355455875397,
-                  -0.2715355455875397,
-                  -0.2715355455875397,
-                  -0.018942559137940407,
-                  -0.018942559137940407,
-                  -0.018942559137940407,
-                  -0.018942559137940407,
-                  -0.018942559137940407,
-                  -0.02516103722155094,
-                  -0.02516103722155094,
-                  -0.02516103722155094,
-                  -0.02516103722155094,
-                  -0.39853188395500183,
-                  -0.39853188395500183,
-                  -0.39853188395500183,
-                  -0.39853188395500183,
-                  -0.39853188395500183,
-                  1.6284748315811157,
-                  3.78882098197937,
-                  3.78882098197937,
-                  1.135919213294983,
-                  2.3059706687927246,
-                  1.135919213294983,
-                  1.024450659751892,
-                  1.024450659751892,
-                  1.024450659751892,
-                  1.024450659751892,
-                  1.024450659751892,
-                  1.1700990200042725,
-                  9.351263046264648,
-                  1.217834212578165
+                  3.6720564365386963,
+                  1.1738885641098022,
+                  2.304730176925659,
+                  2.304730176925659,
+                  2.1816632747650146,
+                  1.9111765623092651,
+                  1.9111765623092651,
+                  -1.063582420349121,
+                  0.5095437169075012,
+                  3.145064115524292,
+                  0.8332069516181946,
+                  0.5980480909347534,
+                  0.8332069516181946,
+                  1.414649486541748,
+                  1.414649486541748,
+                  3.6850550174713135,
+                  -0.4912010133266449,
+                  -0.4912010133266449,
+                  -0.4912010133266449,
+                  -0.4912010133266449,
+                  2.2677831649780273,
+                  0.31683221459388733,
+                  0.558907151222229,
+                  0.558907151222229,
+                  1.6685422658920288,
+                  -0.23543505370616913,
+                  -0.23543505370616913,
+                  -0.23543505370616913,
+                  -0.23543505370616913,
+                  1.9015357494354248,
+                  1.9015357494354248,
+                  1.9015357494354248,
+                  0.0356329120695591,
+                  0.0356329120695591,
+                  0.0356329120695591,
+                  0.0356329120695591,
+                  4.631586641971738
                 ]
               ]
             }
@@ -1339,18 +665,6 @@
       [
         "en",
         "recommend me a restaurant"
-      ],
-      [
-        "en",
-        "I prefer @cuisine cuisine"
-      ],
-      [
-        "en",
-        "I like @ambiance ambiance"
-      ],
-      [
-        "en",
-        "I would prefer a restaurant located in @location"
       ],
       [
         "en",
@@ -1464,7 +778,9 @@
   },
   "ner": {
     "settings": {
-      "tag": "ner"
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
     },
     "rules": {
       "en": {
@@ -2010,12 +1326,6 @@
         "locales": {
           "en": "Where would you prefer the restaurant to be located (downtown, suburbs, waterfront)?"
         }
-      },
-      "dietary_restrictions": {
-        "intent": "halal.restaurant.preferences",
-        "entity": "dietary_restrictions",
-        "mandatory": false,
-        "locales": {}
       },
       "price_range": {
         "intent": "halal.restaurant.preferences",

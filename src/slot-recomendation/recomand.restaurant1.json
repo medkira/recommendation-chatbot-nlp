@@ -35,9 +35,6 @@
       {
         "intent": "restaurant.preferences",
         "utterances": [
-            "I prefer @cuisine cuisine",
-            "I like @ambiance ambiance",
-            "I would prefer a restaurant located in @location",
           "I'm craving some @cuisine cuisine.",
           "I'm in the mood for a(n) @ambiance ambiance experience.",
           "Somewhere in the @location location sounds perfect.",
