@@ -15,6 +15,7 @@ dataDomain.data.map((obj: any) => {
 
 const corpora = [
     'src/corpus/off.domain.json',
+    'src/slot-recomendation/recomand.restaurant2.json'
 ]
 managerDomain.addCorpora(corpora);
 

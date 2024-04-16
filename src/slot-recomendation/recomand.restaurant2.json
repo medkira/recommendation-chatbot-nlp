@@ -90,7 +90,7 @@
             "question": "Will you be dining alone, with a small group (2-4 people), or a large group (5+ people)?"
           },
           "dietary_restrictions": {
-            "mandatory": true,
+            "mandatory": false,
             "question": "Do you have any dietary restrictions to consider (vegetarian, vegan, gluten-free, dairy-free)?"
           },
           "outdoor_seating": {

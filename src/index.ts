@@ -109,12 +109,12 @@ rl.on("line", async function (line: string) {
         // // console.log("--------------------------------------------------------------------------------------------------------")
         // console.log(response.answer);
         // // }
-        // const response = await FeaturesGathermanager.process('en', line, context);
-        // console.log(response.answer);
-        manager.load('./src/models/offDomain.nlp');
+        const response = await FeaturesGathermanager.process('en', line, context);
+        console.log(response.answer);
 
-        const response = await manager.process("en", line);
-        console.log(response.answer)
+        // manager.load('./src/models/offDomain.nlp');
+        // const response = await manager.process("en", line);
+        // console.log(response.answer)
     }
 
 
