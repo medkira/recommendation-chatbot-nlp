@@ -29,6 +29,13 @@
           "moderate": ["Moderately priced", "A good value"],
           "expensive": ["Fine dining", "A splurge-worthy experience", "expensive"]
         }
+      },
+      "group_size": {
+        "options": {
+          "solo": ["Solo"],
+          "small_group": ["Small Group (2-4 people)"],
+          "large_group": ["Large Group (5+ people)"]
+        }
       }
     },
     "data": [

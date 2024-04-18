@@ -1,0 +1,201 @@
+{
+    "name": "Restaurant Features Corpus",
+    "locale": "en-US",
+    "entities": {
+      "cuisine": {
+        "options": {
+          "italian": ["Italian"],
+          "japanese": ["Japanese"],
+          "mexican": ["Mexican"]
+        }
+      },
+      "ambiance": {
+        "options": {
+          "cozy": ["Cozy"],
+          "elegant": ["Elegant"],
+          "casual": ["Casual"]
+        }
+      },
+      "location": {
+        "options": {
+          "downtown": ["Downtown"],
+          "suburbs": ["Suburbs"],
+          "beachfront": ["Beachfront"]
+        }
+      },
+      "outdoor_seating": {
+        "options": {
+          "yes": ["Yes"],
+          "no": ["No"],
+          "unimportant": ["Doesn't Matter"]
+        }
+      },
+      "price_range": {
+        "options": {
+          "cheap": ["Budget-friendly", "Easy on the wallet", "Budget"],
+          "moderate": ["Moderately priced", "A good value"],
+          "expensive": ["Fine dining", "A splurge-worthy experience", "expensive"]
+        }
+      },
+      "dietary_restrictions": {
+        "options": {
+          "vegetarian": ["Vegetarian"],
+          "vegan": ["Vegan"],
+          "gluten-free": ["Gluten-free"],
+          "dairy-free": ["Dairy-free"],
+          "halal": ["Halal", "Following Islamic dietary guidelines"]
+
+        }
+      }
+    },
+    "data": [
+      {
+        "intent": "restaurant.preferences",
+        "utterances": [
+          "@cuisine",
+          "@cuisine cuisine",
+          "I prefer @cuisine cuisine",
+          "I like @ambiance ambiance",
+          "I would prefer a restaurant located in @location",
+          "Can you recommend any  places with a @cuisine cuisine menu?",
+          "Can you recommend restaurant",
+          "recommend me a restaurant"
+
+
+        ],
+        "answers": [
+          "Great! You prefer {{ cuisine }} cuisine, {{ ambiance }} ambiance, and would like a restaurant located in {{ location }}."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What cuisine do you prefer?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What ambiance do you like?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located?"
+          }
+        }
+      },
+       {
+        "intent": "restaurant.preferences",
+        "utterances": [
+          "I'm craving some @cuisine cuisine.",
+          "I'm in the mood for a(n) @ambiance ambiance experience.",
+          "Somewhere in the @location location sounds perfect.",
+          "Ideally, I'd like a @price_range price_range restaurant."
+        ],
+        "answers": [
+          "Sounds delightful! You're looking for an {{ ambiance }} {{ cuisine }} restaurant located in {{ location }}. Perhaps with a {{ price_range }} price point?",
+          "Excellent choices! Let's find you the perfect spot for a {{ ambiance }} {{ cuisine }} adventure in {{ location }}. Budget in mind? We can explore {{ price_range }} options."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of cuisine are you craving?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What kind of ambiance are you looking for?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        }
+      },
+      {
+        "intent": "restaurant.preferences",
+        "utterances": [
+          "I'm looking for a good @cuisine restaurant.",
+          "Any recommendations for a delicious @price_range meal?",
+          "I need to find a place for a(n) @occasion . Any ideas?",
+          "Looking for a restaurant for a group of @group_size . Suggestions?",
+          "Help me find a delicious @cuisine restaurant for a(n) @occasion with a @group_size group. Budget is flexible.",
+          "recommend me restaurent"
+        ],
+        "answers": [
+          "Let's find your perfect match!  We have a wide variety of cuisines to explore. What are you craving today (Italian, Japanese, Mexican, etc.)?",
+          "Price is definitely a factor!  Are you looking for a budget-friendly, moderately priced, or fine dining experience?",
+          "Ah, a special occasion!  Let me know what kind of vibe you're looking for (romantic, family-friendly, etc.) and I can suggest some truly memorable places.",
+          "No problem accommodating your group!  Tell me what kind of cuisine you have in mind and the size of your party, and we'll find the perfect spot.",
+          "Excellent!  We can definitely explore all options.  What kind of cuisine are you leaning towards?  Also, tell me a bit about the occasion and group size."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of cuisine are you interested in (we have Italian, Japanese, Mexican, Indian, Thai, and many more)?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (budget-friendly, moderately priced, or fine dining)?"
+          },
+          "occasion": {
+            "mandatory": true,
+            "question": "Is this for a casual dining experience, a special occasion (romantic, family-friendly, etc.), or a quick bite?"
+          },
+          "group_size": {
+            "mandatory": true,
+            "question": "Will you be dining alone, with a small group (2-4 people), or a large group (5+ people)?"
+          },
+          "dietary_restrictions": {
+            "mandatory": false,
+            "question": "Do you have any dietary restrictions to consider (vegetarian, vegan, gluten-free, dairy-free)?"
+          },
+          "outdoor_seating": {
+            "mandatory": false,
+            "question": "Would you prefer a restaurant"
+        }
+    }
+       },
+       {
+        "intent": "halal.restaurant.preferences",
+        "utterances": [
+          "Halal @cuisine food sounds good.",   
+          "I want some halal @cuisine.",    
+          "Any halal restaurants with @ambiance ambiance?",    
+          "Find a halal place near @location.",    
+          "Halal, @location, any ideas?",    
+          "Craving halal!",
+          "Can you recommend any halal places with a @cuisine cuisine menu?",  
+          "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?", 
+          "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
+          "Family night out! Any  kid-friendly?",
+          "Where can we take the kids, Open to locations!",
+          "recommend me halal restaurant",
+          "@ambiance ambiance"
+        ],
+        "answers": [
+          "Sure, looking for halal options! What kind of cuisine are you in the mood for?",
+          "Absolutely! Halal restaurants with a(n) {{ ambiance }} ambiance sound great. Where would you prefer it to be located?"
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of halal cuisine are you craving?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What kind of ambiance are you looking for (family-friendly, elegant, peaceful)?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located (downtown, suburbs, waterfront)?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        }
+      }
+    ]
+  }
+  

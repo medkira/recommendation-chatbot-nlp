@@ -20946,10 +20946,10 @@
         ],
         "greetings.hello": [
           {
-            "answer": "Hey there!"
+            "answer": "Hey there! {{ user_name }}"
           },
           {
-            "answer": "Greetings!"
+            "answer": "Greetings! {{ user_name }}"
           }
         ],
         "greetings.howareyou": [

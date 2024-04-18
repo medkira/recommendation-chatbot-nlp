@@ -1,48 +1,19 @@
-// Let's start with importing `NlpManager` from `node-nlp`. This will be responsible for training, saving, loading and processing.
-// const { NlpManager } = require("node-nlp");
 const { NlpManager, } = require("node-nlp");
 
-console.log("Starting Chatbot ...");// Creating new Instance of NlpManager class.
-const manager = new NlpManager({ languages: ["en"] });
+console.log("Starting Chatbot ...");
 
-const FeaturesGathermanager = new NlpManager({ languages: ["en"] });
-FeaturesGathermanager.load('./src/models/recomendRestaurant-slot.nlp');
+// ? Domain manager classifies user input into a domain. Depending on that domain, we start the specific model.
+// ? enhance accurcy of understanding what user want.
+const DomainManager = new NlpManager({ languages: ["en"] });
 
-
-const FindPlaceModel = new NlpManager({ languages: ["en"] });
-FindPlaceModel.load('./src/models/findPlace.nlp');
-
-const TestAction = new NlpManager({ languages: ["en"], executeActionsBeforeAnswers: true });
-TestAction.load('./src/models/actiontest.nlp');
-
-
-TestAction.addAction('whatTimeIsIt', 'handleWhatsTimeAction', [], async (data: any, locale: any) => {
-    // console.log(data.context.entities?.cuntry?.option ?? "")
-    console.log("i am working");
-    const res = new Date().toLocaleTimeString((data.context.entities?.cuntry?.option ?? "en-US"));
-    data.context.time = res;
-    // data.context.test = data.context.cuntry;
-    data.context.slotFill = {
-        localeIso2: 'en',
-        intent: 'halal.restaurant.preferences',
-        entities: [],
-        answer: undefined,
-        srcAnswer: undefined,
-        currentSlot: 'cuisine'
-    },
-
-        console.log("DATA", data.context)
-    // console.log(data)
-    // console.log("we can do anything here");
-    return data;
-});
-
+// ? we can get this context from database and inject it into the models
+// ? e.g :  in off domain model => intent of greeting.hello will ge slot filled with user_name entitie
 const context =
 {
     // channel: undefined,
     // app: undefined,
     // from: null,
-    // user_name_0: 'mohamed',
+    // user_name: '',
     user_name: 'mohamed',
     // slotFill: undefined,
     // cuisine_0: 'Italian',
@@ -56,15 +27,11 @@ const context =
 }
 
 
-
-
-// Loading a module readline, this will be able to take input from the terminal.
 var readline = require("readline");
 var rl = readline.createInterface(process.stdin, process.stdout);
 
 
 console.log("Chatbot started!");
-// console.log("hi how i can help you for today");z
 rl.setPrompt("> ");
 rl.prompt();
 rl.on("line", async function (line: string) {
@@ -73,95 +40,58 @@ rl.on("line", async function (line: string) {
         return;
     }
 
-
-    manager.load("./src/models/domain_0.nlp");
-    // console.log("chatbot domains", manager.nlp.getDomains());
-
-    const response = await manager.process("en", line);
+    DomainManager.load("./src/models/domain_0.nlp");
+    // console.log("chatbot domains", DomainManager.nlp.getDomains());
+    const response = await DomainManager.process("en", line);
     // console.log("RESPONSE", response)
-    const intentDomain = manager.getIntentDomain("en", response.intent);
+    const intentDomain = DomainManager.getIntentDomain("en", response.intent);
 
     console.log("user response intent domain: ", intentDomain);
 
 
-
-    if (intentDomain == "recomends") {
-        manager.load('./src/models/recomend.nlp');
-        const response = await manager.process("en", line);
-        console.log(response.answer);
-
-    } else if (intentDomain == "greetings") {
-        manager.load('./src/models/greeting.nlp');
-        const response = await manager.process("en", line, context);
-        console.log(response.answer);
-
-    }
-    else if (intentDomain == "FeaturesGather") {
-        // const context = {}
-        // manager.load('./src/models/recomendRestaurant-slot.nlp');
-
+    if (intentDomain == "FeaturesGather") {
+        const FeaturesGathermanager = new NlpManager({ languages: ["en"] });
+        FeaturesGathermanager.load('./src/models/recomendRestaurant-slot.nlp');
         const response = await FeaturesGathermanager.process('en', line, context);
         console.log(response.answer);
-        // console.log(response);
-    } else if (intentDomain == "FindPlace") {
-        const response = await FindPlaceModel.process('en', line, context);
-        console.log(response.answer);
+
     } else if (intentDomain == "InterruptionDomain") {
 
+        // ? Interruption model is useful when user response with unexpected response 
+        // ? e.g : we expect user to give use his age but he response recommend me restaurent
         const InterruptionModel = new NlpManager({ languages: ["en"] });
 
         InterruptionModel.load('./src/models/interruption.nlp');
 
+        // ? this action : to change the conversation context from recommendation normal e.g to recommend something hala
+        // ? **conversation context in the same model**
         InterruptionModel.addAction('halal.restaurant.preferences', 'changeContext', [], async (data: any) => {
-            // console.log("i am working");
-            // console.log(data.context.slotFill.entities)
-
-            // console.log("---------------------")
-            // console.log(data.context.entities);
-            // console.log("data", data);
             if (data.context && data.context.slotFill) {
                 data.context.slotFill = {
                     localeIso2: 'en',
                     intent: data.intent,
-                    entities: data.context.slotFill.entities,
+                    entities: data.context.slotFill.entities, // ? here happen the change
                     // answer: undefined,
                     // srcAnswer: undefined,
                     // currentSlot: 'cuisine'
                 };
-            } else {
             }
-
-
-            // console.log("---------------------")
-
-            // console.log("DATA", data)
-
             return data;
         });
 
         const response = await InterruptionModel.process("en", line, context);
-        // console.log("response", response);
         console.log(response.answer);
 
+
+    } else if (intentDomain == "OffDomain") {
+        const manager = new NlpManager({ languages: ["en"] });
+        manager.load('./src/models/offDomain.nlp');
+        const response = await manager.process("en", line, context);
+        console.log(response.answer);
 
     } else {
-        // console.log("no model available");
-        // if (true) {
-
-        // const actions = await TestAction.getActions("whatTimeIsIt")
-        // // console.log(actions)
-        // // console.log("--------------------------------------------------------------------------------------------------------")
-        // const response = await TestAction.process('en', line, context);
-        // console.log(response.answer);
-        // // }
-        const response = await FeaturesGathermanager.process('en', line, context);
-        console.log(response.answer);
-
-        // manager.load('./src/models/offDomain.nlp');
-        // const response = await manager.process("en", line);
-        // console.log(response.answer)
+        /// extreme case if domain manager returns default domain! we can use AI API like google gemini
     }
-
 
     // console.log("context: ", context);
     rl.prompt();

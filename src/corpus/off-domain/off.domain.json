@@ -623,7 +623,7 @@
       {
         "intent": "greetings.hello",
         "utterances": ["hello", "hi", "howdy"],
-        "answers": ["Hey there!", "Greetings!"]
+        "answers": ["Hey there! {{ user_name }}", "Greetings! {{ user_name }}"]
       },
       {
         "intent": "greetings.howareyou",
