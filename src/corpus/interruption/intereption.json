@@ -1,5 +1,5 @@
 {
-    "name" : "restaurant halal intereption corpus",
+    "name" : "restaurant halal Interruption corpus",
     "locale": "en-US",
     "entities": {
         "cuisine": {

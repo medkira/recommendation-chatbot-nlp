@@ -12,19 +12,20 @@ dataDomain.data.map((obj: any) => {
 })
 // ? off domain
 
-// ? intereption domain 
-let intereptionDomain = fs.readFileSync('src/corpus/intereption/intereption.json');
-intereptionDomain = JSON.parse(intereptionDomain);
-intereptionDomain.data.map((obj: any) => {
-    managerDomain.assignDomain("en", obj.intent, "IntereptionDomain");
+// ? Interruption domain 
+let InterruptionDomain = fs.readFileSync('src/corpus/interruption/intereption.json');
+InterruptionDomain = JSON.parse(InterruptionDomain);
+InterruptionDomain.data.map((obj: any) => {
+    managerDomain.assignDomain("en", obj.intent, "InterruptionDomain");
 })
-// ? intereptions domain
+// ? Interruptions domain
 
 
 const corpora = [
     'src/corpus/off.domain.json',
     'src/slot-recomendation/recomand.restaurant2.json',
-    'src/corpus/intereption/intereption.json'
+    'src/corpus/interruption/intereption.json',
+    'src/slot-recomendation/recomand.restaurant.json'
 ]
 managerDomain.addCorpora(corpora);
 
@@ -117,31 +118,6 @@ const nlpFindPlace = async () => {
     manager.save("./src/models/findPlace.nlp");
 }
 
-// const nlpRecommend = async () => {
-//     const { dockStart } = require('@nlpjs/basic');
-//     const manager = new NlpManager({ languages: ["en"], autoSave: false, });
-//     const filename = "recomend.place.json";
-//     const intent = filename.replace(".json", "");
-
-//     let data = fs.readFileSync(`./src/intents/${filename}`);
-//     data = JSON.parse(data);
-
-
-//     for (const question of data.questions) {
-//         manager.addDocument("en", question, intent);
-//     }
-
-//     for (const answer of data.answers) {
-//         manager.addAnswer("en", intent, answer);
-//     }
-
-
-
-
-//     await manager.train();
-//     manager.save("./src/models/recomend.nlp");
-// }
-
 
 const nlpRecommendRestaurant = async () => {
     const { dockStart } = require('@nlpjs/basic');
@@ -177,7 +153,7 @@ const nlpRecommendRestaurant = async () => {
     const corpora = [
         // `./src/slot-recomendation/${filename0}`,
         // `./src/slot-recomendation/${filename1}`,
-        `./src/slot-recomendation/${filename2}`,
+        // `./src/slot-recomendation/${filename2}`,
         `./src/slot-recomendation/${filename3}`,
         // `./src/slot-recomendation/${filename4}`,
 
@@ -239,15 +215,15 @@ const nlpOffDomain = async () => {
 
 }
 
-const nlpIntereption = async () => {
+const nlpInterruption = async () => {
     const corpora = [
-        'src/corpus/intereption/intereption.json'
+        'src/corpus/interruption/intereption.json'
     ]
     const manager = new NlpManager({ languages: ["en"], autoSave: false, });
     manager.addCorpora(corpora);
     await manager.train();
 
-    manager.save('./src/models/intereption.nlp');
+    manager.save('./src/models/Interruption.nlp');
 }
 
 
@@ -257,7 +233,7 @@ async function train_save() {
     await nlpgreeting();
     await nlpTestAction();
     await nlpOffDomain();
-    await nlpIntereption();
+    await nlpInterruption();
     await managerDomain.train();
     managerDomain.save("./src/models/domain_0.nlp");
 }
@@ -302,3 +278,30 @@ train_save();
 //     data.context.time = new Date().toLocaleTimeString(locale);
 //     return data;
 // });
+
+
+
+// const nlpRecommend = async () => {
+//     const { dockStart } = require('@nlpjs/basic');
+//     const manager = new NlpManager({ languages: ["en"], autoSave: false, });
+//     const filename = "recomend.place.json";
+//     const intent = filename.replace(".json", "");
+
+//     let data = fs.readFileSync(`./src/intents/${filename}`);
+//     data = JSON.parse(data);
+
+
+//     for (const question of data.questions) {
+//         manager.addDocument("en", question, intent);
+//     }
+
+//     for (const answer of data.answers) {
+//         manager.addAnswer("en", intent, answer);
+//     }
+
+
+
+
+//     await manager.train();
+//     manager.save("./src/models/recomend.nlp");
+// }

@@ -49,7 +49,10 @@
         "yes @price_range budget",
         "@price_range budget",
         "i will go with @price_range budget ",
-        "i will pick @price_range"
+        "i will pick @price_range",
+
+        " entities: { cuisine: {options: {italian: [Italian], japanese: [Japanese], mexican: [Mexican] } },ambiance: {options cozy: [Cozy],"
+                
 
     ]
 }

@@ -1,0 +1,862 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "autoSave": false,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "@cuisin,food,good,halal,sound": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@cuisin,halal,i,some,want": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@locat,a,find,halal,near,place": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@locat,ani,halal,idea": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@cuisin,a,ani,can,cuisin,halal,menu,place,recommend,with,you": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@dietary_restrict,a,ani,cater,dietari,for,look,restaur,restrict,suggest,that,to": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@locat,a,by,for,halal,is,meal,nice,peac,place,the,there,waterfront": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "ani,famili,kid-friend,night,out": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "can,kid,locat,open,take,the,to,we,where": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "@ambianc,ambianc,ani,halal,restaur,with": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "halal,it,need": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "crave,halal": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          },
+          "halal,me,recommend,restaur": {
+            "intent": "halal.restaurant.preferences",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "halal.restaurant.preferences": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Halal @cuisine food sounds good.",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want some halal @cuisine.",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Find a halal place near @location.",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Halal, @location, any ideas?",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Can you recommend any halal places with a @cuisine cuisine menu?",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Is there a nice, peaceful place for a halal meal by the @location waterfront?",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Family night out! Any  kid-friendly?",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Where can we take the kids, Open to locations!",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Any halal restaurants with @ambiance ambiance?",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "need it halal!",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "Craving halal!",
+            "intent": "halal.restaurant.preferences"
+          },
+          {
+            "domain": "default",
+            "utterance": "recommend me halal restaurant",
+            "intent": "halal.restaurant.preferences"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "halal": 1,
+              "@cuisin": 1,
+              "food": 1,
+              "sound": 1,
+              "good": 1,
+              "i": 1,
+              "want": 1,
+              "some": 1,
+              "find": 1,
+              "a": 1,
+              "place": 1,
+              "near": 1,
+              "@locat": 1,
+              "ani": 1,
+              "idea": 1,
+              "can": 1,
+              "you": 1,
+              "recommend": 1,
+              "with": 1,
+              "cuisin": 1,
+              "menu": 1,
+              "look": 1,
+              "for": 1,
+              "restaur": 1,
+              "that": 1,
+              "cater": 1,
+              "to": 1,
+              "@dietary_restrict": 1,
+              "dietari": 1,
+              "restrict": 1,
+              "suggest": 1,
+              "is": 1,
+              "there": 1,
+              "nice": 1,
+              "peac": 1,
+              "meal": 1,
+              "by": 1,
+              "the": 1,
+              "waterfront": 1,
+              "famili": 1,
+              "night": 1,
+              "out": 1,
+              "kid-friend": 1,
+              "where": 1,
+              "we": 1,
+              "take": 1,
+              "kid": 1,
+              "open": 1,
+              "locat": 1,
+              "@ambianc": 1,
+              "ambianc": 1,
+              "need": 1,
+              "it": 1,
+              "crave": 1,
+              "me": 1
+            },
+            "intents": {
+              "halal.restaurant.preferences": 1
+            },
+            "intentFeatures": {
+              "halal.restaurant.preferences": {
+                "halal": 1,
+                "@cuisin": 1,
+                "food": 1,
+                "sound": 1,
+                "good": 1,
+                "i": 1,
+                "want": 1,
+                "some": 1,
+                "find": 1,
+                "a": 1,
+                "place": 1,
+                "near": 1,
+                "@locat": 1,
+                "ani": 1,
+                "idea": 1,
+                "can": 1,
+                "you": 1,
+                "recommend": 1,
+                "with": 1,
+                "cuisin": 1,
+                "menu": 1,
+                "look": 1,
+                "for": 1,
+                "restaur": 1,
+                "that": 1,
+                "cater": 1,
+                "to": 1,
+                "@dietary_restrict": 1,
+                "dietari": 1,
+                "restrict": 1,
+                "suggest": 1,
+                "is": 1,
+                "there": 1,
+                "nice": 1,
+                "peac": 1,
+                "meal": 1,
+                "by": 1,
+                "the": 1,
+                "waterfront": 1,
+                "famili": 1,
+                "night": 1,
+                "out": 1,
+                "kid-friend": 1,
+                "where": 1,
+                "we": 1,
+                "take": 1,
+                "kid": 1,
+                "open": 1,
+                "locat": 1,
+                "@ambianc": 1,
+                "ambianc": 1,
+                "need": 1,
+                "it": 1,
+                "crave": 1,
+                "me": 1
+              }
+            },
+            "featuresToIntent": {
+              "halal": [
+                "halal.restaurant.preferences"
+              ],
+              "@cuisin": [
+                "halal.restaurant.preferences"
+              ],
+              "food": [
+                "halal.restaurant.preferences"
+              ],
+              "sound": [
+                "halal.restaurant.preferences"
+              ],
+              "good": [
+                "halal.restaurant.preferences"
+              ],
+              "i": [
+                "halal.restaurant.preferences"
+              ],
+              "want": [
+                "halal.restaurant.preferences"
+              ],
+              "some": [
+                "halal.restaurant.preferences"
+              ],
+              "find": [
+                "halal.restaurant.preferences"
+              ],
+              "a": [
+                "halal.restaurant.preferences"
+              ],
+              "place": [
+                "halal.restaurant.preferences"
+              ],
+              "near": [
+                "halal.restaurant.preferences"
+              ],
+              "@locat": [
+                "halal.restaurant.preferences"
+              ],
+              "ani": [
+                "halal.restaurant.preferences"
+              ],
+              "idea": [
+                "halal.restaurant.preferences"
+              ],
+              "can": [
+                "halal.restaurant.preferences"
+              ],
+              "you": [
+                "halal.restaurant.preferences"
+              ],
+              "recommend": [
+                "halal.restaurant.preferences"
+              ],
+              "with": [
+                "halal.restaurant.preferences"
+              ],
+              "cuisin": [
+                "halal.restaurant.preferences"
+              ],
+              "menu": [
+                "halal.restaurant.preferences"
+              ],
+              "look": [
+                "halal.restaurant.preferences"
+              ],
+              "for": [
+                "halal.restaurant.preferences"
+              ],
+              "restaur": [
+                "halal.restaurant.preferences"
+              ],
+              "that": [
+                "halal.restaurant.preferences"
+              ],
+              "cater": [
+                "halal.restaurant.preferences"
+              ],
+              "to": [
+                "halal.restaurant.preferences"
+              ],
+              "@dietary_restrict": [
+                "halal.restaurant.preferences"
+              ],
+              "dietari": [
+                "halal.restaurant.preferences"
+              ],
+              "restrict": [
+                "halal.restaurant.preferences"
+              ],
+              "suggest": [
+                "halal.restaurant.preferences"
+              ],
+              "is": [
+                "halal.restaurant.preferences"
+              ],
+              "there": [
+                "halal.restaurant.preferences"
+              ],
+              "nice": [
+                "halal.restaurant.preferences"
+              ],
+              "peac": [
+                "halal.restaurant.preferences"
+              ],
+              "meal": [
+                "halal.restaurant.preferences"
+              ],
+              "by": [
+                "halal.restaurant.preferences"
+              ],
+              "the": [
+                "halal.restaurant.preferences"
+              ],
+              "waterfront": [
+                "halal.restaurant.preferences"
+              ],
+              "famili": [
+                "halal.restaurant.preferences"
+              ],
+              "night": [
+                "halal.restaurant.preferences"
+              ],
+              "out": [
+                "halal.restaurant.preferences"
+              ],
+              "kid-friend": [
+                "halal.restaurant.preferences"
+              ],
+              "where": [
+                "halal.restaurant.preferences"
+              ],
+              "we": [
+                "halal.restaurant.preferences"
+              ],
+              "take": [
+                "halal.restaurant.preferences"
+              ],
+              "kid": [
+                "halal.restaurant.preferences"
+              ],
+              "open": [
+                "halal.restaurant.preferences"
+              ],
+              "locat": [
+                "halal.restaurant.preferences"
+              ],
+              "@ambianc": [
+                "halal.restaurant.preferences"
+              ],
+              "ambianc": [
+                "halal.restaurant.preferences"
+              ],
+              "need": [
+                "halal.restaurant.preferences"
+              ],
+              "it": [
+                "halal.restaurant.preferences"
+              ],
+              "crave": [
+                "halal.restaurant.preferences"
+              ],
+              "me": [
+                "halal.restaurant.preferences"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "halal",
+                "@cuisin",
+                "food",
+                "sound",
+                "good",
+                "i",
+                "want",
+                "some",
+                "find",
+                "a",
+                "place",
+                "near",
+                "@locat",
+                "ani",
+                "idea",
+                "can",
+                "you",
+                "recommend",
+                "with",
+                "cuisin",
+                "menu",
+                "look",
+                "for",
+                "restaur",
+                "that",
+                "cater",
+                "to",
+                "@dietary_restrict",
+                "dietari",
+                "restrict",
+                "suggest",
+                "is",
+                "there",
+                "nice",
+                "peac",
+                "meal",
+                "by",
+                "the",
+                "waterfront",
+                "famili",
+                "night",
+                "out",
+                "kid-friend",
+                "where",
+                "we",
+                "take",
+                "kid",
+                "open",
+                "locat",
+                "@ambianc",
+                "ambianc",
+                "need",
+                "it",
+                "crave",
+                "me"
+              ],
+              "intents": [
+                "halal.restaurant.preferences"
+              ],
+              "perceptrons": [
+                [
+                  6.531139373779297,
+                  0.8522104620933533,
+                  0.6601148843765259,
+                  0.6601148843765259,
+                  0.6601148843765259,
+                  0.6552155017852783,
+                  0.6552155017852783,
+                  0.6552155017852783,
+                  0.6402217745780945,
+                  0.6339941620826721,
+                  0.15337911248207092,
+                  0.6402217745780945,
+                  0.7473728060722351,
+                  1.9684326648712158,
+                  0.13855083286762238,
+                  0.5790144205093384,
+                  -0.4599543511867523,
+                  0.49142828583717346,
+                  -0.4889620542526245,
+                  -0.4599543511867523,
+                  -0.4599543511867523,
+                  0.4800339341163635,
+                  0.45424702763557434,
+                  1.4014118909835815,
+                  0.4800339341163635,
+                  0.4800339341163635,
+                  1.519055724143982,
+                  0.4800339341163635,
+                  0.4800339341163635,
+                  0.4800339341163635,
+                  0.4800339341163635,
+                  -0.026174271479249,
+                  -0.026174271479249,
+                  -0.026174271479249,
+                  -0.026174271479249,
+                  -0.026174271479249,
+                  -0.026174271479249,
+                  1.0121266841888428,
+                  -0.026174271479249,
+                  1.8425955772399902,
+                  1.8425955772399902,
+                  1.8425955772399902,
+                  1.8425955772399902,
+                  1.0388360023498535,
+                  1.0388360023498535,
+                  1.0388360023498535,
+                  1.0388360023498535,
+                  1.0388360023498535,
+                  1.0388360023498535,
+                  -0.02891986444592476,
+                  -0.02891986444592476,
+                  1.4625024795532227,
+                  1.4625024795532227,
+                  2.535856008529663,
+                  0.9524137377738953,
+                  4.948495810784649
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Halal @cuisine food sounds good."
+      ],
+      [
+        "en",
+        "I want some halal @cuisine."
+      ],
+      [
+        "en",
+        "Find a halal place near @location."
+      ],
+      [
+        "en",
+        "Halal, @location, any ideas?"
+      ],
+      [
+        "en",
+        "Can you recommend any halal places with a @cuisine cuisine menu?"
+      ],
+      [
+        "en",
+        "Looking for a restaurant that caters to @dietary_restrictions dietary restrictions, any suggestions?"
+      ],
+      [
+        "en",
+        "Is there a nice, peaceful place for a halal meal by the @location waterfront?"
+      ],
+      [
+        "en",
+        "Family night out! Any  kid-friendly?"
+      ],
+      [
+        "en",
+        "Where can we take the kids, Open to locations!"
+      ],
+      [
+        "en",
+        "Any halal restaurants with @ambiance ambiance?"
+      ],
+      [
+        "en",
+        "need it halal!"
+      ],
+      [
+        "en",
+        "Craving halal!"
+      ],
+      [
+        "en",
+        "recommend me halal restaurant"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {
+      "en": {
+        "cuisine": {
+          "name": "cuisine",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "italian",
+              "texts": [
+                "Italian"
+              ]
+            },
+            {
+              "option": "japanese",
+              "texts": [
+                "Japanese"
+              ]
+            },
+            {
+              "option": "mexican",
+              "texts": [
+                "Mexican"
+              ]
+            },
+            {
+              "option": "indian",
+              "texts": [
+                "Indian"
+              ]
+            },
+            {
+              "option": "thai",
+              "texts": [
+                "Thai"
+              ]
+            },
+            {
+              "option": "american",
+              "texts": [
+                "American"
+              ]
+            },
+            {
+              "option": "french",
+              "texts": [
+                "French"
+              ]
+            },
+            {
+              "option": "chinese",
+              "texts": [
+                "Chinese"
+              ]
+            },
+            {
+              "option": "greek",
+              "texts": [
+                "Greek"
+              ]
+            },
+            {
+              "option": "vietnamese",
+              "texts": [
+                "Vietnamese"
+              ]
+            }
+          ]
+        },
+        "dietary_restrictions": {
+          "name": "dietary_restrictions",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "halal",
+              "texts": [
+                "Halal",
+                "Following Islamic dietary guidelines",
+                "hala"
+              ]
+            }
+          ]
+        },
+        "ambiance": {
+          "name": "ambiance",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "cozy",
+              "texts": [
+                "Cozy",
+                "Intimate and warm",
+                "A fireside escape"
+              ]
+            },
+            {
+              "option": "elegant",
+              "texts": [
+                "Elegant",
+                "Upscale and sophisticated",
+                "A touch of luxury"
+              ]
+            },
+            {
+              "option": "casual",
+              "texts": [
+                "Casual",
+                "Relaxed and inviting",
+                "A place to unwind"
+              ]
+            }
+          ]
+        },
+        "location": {
+          "name": "location",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "downtown",
+              "texts": [
+                "Downtown",
+                "In the heart of the city",
+                "Bustling with urban energy"
+              ]
+            },
+            {
+              "option": "suburbs",
+              "texts": [
+                "Suburbs",
+                "A charming neighborhood setting",
+                "Relaxed and convenient"
+              ]
+            },
+            {
+              "option": "beachfront",
+              "texts": [
+                "Beachfront",
+                "Ocean views and fresh air",
+                "A taste of paradise"
+              ]
+            }
+          ]
+        },
+        "price_range": {
+          "name": "price_range",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "cheap",
+              "texts": [
+                "Budget-friendly",
+                "Easy on the wallet",
+                "Budget"
+              ]
+            },
+            {
+              "option": "moderate",
+              "texts": [
+                "Moderately priced",
+                "A good value"
+              ]
+            },
+            {
+              "option": "expensive",
+              "texts": [
+                "Fine dining",
+                "A splurge-worthy experience",
+                "expensive"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "halal.restaurant.preferences": [
+          {
+            "answer": "Sure, looking for halal options! What type of halal cuisine are you craving?"
+          },
+          {
+            "answer": "Sure, looking for halal options! What kind of ambiance are you looking for (family-friendly, elegant, peaceful)?"
+          },
+          {
+            "answer": "Sure, looking for halal options! Where would you prefer the restaurant to be located (downtown, suburbs, waterfront)?"
+          },
+          {
+            "answer": "Sure, looking for halal options! Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

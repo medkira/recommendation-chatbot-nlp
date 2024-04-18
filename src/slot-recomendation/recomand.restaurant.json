@@ -28,6 +28,8 @@
       {
         "intent": "restaurant.preferences",
         "utterances": [
+          "@cuisine",
+          "@cuisine cuisine",
           "I prefer @cuisine cuisine",
           "I like @ambiance ambiance",
           "I would prefer a restaurant located in @location",

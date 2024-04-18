@@ -85,7 +85,6 @@ rl.on("line", async function (line: string) {
 
 
 
-
     if (intentDomain == "recomends") {
         manager.load('./src/models/recomend.nlp');
         const response = await manager.process("en", line);
@@ -107,13 +106,13 @@ rl.on("line", async function (line: string) {
     } else if (intentDomain == "FindPlace") {
         const response = await FindPlaceModel.process('en', line, context);
         console.log(response.answer);
-    } else if (intentDomain == "IntereptionDomain") {
+    } else if (intentDomain == "InterruptionDomain") {
 
-        const IntereptionModel = new NlpManager({ languages: ["en"] });
+        const InterruptionModel = new NlpManager({ languages: ["en"] });
 
-        IntereptionModel.load('./src/models/intereption.nlp');
+        InterruptionModel.load('./src/models/interruption.nlp');
 
-        IntereptionModel.addAction('halal.restaurant.preferences', 'changeContext', [], async (data: any) => {
+        InterruptionModel.addAction('halal.restaurant.preferences', 'changeContext', [], async (data: any) => {
             // console.log("i am working");
             // console.log(data.context.slotFill.entities)
 
@@ -140,12 +139,9 @@ rl.on("line", async function (line: string) {
             return data;
         });
 
-        const response = await IntereptionModel.process("en", line, context);
+        const response = await InterruptionModel.process("en", line, context);
         // console.log("response", response);
         console.log(response.answer);
-
-
-
 
 
     } else {

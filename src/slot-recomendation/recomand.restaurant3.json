@@ -2,6 +2,24 @@
     "name": "Halal Restaurant Features Corpus (Ultra Fancy Edition)",
     "locale": "en-US",
     "entities": {
+      "movie_title": {
+        "options": []  
+      },
+      "showtime": {
+        "options": [
+          "morning",
+          "afternoon",
+          "evening"
+        ]
+      },
+      "number_of_tickets": {
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4+"
+        ]
+      },
       "cuisine": {
         "options": {
           " mediterranean": ["Mediterranean", "A flavorful journey through the Islamic world", "Explore halal delights from sun-drenched shores"],
@@ -9,23 +27,30 @@
           " indian": ["Indian", "A vibrant tapestry of halal flavors", "Tantalize your taste buds with halal Indian cuisine"]
         }
       },
+      "dietary_restrictions": {
+        "options": {
+          "halal": ["Halal", "Following Islamic dietary guidelines"]
+        }
+      },
       "ambiance": {
         "options": {
-          "family-friendly": ["Family-friendly", "Welcoming for all ages", "A place to gather with loved ones"],
-          "elegant": ["Elegant", "Upscale and sophisticated", "A touch of luxury with a halal twist"],
-          "peaceful": ["Peaceful", "Serene and tranquil", "A relaxing escape for a halal meal"]
+          "cozy": ["Cozy", "Intimate and warm", "A fireside escape"],
+          "elegant": ["Elegant", "Upscale and sophisticated", "A touch of luxury"],
+          "casual": ["Casual", "Relaxed and inviting", "A place to unwind"]
         }
       },
       "location": {
         "options": {
           "downtown": ["Downtown", "In the heart of the city", "Bustling with urban energy"],
           "suburbs": ["Suburbs", "A charming neighborhood setting", "Relaxed and convenient"],
-          "waterfront": ["Waterfront", "Soothing water views and fresh air", "A tranquil escape for a halal meal"]
+          "beachfront": ["Beachfront", "Ocean views and fresh air", "A taste of paradise"]
         }
       },
-      "dietary_restrictions": {
+      "price_range": {
         "options": {
-          "halal": ["Halal", "Following Islamic dietary guidelines"]
+          "cheap": ["Budget-friendly", "Easy on the wallet", "Budget"],
+          "moderate": ["Moderately priced", "A good value"],
+          "expensive": ["Fine dining", "A splurge-worthy experience", "expensive"]
         }
       }
     },
@@ -67,6 +92,69 @@
           "price_range": {
             "mandatory": true,
             "question": "Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        }
+      },
+      {
+        "intent": "restaurant.preferences",
+        "utterances": [
+          "I'm craving some @cuisine cuisine.",
+          "I'm in the mood for a(n) @ambiance ambiance experience.",
+          "Somewhere in the @location location sounds perfect.",
+          "Ideally, I'd like a @price_range price_range restaurant."
+        ],
+        "answers": [
+          "Sounds delightful! You're looking for an {{ ambiance }} {{ cuisine }} restaurant located in {{ location }}. Perhaps with a {{ price_range }} price point?",
+          "Excellent choices! Let's find you the perfect spot for a {{ ambiance }} {{ cuisine }} adventure in {{ location }}. Budget in mind? We can explore {{ price_range }} options."
+        ],
+        "slotFilling": {
+          "cuisine": {
+            "mandatory": true,
+            "question": "What type of cuisine are you craving?"
+          },
+          "ambiance": {
+            "mandatory": true,
+            "question": "What kind of ambiance are you looking for?"
+          },
+          "location": {
+            "mandatory": true,
+            "question": "Where would you prefer the restaurant to be located?"
+          },
+          "price_range": {
+            "mandatory": true,
+            "question": "Do you have a budget in mind (cheap, moderate, or expensive)?"
+          }
+        }
+      },
+      {
+        "intent": "movie.booking",
+        "utterances": [
+          "I'd like to book a ticket for @movie_title.",
+          "Can I get a ticket for the @showtime showing of @movie_title?",
+          "I need tickets for @movie_title. How many seats are available?",
+          "Looking to watch a movie @showtime. Any suggestions?",
+          "recommend a movie",
+          "recommend me movie"
+
+        ],
+        "answers": [
+          "Sure, what showtime are you interested in for {{movie_title}} (morning, afternoon, or evening)?",
+          "Sounds good! How many tickets would you like for {movie_title} @showtime?",
+          "Let's see what's playing @showtime. What kind of movie are you in the mood for?",
+          "Great choice! Tickets for {movie_title} @showtime can be booked right away. How many seats do you need?"
+        ],
+        "slotFilling": {
+          "movie_title": {
+            "mandatory": true,
+            "question": "What movie title are you interested in?"
+          },
+          "showtime": {
+            "mandatory": false,
+            "question": "Do you have a preference for the showtime (morning, afternoon, or evening)?"
+          },
+          "number_of_tickets": {
+            "mandatory": false,
+            "question": "How many tickets would you like to book?"
           }
         }
       }
